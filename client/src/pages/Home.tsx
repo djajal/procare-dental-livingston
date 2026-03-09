@@ -330,6 +330,7 @@ export default function Home() {
                   "Comfortable, welcoming environment",
                   "Over 25 years of trusted experience",
                   "Emergency dental services available",
+                  "NJ Top Dentist Award 2026",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-accent" />
@@ -337,6 +338,13 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-8 flex justify-center md:justify-start">
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/nj_top_dentist_2026_a1720d57.png"
+                  alt="NJ Top Dentist 2026 Award - ProCare Dental Livingston"
+                  className="w-48 h-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -498,7 +506,18 @@ export default function Home() {
               <ul className="space-y-2 text-sm text-white/80">
                 <li><a href="#about" className="hover:text-white transition">About Us</a></li>
                 <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
-                <li><a href="#contact" className="hover:text-white transition">Book Appointment</a></li>
+                <li><a href="/privacy-policy" className="hover:text-white transition">Privacy Policy</a></li>
+                <li><a href="/sitemap" className="hover:text-white transition">Sitemap</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Nearby Towns</h4>
+              <ul className="space-y-2 text-sm text-white/80">
+                <li><a href="/dentist-west-orange" className="hover:text-white transition">West Orange</a></li>
+                <li><a href="/dentist-verona" className="hover:text-white transition">Verona</a></li>
+                <li><a href="/dentist-montclair" className="hover:text-white transition">Montclair</a></li>
+                <li><a href="/dentist-bloomfield" className="hover:text-white transition">Bloomfield</a></li>
+                <li><a href="/dentist-essex-fells" className="hover:text-white transition">Essex Fells</a></li>
               </ul>
             </div>
             <div>
