@@ -518,6 +518,14 @@ export default function Home() {
                 <li><a href="/dentist-montclair" className="hover:text-white transition">Montclair</a></li>
                 <li><a href="/dentist-bloomfield" className="hover:text-white transition">Bloomfield</a></li>
                 <li><a href="/dentist-essex-fells" className="hover:text-white transition">Essex Fells</a></li>
+                <li><a href="/dentist-short-hills" className="hover:text-white transition">Short Hills</a></li>
+                <li><a href="/dentist-millburn" className="hover:text-white transition">Millburn</a></li>
+                <li><a href="/dentist-madison" className="hover:text-white transition">Madison</a></li>
+                <li><a href="/dentist-chatham" className="hover:text-white transition">Chatham</a></li>
+                <li><a href="/dentist-summit" className="hover:text-white transition">Summit</a></li>
+                <li><a href="/dentist-florham-park" className="hover:text-white transition">Florham Park</a></li>
+                <li><a href="/dentist-south-orange" className="hover:text-white transition">South Orange</a></li>
+                <li><a href="/dentist-maplewood" className="hover:text-white transition">Maplewood</a></li>
               </ul>
             </div>
             <div>
