@@ -10,6 +10,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import DentistWestOrange from "./pages/DentistWestOrange";
 import { DentistVerona, DentistMontclair, DentistBloomfield, DentistEssexFells } from "./pages/TownPages";
 import { DentistShortHills, DentistMillburn, DentistMadison, DentistChatham, DentistSummit, DentistFlorhamPark, DentistSouthOrange, DentistMaplewood } from "./pages/AdditionalTownPages";
+import Reviews from "./pages/Reviews";
 
 /**
  * ProCare Dental - Professional Dental Website
@@ -35,6 +36,7 @@ function Router() {
       <Route path={"/dentist-florham-park"} component={DentistFlorhamPark} />
       <Route path={"/dentist-south-orange"} component={DentistSouthOrange} />
       <Route path={"/dentist-maplewood"} component={DentistMaplewood} />
+      <Route path={"/reviews"} component={Reviews} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

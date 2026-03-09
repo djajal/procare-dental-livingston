@@ -505,6 +505,7 @@ export default function Home() {
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm text-white/80">
                 <li><a href="#about" className="hover:text-white transition">About Us</a></li>
+                <li><a href="/reviews" className="hover:text-white transition">Reviews</a></li>
                 <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
                 <li><a href="/privacy-policy" className="hover:text-white transition">Privacy Policy</a></li>
                 <li><a href="/sitemap" className="hover:text-white transition">Sitemap</a></li>
