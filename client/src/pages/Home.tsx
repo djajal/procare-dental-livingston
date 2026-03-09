@@ -257,12 +257,22 @@ export default function Home() {
                 <span className="text-sm text-foreground/70">119 Google Reviews - 4.9/5 Stars</span>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-96 flex items-center justify-center overflow-hidden">
-              <img
-                src="https://lh3.googleusercontent.com/p/AF1QipN0dB0NAiD-y4J6zzLcXcf4nVCDeL7wLqvlHduw=s1024-v1"
-                alt="Dr. Kristina Ceravolo"
-                className="w-full h-full object-cover"
-              />
+            <div className="flex flex-col items-center gap-4">
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-96 w-full flex items-center justify-center overflow-hidden">
+                <a href="/dr-kristina-ceravolo" className="hover:opacity-80 transition w-full h-full flex items-center justify-center">
+                  <img
+                    src="https://lh3.googleusercontent.com/p/AF1QipN0dB0NAiD-y4J6zzLcXcf4nVCDeL7wLqvlHduw=s1024-v1"
+                    alt="Dr. Kristina Ceravolo, DMD - Dentist in Livingston NJ"
+                    className="w-full h-full object-contain"
+                  />
+                </a>
+              </div>
+              <div className="text-center">
+                <a href="/dr-kristina-ceravolo" className="hover:text-primary/80 transition">
+                  <h3 className="text-2xl font-bold text-primary">Dr. Kristina Ceravolo</h3>
+                  <p className="text-lg text-accent font-semibold">DMD</p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
