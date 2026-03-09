@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, MapPin, Clock, Smile, Sparkles, Shield, Users, Star, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
-import { MapView } from "@/components/Map";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -258,7 +258,15 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-96 flex items-center justify-center overflow-hidden">
-              <MapView onMapReady={() => {}} />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.6596816282286!2d-74.3029631227733!3d40.76950923409121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3abf98bd285d9%3A0x2d9473985b08046!2sProCare%20Dental%20Livingston!5e0!3m2!1sen!2sus!4v1773093153871!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>
@@ -335,7 +343,15 @@ export default function Home() {
             <p className="text-xl text-foreground/70">Find us on the map and get directions</p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg h-96">
-            <MapView onMapReady={() => {}} />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.6596816282286!2d-74.3029631227733!3d40.76950923409121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3abf98bd285d9%3A0x2d9473985b08046!2sProCare%20Dental%20Livingston!5e0!3m2!1sen!2sus!4v1773093153871!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
