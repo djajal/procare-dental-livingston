@@ -310,11 +310,12 @@ export default function Home() {
       <section id="about" className="py-20 md:py-32 bg-secondary">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-96 flex items-center justify-center">
-              <div className="text-center">
-                <Shield className="w-32 h-32 text-primary mx-auto mb-4 opacity-20" />
-                <p className="text-foreground/40 font-medium">Advanced Technology</p>
-              </div>
+            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-96 flex items-center justify-center overflow-hidden">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_technology_c78a18c7.png"
+                alt="Advanced Dental Technology - ProCare Dental Livingston"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold text-primary">Why Choose ProCare Dental?</h2>
