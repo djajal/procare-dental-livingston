@@ -244,7 +244,7 @@ export default function Home() {
                     Call Now
                   </Button>
                 </a>
-                <Button size="lg" variant="outline" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white rounded-full" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
                   Book Appointment
                 </Button>
               </div>
@@ -484,8 +484,15 @@ export default function Home() {
               <p className="text-sm text-white/80">Livingston, NJ 07039</p>
             </div>
           </div>
-          <div className="border-t border-white/20 pt-8 text-center text-sm text-white/70">
-            <p>&copy; 2026 ProCare Dental. All rights reserved. | Dentist in Livingston, NJ</p>
+          <div className="border-t border-white/20 pt-8 mb-8">
+            <div className="flex justify-center mb-6">
+              <div>
+                <a style={{display: 'block'}} href='https://www.zocdoc.com/practice/procare-dental-livingston-168071?lock=true&isNewPatient=false&referrerType=widget' className='zd-plugin' data-type='book-button' data-practice-id='168071' title='ProCare Dental Livingston'>
+                  <img src='https://offsiteSchedule.zocdoc.com/images/remote/zd_bookonline_162x48.png?type=bobjs&monolith_provider_id=168071&practice_id=pt_v_yyrdwF5k2edNrvM8lGNw' alt='ProCare Dental Livingston' title='ProCare Dental Livingston' style={{border: '0'}}/>
+                </a>
+              </div>
+            </div>
+            <p className="text-center text-sm text-white/70">&copy; 2026 ProCare Dental. All rights reserved. | Dentist in Livingston, NJ</p>
           </div>
         </div>
       </footer>
