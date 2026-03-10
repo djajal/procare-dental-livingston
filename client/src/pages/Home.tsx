@@ -147,7 +147,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Top Contact Bar */}
       <div className="bg-slate-800 text-white py-3 px-4">
-        <div className="container flex items-center justify-center gap-8 text-sm md:text-base">
+        <div className="container flex items-center justify-end gap-8 text-sm md:text-base">
           <a href="tel:(973) 533-1777" className="flex items-center gap-2 hover:text-accent transition">
             <Phone className="w-4 h-4" />
             <span>(973) 533-1777</span>
