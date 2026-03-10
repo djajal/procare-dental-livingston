@@ -14,6 +14,9 @@ import Reviews from "./pages/Reviews";
 import { TeethWhiteningService, PreventativeCareService, CosmeticDentistryService, FamilyDentistryService, DentalImplantsService, RootCanalService, InvisalignService, EmergencyDentistryService } from "./pages/ServicePages";
 import { DentalHygieneService, DentalImplantFAQService, LumineersService, VeneersService, ZoomWhiteningService, SnapOnSmileService, BondingService, InlaysOnlaysService, RootCanalFAQService, RetreatmentService, BridgesService, CrownsService, DenturesService, SealsService, MouthGuardsService, OcclusalAdjustmentService, PeriodontalDiseaseService, ScalingRootPlaningService, WisdomTeethService, ExtractionsService, SleepApneaService, NightGuardsService, TMJService } from "./pages/ComprehensiveServices";
 import { OralCancerScreeningsService, DigitalXrayService, OurTechnologyPage } from "./pages/AdditionalServices";
+import { VeneersPage, LumineersPage, TeethWhiteningPage, BondingPage } from "./pages/CosmeticServices";
+import TestimonialsPage from "./pages/Testimonials";
+import BlogPage from "./pages/Blog";
 
 /**
  * ProCare Dental - Professional Dental Website
@@ -74,6 +77,12 @@ function Router() {
       <Route path={"/service/oral-cancer-screenings"} component={OralCancerScreeningsService} />
       <Route path={"/service/digital-xray"} component={DigitalXrayService} />
       <Route path={"/our-technology"} component={OurTechnologyPage} />
+      <Route path={"/service/veneers-gallery"} component={VeneersPage} />
+      <Route path={"/service/lumineers-gallery"} component={LumineersPage} />
+      <Route path={"/service/teeth-whitening-gallery"} component={TeethWhiteningPage} />
+      <Route path={"/service/bonding-gallery"} component={BondingPage} />
+      <Route path={"/testimonials"} component={TestimonialsPage} />
+      <Route path={"/blog"} component={BlogPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
