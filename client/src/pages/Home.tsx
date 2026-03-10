@@ -191,48 +191,75 @@ export default function Home() {
               <DropdownMenuTrigger className="flex items-center gap-1 text-lg font-semibold text-foreground hover:text-primary transition">
                 Our Services <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-64">
-                <div className="px-2 py-1 text-sm font-semibold text-primary">Preventative & General</div>
-                <DropdownMenuItem><a href="/service/dental-hygiene">Dental Hygiene</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/oral-cancer-screenings">Oral Cancer Screenings</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/digital-xray">Digital X-Ray</a></DropdownMenuItem>
-                
-                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Cosmetic Services</div>
-                <DropdownMenuItem><a href="/service/lumineers">Lumineers</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/veneers">Veneers</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/zoom-whitening">Zoom Whitening</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/snap-on-smile">Snap On Smile</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/bonding">Bonding & White Fillings</a></DropdownMenuItem>
-                
-                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Restorative</div>
-                <DropdownMenuItem><a href="/service/dental-implants">Dental Implants</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/bridges">Bridges</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/crowns">Crowns</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/dentures">Dentures</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/inlays-onlays">Inlays & Onlays</a></DropdownMenuItem>
-                
-                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Endodontics</div>
-                <DropdownMenuItem><a href="/service/root-canal">Root Canal Treatment</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/root-canal-retreatment">Retreatment</a></DropdownMenuItem>
-                
-                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Periodontic</div>
-                <DropdownMenuItem><a href="/service/periodontal-disease">Gum Disease Treatment</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/scaling-root-planing">Scaling & Root Planing</a></DropdownMenuItem>
-                
-                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Oral Surgery</div>
-                <DropdownMenuItem><a href="/service/wisdom-teeth">Wisdom Teeth Extraction</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/extractions">Extractions</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/sleep-apnea">Sleep Apnea Treatment</a></DropdownMenuItem>
-                
-                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Pediatric & Specialty</div>
-                <DropdownMenuItem><a href="/service/sealants">Sealants</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/mouth-guards">Mouth Guards</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/night-guards">Night Guards</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/tmj">TMJ Treatment</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="/service/occlusal-adjustment">Occlusal Adjustment</a></DropdownMenuItem>
-                
-                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Technology</div>
-                <DropdownMenuItem><a href="/our-technology">Our Advanced Technology</a></DropdownMenuItem>
+              <DropdownMenuContent className="w-auto p-4">
+                <div className="grid grid-cols-3 gap-6 min-w-max">
+                  {/* Column 1 */}
+                  <div>
+                    <div className="text-sm font-semibold text-primary mb-2">Preventative & General</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/dental-hygiene" className="block hover:text-primary transition">Dental Hygiene</a>
+                      <a href="/service/oral-cancer-screenings" className="block hover:text-primary transition">Oral Cancer Screenings</a>
+                      <a href="/service/digital-xray" className="block hover:text-primary transition">Digital X-Ray</a>
+                    </div>
+                    
+                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Cosmetic Services</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/lumineers" className="block hover:text-primary transition">Lumineers</a>
+                      <a href="/service/veneers" className="block hover:text-primary transition">Veneers</a>
+                      <a href="/service/zoom-whitening" className="block hover:text-primary transition">Zoom Whitening</a>
+                      <a href="/service/snap-on-smile" className="block hover:text-primary transition">Snap On Smile</a>
+                      <a href="/service/bonding" className="block hover:text-primary transition">Bonding & White Fillings</a>
+                    </div>
+                  </div>
+                  
+                  {/* Column 2 */}
+                  <div>
+                    <div className="text-sm font-semibold text-primary mb-2">Restorative</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/dental-implants" className="block hover:text-primary transition">Dental Implants</a>
+                      <a href="/service/bridges" className="block hover:text-primary transition">Bridges</a>
+                      <a href="/service/crowns" className="block hover:text-primary transition">Crowns</a>
+                      <a href="/service/dentures" className="block hover:text-primary transition">Dentures</a>
+                      <a href="/service/inlays-onlays" className="block hover:text-primary transition">Inlays & Onlays</a>
+                    </div>
+                    
+                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Endodontics</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/root-canal" className="block hover:text-primary transition">Root Canal Treatment</a>
+                      <a href="/service/root-canal-retreatment" className="block hover:text-primary transition">Retreatment</a>
+                    </div>
+                  </div>
+                  
+                  {/* Column 3 */}
+                  <div>
+                    <div className="text-sm font-semibold text-primary mb-2">Periodontic</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/periodontal-disease" className="block hover:text-primary transition">Gum Disease Treatment</a>
+                      <a href="/service/scaling-root-planing" className="block hover:text-primary transition">Scaling & Root Planing</a>
+                    </div>
+                    
+                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Oral Surgery</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/wisdom-teeth" className="block hover:text-primary transition">Wisdom Teeth Extraction</a>
+                      <a href="/service/extractions" className="block hover:text-primary transition">Extractions</a>
+                      <a href="/service/sleep-apnea" className="block hover:text-primary transition">Sleep Apnea Treatment</a>
+                    </div>
+                    
+                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Pediatric & Specialty</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/sealants" className="block hover:text-primary transition">Sealants</a>
+                      <a href="/service/mouth-guards" className="block hover:text-primary transition">Mouth Guards</a>
+                      <a href="/service/night-guards" className="block hover:text-primary transition">Night Guards</a>
+                      <a href="/service/tmj" className="block hover:text-primary transition">TMJ Treatment</a>
+                      <a href="/service/occlusal-adjustment" className="block hover:text-primary transition">Occlusal Adjustment</a>
+                    </div>
+                    
+                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Technology</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/our-technology" className="block hover:text-primary transition">Our Advanced Technology</a>
+                    </div>
+                  </div>
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
 
