@@ -292,15 +292,17 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service) => (
-              <Card key={service.id} className="border border-border hover:shadow-lg transition-shadow duration-300 group cursor-pointer">
-                <CardHeader className="pb-4">
-                  <Sparkles className="w-12 h-12 text-accent mb-3 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-lg font-semibold text-primary">{service.title}</h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-foreground/70 text-sm leading-relaxed">{service.description}</p>
-                </CardContent>
-              </Card>
+              <a href={`/service/${service.id}`} key={service.id}>
+                <Card className="border border-border hover:shadow-lg transition-shadow duration-300 group cursor-pointer h-full">
+                  <CardHeader className="pb-4">
+                    <Sparkles className="w-12 h-12 text-accent mb-3 group-hover:scale-110 transition-transform" />
+                    <h2 className="text-lg font-semibold text-primary">{service.title}</h2>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-foreground/70 text-sm leading-relaxed">{service.description}</p>
+                  </CardContent>
+                </Card>
+              </a>
             ))}
           </div>
         </div>
@@ -357,11 +359,11 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Visit Us in Livingston</h2>
             <p className="text-xl text-foreground/70">Find us on the map and get directions</p>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg h-96">
+          <div className="rounded-2xl overflow-hidden shadow-lg" style={{ height: '600px' }}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.6596816282286!2d-74.3029631227733!3d40.76950923409121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3abf98bd285d9%3A0x2d9473985b08046!2sProCare%20Dental%20Livingston!5e0!3m2!1sen!2sus!4v1773093153871!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
+              width="600"
+              height="600"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"

@@ -11,6 +11,7 @@ import DentistWestOrange from "./pages/DentistWestOrange";
 import { DentistVerona, DentistMontclair, DentistBloomfield, DentistEssexFells } from "./pages/TownPages";
 import { DentistShortHills, DentistMillburn, DentistMadison, DentistChatham, DentistSummit, DentistFlorhamPark, DentistSouthOrange, DentistMaplewood } from "./pages/AdditionalTownPages";
 import Reviews from "./pages/Reviews";
+import { TeethWhiteningService, PreventativeCareService, CosmeticDentistryService, FamilyDentistryService, DentalImplantsService, RootCanalService, InvisalignService, EmergencyDentistryService } from "./pages/ServicePages";
 
 /**
  * ProCare Dental - Professional Dental Website
@@ -37,6 +38,14 @@ function Router() {
       <Route path={"/dentist-south-orange"} component={DentistSouthOrange} />
       <Route path={"/dentist-maplewood"} component={DentistMaplewood} />
       <Route path={"/reviews"} component={Reviews} />
+      <Route path={"/service/teeth-whitening"} component={TeethWhiteningService} />
+      <Route path={"/service/preventative-care"} component={PreventativeCareService} />
+      <Route path={"/service/cosmetic-dentistry"} component={CosmeticDentistryService} />
+      <Route path={"/service/family-dentistry"} component={FamilyDentistryService} />
+      <Route path={"/service/dental-implants"} component={DentalImplantsService} />
+      <Route path={"/service/root-canal"} component={RootCanalService} />
+      <Route path={"/service/invisalign"} component={InvisalignService} />
+      <Route path={"/service/emergency-dentistry"} component={EmergencyDentistryService} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
