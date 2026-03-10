@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import { IntraoralCameraPage, RotaryEndodonticsPage, DexisDigitalXrayPage, NomadProXrayPage, AIDigitalDiagnosticsPage } from "./pages/TechnologyPages";
 import DrKristina from "./pages/DrKristina";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import DentistWestOrange from "./pages/DentistWestOrange";
@@ -78,6 +79,11 @@ function Router() {
       <Route path={"/service/oral-cancer-screenings"} component={OralCancerScreeningsService} />
       <Route path={"/service/digital-xray"} component={DigitalXrayService} />
       <Route path={"/our-technology"} component={OurTechnologyPage} />
+      <Route path={"/technology/intraoral-camera"} component={IntraoralCameraPage} />
+      <Route path={"/technology/rotary-endodontics"} component={RotaryEndodonticsPage} />
+      <Route path={"/technology/dexis-digital-xray"} component={DexisDigitalXrayPage} />
+      <Route path={"/technology/nomad-pro-xray"} component={NomadProXrayPage} />
+      <Route path={"/technology/ai-diagnostics"} component={AIDigitalDiagnosticsPage} />
       <Route path={"/service/veneers-gallery"} component={VeneersPage} />
       <Route path={"/service/lumineers-gallery"} component={LumineersPage} />
       <Route path={"/service/teeth-whitening-gallery"} component={TeethWhiteningPage} />
