@@ -17,6 +17,7 @@ import { OralCancerScreeningsService, DigitalXrayService, OurTechnologyPage } fr
 import { VeneersPage, LumineersPage, TeethWhiteningPage, BondingPage } from "./pages/CosmeticServices";
 import TestimonialsPage from "./pages/Testimonials";
 import BlogPage from "./pages/Blog";
+import { NewPatientsPage, FinancialInformationPage, InsurancePage, FormsPage } from "./pages/PatientInformation";
 
 /**
  * ProCare Dental - Professional Dental Website
@@ -83,6 +84,10 @@ function Router() {
       <Route path={"/service/bonding-gallery"} component={BondingPage} />
       <Route path={"/testimonials"} component={TestimonialsPage} />
       <Route path={"/blog"} component={BlogPage} />
+      <Route path={"/new-patients"} component={NewPatientsPage} />
+      <Route path={"/financial-information"} component={FinancialInformationPage} />
+      <Route path={"/insurance"} component={InsurancePage} />
+      <Route path={"/forms"} component={FormsPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

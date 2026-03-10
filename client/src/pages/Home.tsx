@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, MapPin, Clock, Smile, Sparkles, Shield, Users, Star, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
+import { Link } from "wouter";
 
 import {
   DropdownMenu,
@@ -241,10 +242,10 @@ export default function Home() {
                 Patient Information <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem>New Patients</DropdownMenuItem>
-                <DropdownMenuItem>Financial Information</DropdownMenuItem>
-                <DropdownMenuItem>Insurance</DropdownMenuItem>
-                <DropdownMenuItem>Forms</DropdownMenuItem>
+                <DropdownMenuItem><Link href="/new-patients">New Patients</Link></DropdownMenuItem>
+                <DropdownMenuItem><Link href="/financial-information">Financial Information</Link></DropdownMenuItem>
+                <DropdownMenuItem><Link href="/insurance">Insurance</Link></DropdownMenuItem>
+                <DropdownMenuItem><Link href="/forms">Forms</Link></DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -324,7 +325,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {SERVICES.map((service) => (
               <a href={`/service/${service.id}`} key={service.id}>
                 <Card className="border border-border hover:shadow-lg transition-shadow duration-300 group cursor-pointer h-full">
