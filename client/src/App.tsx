@@ -12,6 +12,7 @@ import { DentistVerona, DentistMontclair, DentistBloomfield, DentistEssexFells }
 import { DentistShortHills, DentistMillburn, DentistMadison, DentistChatham, DentistSummit, DentistFlorhamPark, DentistSouthOrange, DentistMaplewood } from "./pages/AdditionalTownPages";
 import Reviews from "./pages/Reviews";
 import { TeethWhiteningService, PreventativeCareService, CosmeticDentistryService, FamilyDentistryService, DentalImplantsService, RootCanalService, InvisalignService, EmergencyDentistryService } from "./pages/ServicePages";
+import { DentalHygieneService, DentalImplantFAQService, LumineersService, VeneersService, ZoomWhiteningService, SnapOnSmileService, BondingService, InlaysOnlaysService, RootCanalFAQService, RetreatmentService, BridgesService, CrownsService, DenturesService, SealsService, MouthGuardsService, OcclusalAdjustmentService, PeriodontalDiseaseService, ScalingRootPlaningService, WisdomTeethService, ExtractionsService, SleepApneaService, NightGuardsService, TMJService } from "./pages/ComprehensiveServices";
 
 /**
  * ProCare Dental - Professional Dental Website
@@ -46,6 +47,29 @@ function Router() {
       <Route path={"/service/root-canal"} component={RootCanalService} />
       <Route path={"/service/invisalign"} component={InvisalignService} />
       <Route path={"/service/emergency-dentistry"} component={EmergencyDentistryService} />
+      <Route path={"/service/dental-hygiene"} component={DentalHygieneService} />
+      <Route path={"/service/dental-implant-faq"} component={DentalImplantFAQService} />
+      <Route path={"/service/lumineers"} component={LumineersService} />
+      <Route path={"/service/veneers"} component={VeneersService} />
+      <Route path={"/service/zoom-whitening"} component={ZoomWhiteningService} />
+      <Route path={"/service/snap-on-smile"} component={SnapOnSmileService} />
+      <Route path={"/service/bonding"} component={BondingService} />
+      <Route path={"/service/inlays-onlays"} component={InlaysOnlaysService} />
+      <Route path={"/service/root-canal-faq"} component={RootCanalFAQService} />
+      <Route path={"/service/root-canal-retreatment"} component={RetreatmentService} />
+      <Route path={"/service/bridges"} component={BridgesService} />
+      <Route path={"/service/crowns"} component={CrownsService} />
+      <Route path={"/service/dentures"} component={DenturesService} />
+      <Route path={"/service/sealants"} component={SealsService} />
+      <Route path={"/service/mouth-guards"} component={MouthGuardsService} />
+      <Route path={"/service/occlusal-adjustment"} component={OcclusalAdjustmentService} />
+      <Route path={"/service/periodontal-disease"} component={PeriodontalDiseaseService} />
+      <Route path={"/service/scaling-root-planing"} component={ScalingRootPlaningService} />
+      <Route path={"/service/wisdom-teeth"} component={WisdomTeethService} />
+      <Route path={"/service/extractions"} component={ExtractionsService} />
+      <Route path={"/service/sleep-apnea"} component={SleepApneaService} />
+      <Route path={"/service/night-guards"} component={NightGuardsService} />
+      <Route path={"/service/tmj"} component={TMJService} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
