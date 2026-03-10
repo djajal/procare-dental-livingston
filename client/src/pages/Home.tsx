@@ -190,14 +190,48 @@ export default function Home() {
               <DropdownMenuTrigger className="flex items-center gap-1 text-lg font-semibold text-foreground hover:text-primary transition">
                 Our Services <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48">
-                <DropdownMenuItem>General Dentistry</DropdownMenuItem>
-                <DropdownMenuItem>Cosmetic Dentistry</DropdownMenuItem>
-                <DropdownMenuItem>Dental Implants</DropdownMenuItem>
-                <DropdownMenuItem>Teeth Whitening</DropdownMenuItem>
-                <DropdownMenuItem>Emergency Dentistry</DropdownMenuItem>
-                <DropdownMenuItem>Invisalign</DropdownMenuItem>
-                <DropdownMenuItem>Root Canal Treatment</DropdownMenuItem>
+              <DropdownMenuContent className="w-64">
+                <div className="px-2 py-1 text-sm font-semibold text-primary">Preventative & General</div>
+                <DropdownMenuItem><a href="/service/dental-hygiene">Dental Hygiene</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/oral-cancer-screenings">Oral Cancer Screenings</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/digital-xray">Digital X-Ray</a></DropdownMenuItem>
+                
+                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Cosmetic Services</div>
+                <DropdownMenuItem><a href="/service/lumineers">Lumineers</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/veneers">Veneers</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/zoom-whitening">Zoom Whitening</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/snap-on-smile">Snap On Smile</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/bonding">Bonding & White Fillings</a></DropdownMenuItem>
+                
+                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Restorative</div>
+                <DropdownMenuItem><a href="/service/dental-implants">Dental Implants</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/bridges">Bridges</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/crowns">Crowns</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/dentures">Dentures</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/inlays-onlays">Inlays & Onlays</a></DropdownMenuItem>
+                
+                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Endodontics</div>
+                <DropdownMenuItem><a href="/service/root-canal">Root Canal Treatment</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/root-canal-retreatment">Retreatment</a></DropdownMenuItem>
+                
+                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Periodontic</div>
+                <DropdownMenuItem><a href="/service/periodontal-disease">Gum Disease Treatment</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/scaling-root-planing">Scaling & Root Planing</a></DropdownMenuItem>
+                
+                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Oral Surgery</div>
+                <DropdownMenuItem><a href="/service/wisdom-teeth">Wisdom Teeth Extraction</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/extractions">Extractions</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/sleep-apnea">Sleep Apnea Treatment</a></DropdownMenuItem>
+                
+                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Pediatric & Specialty</div>
+                <DropdownMenuItem><a href="/service/sealants">Sealants</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/mouth-guards">Mouth Guards</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/night-guards">Night Guards</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/tmj">TMJ Treatment</a></DropdownMenuItem>
+                <DropdownMenuItem><a href="/service/occlusal-adjustment">Occlusal Adjustment</a></DropdownMenuItem>
+                
+                <div className="px-2 py-1 text-sm font-semibold text-primary mt-2">Technology</div>
+                <DropdownMenuItem><a href="/our-technology">Our Advanced Technology</a></DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 

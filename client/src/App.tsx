@@ -13,6 +13,7 @@ import { DentistShortHills, DentistMillburn, DentistMadison, DentistChatham, Den
 import Reviews from "./pages/Reviews";
 import { TeethWhiteningService, PreventativeCareService, CosmeticDentistryService, FamilyDentistryService, DentalImplantsService, RootCanalService, InvisalignService, EmergencyDentistryService } from "./pages/ServicePages";
 import { DentalHygieneService, DentalImplantFAQService, LumineersService, VeneersService, ZoomWhiteningService, SnapOnSmileService, BondingService, InlaysOnlaysService, RootCanalFAQService, RetreatmentService, BridgesService, CrownsService, DenturesService, SealsService, MouthGuardsService, OcclusalAdjustmentService, PeriodontalDiseaseService, ScalingRootPlaningService, WisdomTeethService, ExtractionsService, SleepApneaService, NightGuardsService, TMJService } from "./pages/ComprehensiveServices";
+import { OralCancerScreeningsService, DigitalXrayService, OurTechnologyPage } from "./pages/AdditionalServices";
 
 /**
  * ProCare Dental - Professional Dental Website
@@ -70,6 +71,9 @@ function Router() {
       <Route path={"/service/sleep-apnea"} component={SleepApneaService} />
       <Route path={"/service/night-guards"} component={NightGuardsService} />
       <Route path={"/service/tmj"} component={TMJService} />
+      <Route path={"/service/oral-cancer-screenings"} component={OralCancerScreeningsService} />
+      <Route path={"/service/digital-xray"} component={DigitalXrayService} />
+      <Route path={"/our-technology"} component={OurTechnologyPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
