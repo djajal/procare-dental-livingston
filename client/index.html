@@ -20,6 +20,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyQuMh9.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Performance optimizations -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://d2xsxph8kpxj0f.cloudfront.net" />
+    <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://offsiteschedule.zocdoc.com" />
+    <!-- Preconnect to critical third-party origins -->
+    <link rel="preconnect" href="https://d2xsxph8kpxj0f.cloudfront.net" />
+    <link rel="preconnect" href="https://lh3.googleusercontent.com" />
   </head>
 
   <body>
@@ -29,7 +39,7 @@
       defer
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
-    <script>(function (d) {var script = d.createElement('script'); script.type = 'text/javascript'; script.async = true; script.src = 'https://offsiteschedule.zocdoc.com/plugin/embed';var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);})(document);</script>
+    <script defer>(function (d) {var script = d.createElement('script'); script.type = 'text/javascript'; script.async = true; script.src = 'https://offsiteschedule.zocdoc.com/plugin/embed';var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);})(document);</script>
   </body>
 
 </html>

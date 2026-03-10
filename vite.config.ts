@@ -166,6 +166,27 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) return 'vendor-react';
+            if (id.includes('@radix-ui')) return 'vendor-ui';
+            if (id.includes('lucide-react')) return 'vendor-icons';
+            return 'vendor-other';
+          }
+        },
+      },
+    },
+    // Optimize build output
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+    cssCodeSplit: true,
+    sourcemap: false,
   },
   server: {
     port: 3000,

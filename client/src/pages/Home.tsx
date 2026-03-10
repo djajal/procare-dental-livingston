@@ -282,7 +282,7 @@ export default function Home() {
             </a>
 
             {/* Book Appointment Button */}
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-8 py-6 text-lg font-semibold">
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-8 py-6 text-lg font-semibold" aria-label="Book an appointment at ProCare Dental">
               Book an Appointment
             </Button>
           </div>
@@ -294,7 +294,7 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight" role="heading" aria-level={1}>
                 Dentist in Livingston NJ
               </h1>
               <p className="text-xl text-foreground/80 leading-relaxed">
@@ -344,7 +344,7 @@ export default function Home() {
       <section id="services" className="py-20 md:py-32 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>
               Dental Services in Livingston, NJ
             </h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
@@ -382,7 +382,7 @@ export default function Home() {
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary">Why Choose ProCare Dental?</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary" role="heading" aria-level={2}>Why Choose ProCare Dental?</h2>
               <p className="text-lg text-foreground/80 leading-relaxed">
                 At ProCare Dental in Livingston, NJ, we're committed to providing the highest quality dental care using the latest technology and techniques. Our experienced team of dentists is dedicated to making your dental experience comfortable and stress-free.
               </p>
@@ -418,7 +418,7 @@ export default function Home() {
       <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Visit Us in Livingston</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>Visit Us in Livingston</h2>
             <p className="text-xl text-foreground/70">Find us on the map and get directions</p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg" style={{ height: '600px' }}>
@@ -430,6 +430,8 @@ export default function Home() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              title="ProCare Dental location on Google Maps"
+              aria-label="ProCare Dental location map"
             />
           </div>
         </div>
@@ -440,7 +442,7 @@ export default function Home() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Get In Touch</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>Get In Touch</h2>
               <p className="text-xl text-foreground/70">
                 Have questions? We'd love to hear from you.
               </p>
@@ -495,6 +497,7 @@ export default function Home() {
                         onChange={handleInputChange}
                         placeholder="Your name"
                         className="border-border"
+                        aria-label="Your full name"
                       />
                     </div>
                     <div>
@@ -508,6 +511,7 @@ export default function Home() {
                         onChange={handleInputChange}
                         placeholder="your@email.com"
                         className="border-border"
+                        aria-label="Your email address"
                       />
                     </div>
                   </div>
@@ -522,6 +526,7 @@ export default function Home() {
                       onChange={handleInputChange}
                       placeholder="(XXX) XXX-XXXX"
                       className="border-border"
+                      aria-label="Your phone number"
                     />
                   </div>
                   <div>
@@ -534,6 +539,7 @@ export default function Home() {
                       onChange={handleInputChange}
                       placeholder="Tell us how we can help..."
                       className="border-border min-h-32"
+                      aria-label="Your message"
                     />
                   </div>
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-lg">
