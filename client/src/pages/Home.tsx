@@ -155,9 +155,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Top Contact Bar */}
-      <div className="bg-slate-800 text-white py-3 px-4">
+    <>
+      <header className="sticky top-0 z-40 bg-white border-b border-border">
+        {/* Top Contact Bar */}
+        <div className="bg-slate-800 text-white py-3 px-4">
         <div className="container flex items-center justify-end gap-8 text-sm md:text-base">
           <a href="tel:(973) 533-1777" className="flex items-center gap-2 hover:text-accent transition">
             <Phone className="w-4 h-4" />
@@ -171,8 +172,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Main Navigation */}
-      <nav className="sticky top-0 z-50 bg-slate-100 border-b border-border shadow-sm">
+        {/* Main Navigation */}
+        <nav className="bg-slate-100 border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-24 px-4">
           <div className="flex items-center gap-3">
             <img
@@ -299,8 +300,10 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </nav>
+        </nav>
+      </header>
 
+      <main className="min-h-screen bg-white">
       {/* Hero Section with H1 */}
       <section className="bg-gradient-to-br from-white via-secondary to-white py-20 md:py-32">
         <div className="container">
@@ -345,7 +348,7 @@ export default function Home() {
               </div>
               <div className="text-center">
                 <a href="/dr-kristina-ceravolo" className="hover:text-primary/80 transition">
-                  <h3 className="text-2xl font-bold text-primary">Dr. Kristina Ceravolo</h3>
+                  <h2 className="text-2xl font-bold text-primary">Dr. Kristina Ceravolo</h2>
                   <p className="text-lg text-accent font-semibold">DMD</p>
                 </a>
               </div>
@@ -635,6 +638,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+      </main>
+    </>
   );
 }
