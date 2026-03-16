@@ -485,7 +485,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>Accepted Insurance Plans</h2>
             <p className="text-xl text-foreground/70">We work with major insurance providers to make dental care accessible</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 items-center justify-center">
             {/* Delta Dental */}
             <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
               <div className="text-center">
@@ -547,6 +547,22 @@ export default function Home() {
               <div className="text-center">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/KwlRpqpghXCP_6e9581d0.jpg" alt="Clover Health insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Clover Health</p>
+              </div>
+            </div>
+
+            {/* BCBS (Anthem) */}
+            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/anthembcbs-large_9b5bec76.png" alt="Anthem BCBS insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">BCBS (Anthem)</p>
+              </div>
+            </div>
+
+            {/* Humana */}
+            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/humana-large_a30abd7f.png" alt="Humana insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Humana</p>
               </div>
             </div>
           </div>
