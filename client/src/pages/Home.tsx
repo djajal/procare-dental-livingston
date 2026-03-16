@@ -485,44 +485,68 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>Accepted Insurance Plans</h2>
             <p className="text-xl text-foreground/70">We work with major insurance providers to make dental care accessible</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center">
             {/* Delta Dental */}
             <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center bg-green-50 rounded-lg">
-                  <span className="text-3xl font-bold text-green-600">Δ</span>
-                </div>
-                <p className="font-semibold text-foreground">Delta Dental</p>
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/mW45putU4a5Z_3f28e41f.webp" alt="Delta Dental insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Delta Dental</p>
               </div>
             </div>
 
             {/* Aetna */}
             <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center bg-purple-50 rounded-lg">
-                  <span className="text-2xl font-bold text-purple-600">❤</span>
-                </div>
-                <p className="font-semibold text-foreground">Aetna</p>
-              </div>
-            </div>
-
-            {/* United Healthcare */}
-            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
-              <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center bg-blue-50 rounded-lg">
-                  <span className="text-3xl font-bold text-blue-600">U</span>
-                </div>
-                <p className="font-semibold text-foreground">United Healthcare</p>
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/nbuF1sqVtYPj_0a7bb9bc.jpg" alt="Aetna insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Aetna</p>
               </div>
             </div>
 
             {/* Cigna */}
             <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center bg-green-50 rounded-lg">
-                  <span className="text-2xl font-bold text-green-600">🌿</span>
-                </div>
-                <p className="font-semibold text-foreground">Cigna</p>
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/ODwhVIvXIWrM_a03ee5e5.jpg" alt="Cigna insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Cigna</p>
+              </div>
+            </div>
+
+            {/* MetLife */}
+            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/0UOJD1NqtXmV_a302593b.jpg" alt="MetLife insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">MetLife</p>
+              </div>
+            </div>
+
+            {/* Guardian */}
+            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/J6H7JKx4T04W_ae93af69.png" alt="Guardian insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Guardian</p>
+              </div>
+            </div>
+
+            {/* United Healthcare */}
+            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/8tQopdj7w1Dd_c6d47a8d.jpg" alt="United Healthcare insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">United Healthcare</p>
+              </div>
+            </div>
+
+            {/* Ameritas */}
+            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/RqoQUYBD42I6_1d3c3c22.png" alt="Ameritas insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Ameritas</p>
+              </div>
+            </div>
+
+            {/* Clover Health */}
+            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/KwlRpqpghXCP_6e9581d0.jpg" alt="Clover Health insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Clover Health</p>
               </div>
             </div>
           </div>
