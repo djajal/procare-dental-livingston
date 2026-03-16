@@ -478,6 +478,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust Badges Section */}
+      <section className="py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>Accepted Insurance Plans</h2>
+            <p className="text-xl text-foreground/70">We work with major insurance providers to make dental care accessible</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
+            {/* Delta Dental */}
+            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="text-center">
+                <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center bg-green-50 rounded-lg">
+                  <span className="text-3xl font-bold text-green-600">Δ</span>
+                </div>
+                <p className="font-semibold text-foreground">Delta Dental</p>
+              </div>
+            </div>
+
+            {/* Aetna */}
+            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="text-center">
+                <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center bg-purple-50 rounded-lg">
+                  <span className="text-2xl font-bold text-purple-600">❤</span>
+                </div>
+                <p className="font-semibold text-foreground">Aetna</p>
+              </div>
+            </div>
+
+            {/* United Healthcare */}
+            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="text-center">
+                <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center bg-blue-50 rounded-lg">
+                  <span className="text-3xl font-bold text-blue-600">U</span>
+                </div>
+                <p className="font-semibold text-foreground">United Healthcare</p>
+              </div>
+            </div>
+
+            {/* Cigna */}
+            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="text-center">
+                <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center bg-green-50 rounded-lg">
+                  <span className="text-2xl font-bold text-green-600">🌿</span>
+                </div>
+                <p className="font-semibold text-foreground">Cigna</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 text-center">
+            <p className="text-foreground/70 mb-4">Don't see your insurance? Call us at <a href="tel:+19735331777" className="font-semibold text-primary hover:underline">(973) 533-1777</a></p>
+          </div>
+        </div>
+      </section>
+
       {/* Google Maps Section */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container">
