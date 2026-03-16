@@ -385,7 +385,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-96 flex items-center justify-center overflow-hidden">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_technology_c78a18c7.png"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_technology_d2e7feb4.webp"
                 alt="Advanced Dental Technology - ProCare Dental Livingston"
                 className="w-full h-full object-contain"
                 loading="lazy"
@@ -415,7 +415,7 @@ export default function Home() {
               </ul>
               <div className="mt-8 flex justify-center md:justify-start">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/nj_top_dentist_2026_a1720d57.png"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/nj_top_dentist_d348b59e.webp"
                   alt="NJ Top Dentist 2026 Award - ProCare Dental Livingston"
                   className="w-48 h-auto"
                   loading="lazy"
