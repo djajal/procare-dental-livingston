@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 
 export function MobileNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState<string[]>([]);
+  const [, navigate] = useLocation();
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -71,9 +73,9 @@ export function MobileNav() {
               </button>
               {expandedSections.includes('about') && (
                 <div className="space-y-2 pl-4 pb-3 text-sm">
-                  <a href="#" className="block hover:text-primary transition">Meet the Doctors</a>
-                  <a href="#" className="block hover:text-primary transition">Meet the Staff</a>
-                  <a href="#" className="block hover:text-primary transition">Office Tour</a>
+                  <button onClick={() => { navigate('/dr-kristina-ceravolo'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Meet the Doctors</button>
+                  <button onClick={() => { navigate('/'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Meet the Staff</button>
+                  <button onClick={() => { navigate('/'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Office Tour</button>
                 </div>
               )}
             </div>
@@ -93,12 +95,12 @@ export function MobileNav() {
               </button>
               {expandedSections.includes('services') && (
                 <div className="space-y-2 pl-4 pb-3 text-sm">
-                  <a href="#" className="block hover:text-primary transition">Preventative Care</a>
-                  <a href="#" className="block hover:text-primary transition">Cosmetic Dentistry</a>
-                  <a href="#" className="block hover:text-primary transition">Dental Implants</a>
-                  <a href="#" className="block hover:text-primary transition">Root Canal Treatment</a>
-                  <a href="#" className="block hover:text-primary transition">Invisalign</a>
-                  <a href="#" className="block hover:text-primary transition">Emergency Dentistry</a>
+                  <button onClick={() => { navigate('/service/preventative-care'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Preventative Care</button>
+                  <button onClick={() => { navigate('/service/cosmetic-dentistry'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Cosmetic Dentistry</button>
+                  <button onClick={() => { navigate('/service/dental-implants'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Dental Implants</button>
+                  <button onClick={() => { navigate('/service/root-canal'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Root Canal Treatment</button>
+                  <button onClick={() => { navigate('/service/invisalign'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Invisalign</button>
+                  <button onClick={() => { navigate('/service/emergency-dentistry'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Emergency Dentistry</button>
                 </div>
               )}
             </div>
@@ -118,19 +120,19 @@ export function MobileNav() {
               </button>
               {expandedSections.includes('patient') && (
                 <div className="space-y-2 pl-4 pb-3 text-sm">
-                  <a href="#" className="block hover:text-primary transition">New Patients</a>
-                  <a href="#" className="block hover:text-primary transition">Financial Information</a>
-                  <a href="#" className="block hover:text-primary transition">Insurance</a>
-                  <a href="#" className="block hover:text-primary transition">Forms</a>
+                  <button onClick={() => { navigate('/new-patients'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">New Patients</button>
+                  <button onClick={() => { navigate('/financial-information'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Financial Information</button>
+                  <button onClick={() => { navigate('/insurance'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Insurance</button>
+                  <button onClick={() => { navigate('/forms'); setMobileMenuOpen(false); }} className="block hover:text-primary transition text-left">Forms</button>
                 </div>
               )}
             </div>
 
             {/* Contact */}
             <div className="py-3">
-              <a href="#contact" className="font-semibold text-primary hover:text-primary/80 transition">
+              <button onClick={() => { navigate('/'); setMobileMenuOpen(false); }} className="font-semibold text-primary hover:text-primary/80 transition text-left">
                 Contact
-              </a>
+              </button>
             </div>
           </div>
         </div>
