@@ -150,14 +150,7 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const isDev = process.env.NODE_ENV !== "production";
-
-// Only load dev-only plugins during development
-const plugins = [
-  react(),
-  tailwindcss(),
-  ...(isDev ? [jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()] : []),
-];
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
 export default defineConfig({
   plugins,
@@ -177,42 +170,24 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          if (!id.includes('node_modules')) return undefined;
-          // Core React runtime — keep small and stable for caching
-          if (id.includes('/react/') || id.includes('/react-dom/') || id.includes('/scheduler/')) return 'vendor-react';
-          // Router + query — loaded on every page
-          if (id.includes('wouter') || id.includes('@tanstack/react-query') || id.includes('@trpc/')) return 'vendor-routing';
-          // Radix UI primitives — large but tree-shakeable per route via lazy loading
-          if (id.includes('@radix-ui')) return 'vendor-ui';
-          // Icons — loaded as needed but keep separate for caching
-          if (id.includes('lucide-react')) return 'vendor-icons';
-          // Charts / heavy libs — only loaded on pages that need them
-          if (id.includes('recharts') || id.includes('framer-motion')) return 'vendor-charts';
-          // Everything else vendor
-          return 'vendor-other';
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) return 'vendor-react';
+            if (id.includes('@radix-ui')) return 'vendor-ui';
+            if (id.includes('lucide-react')) return 'vendor-icons';
+            return 'vendor-other';
+          }
         },
       },
-      treeshake: {
-        moduleSideEffects: false,
-        propertyReadSideEffects: false,
-      },
     },
+    // Optimize build output
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true,
-        pure_funcs: ['console.log', 'console.warn', 'console.info'],
-        passes: 2,
       },
-      mangle: { safari10: true },
     },
     cssCodeSplit: true,
     sourcemap: false,
-    // Inline small assets to save round trips
-    assetsInlineLimit: 4096,
-    // Warn on chunks larger than 500KB
-    chunkSizeWarningLimit: 500,
   },
   server: {
     host: true,
