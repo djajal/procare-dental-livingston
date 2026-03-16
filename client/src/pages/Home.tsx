@@ -4,11 +4,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, MapPin, Clock, Smile, Sparkles, Shield, Users, Star, ChevronDown, Globe } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
-import ReCAPTCHA from "react-google-recaptcha";
 
 import {
   DropdownMenu,
@@ -84,8 +83,6 @@ export default function Home() {
     phone: "",
     message: "",
   });
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   // Fetch ZocDoc reviews
   const { data: zocdocReviews, isLoading: reviewsLoading } = trpc.reviews.zocdoc.useQuery();
@@ -157,20 +154,8 @@ export default function Home() {
       toast.error("Please fill in all required fields");
       return;
     }
-    if (!captchaToken) {
-      toast.error("Please complete the CAPTCHA verification");
-      return;
-    }
     toast.success("Thank you! We'll contact you soon.");
     setFormData({ name: "", email: "", phone: "", message: "" });
-    setCaptchaToken(null);
-    if (recaptchaRef.current) {
-      recaptchaRef.current.reset();
-    }
-  };
-
-  const handleCaptchaChange = (token: string | null) => {
-    setCaptchaToken(token);
   };
 
   return (
@@ -731,13 +716,6 @@ export default function Home() {
                       placeholder="Tell us how we can help..."
                       className="border-border min-h-32"
                       aria-label="Your message"
-                    />
-                  </div>
-                  <div className="flex justify-center py-2">
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                      onChange={handleCaptchaChange}
                     />
                   </div>
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-lg">
