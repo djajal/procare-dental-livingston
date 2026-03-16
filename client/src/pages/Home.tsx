@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, MapPin, Clock, Smile, Sparkles, Shield, Users, Star, ChevronDown } from "lucide-react";
+import { Phone, MapPin, Clock, Smile, Sparkles, Shield, Users, Star, ChevronDown, Globe } from "lucide-react";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { Link } from "wouter";
+import { trpc } from "@/lib/trpc";
 
 import {
   DropdownMenu,
@@ -82,6 +83,9 @@ export default function Home() {
     phone: "",
     message: "",
   });
+
+  // Fetch ZocDoc reviews
+  const { data: zocdocReviews, isLoading: reviewsLoading } = trpc.reviews.zocdoc.useQuery();
 
   // Add JSON-LD schema markup
   useEffect(() => {
@@ -325,13 +329,33 @@ export default function Home() {
                   Book Appointment
                 </Button>
               </div>
-              <div className="flex items-center gap-2 pt-4">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
+              <div className="flex flex-wrap gap-6 pt-4">
+                <div className="flex items-center gap-2">
+                  <Globe className="w-4 h-4 text-blue-600" />
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <span className="text-sm text-foreground/70">119 Google</span>
                 </div>
-                <span className="text-sm text-foreground/70">119 Google Reviews - 4.9/5 Stars</span>
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm0 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z" />
+                  </svg>
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  {zocdocReviews ? (
+                    <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/70 hover:text-primary transition">
+                      {zocdocReviews.reviewCount} ZocDoc
+                    </a>
+                  ) : (
+                    <span className="text-sm text-foreground/70">45 ZocDoc</span>
+                  )}
+                </div>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
