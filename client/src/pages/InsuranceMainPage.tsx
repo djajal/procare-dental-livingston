@@ -11,36 +11,36 @@ import Footer from "@/components/Footer";
  */
 
 const INSURANCE_PROVIDERS = [
-  "AmeriHealth Medicare Advantage PPO",
-  "Aetna",
-  "Ameritas",
-  "Anthem",
-  "AFLAC",
-  "Assurant",
-  "Beam Dental",
-  "Blue Cross Blue Shield (All States)",
-  "Clover Medicare PPO+HMO",
-  "Cigna",
-  "Careington",
-  "Delta Dental",
-  "Dominion National",
-  "Fidelio",
-  "GEHA",
-  "Guardian",
-  "Healthplex",
-  "Horizon NJ BCBS",
-  "Humana",
-  "Lincoln Financial Group",
-  "Manhattan Life",
-  "Metlife",
-  "Mutual Of Omaha",
-  "Principal",
-  "Sunlife",
-  "Solstice",
-  "TruAssure",
-  "United Concordia",
-  "United Healthcare",
-  "Unum",
+  { name: "AmeriHealth", slug: "amerihealth" },
+  { name: "Aetna", slug: "aetna" },
+  { name: "Ameritas", slug: "ameritas" },
+  { name: "Anthem", slug: "anthem" },
+  { name: "AFLAC", slug: "aflac" },
+  { name: "Assurant", slug: "assurant" },
+  { name: "Beam Dental", slug: "beam-dental" },
+  { name: "Blue Cross Blue Shield", slug: "blue-cross-blue-shield" },
+  { name: "Clover Medicare PPO+HMO", slug: "clover-medicare" },
+  { name: "Cigna", slug: "cigna" },
+  { name: "Careington", slug: "careington" },
+  { name: "Delta Dental", slug: "delta-dental" },
+  { name: "Dominion National", slug: "dominion-national" },
+  { name: "Fidelio", slug: "fidelio" },
+  { name: "GEHA", slug: "geha" },
+  { name: "Guardian", slug: "guardian" },
+  { name: "Healthplex", slug: "healthplex" },
+  { name: "Horizon NJ BCBS", slug: "horizon-nj-bcbs" },
+  { name: "Humana", slug: "humana" },
+  { name: "Lincoln Financial Group", slug: "lincoln-financial-group" },
+  { name: "Manhattan Life", slug: "manhattan-life" },
+  { name: "MetLife", slug: "metlife" },
+  { name: "Mutual Of Omaha", slug: "mutual-of-omaha" },
+  { name: "Principal", slug: "principal" },
+  { name: "Sunlife", slug: "sunlife" },
+  { name: "Solstice", slug: "solstice" },
+  { name: "TruAssure", slug: "truassure" },
+  { name: "United Concordia", slug: "united-concordia" },
+  { name: "United Healthcare", slug: "united-healthcare" },
+  { name: "Unum", slug: "unum" },
 ];
 
 const TOP_INSURANCES = [
@@ -170,11 +170,13 @@ export default function InsuranceMainPage() {
             ProCare Dental accepts most major PPO and Medicare Advantage plans. If your insurance isn't listed below, please contact us to verify coverage.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
-            {INSURANCE_PROVIDERS.map((provider, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                <span className="text-foreground">{provider}</span>
-              </div>
+            {INSURANCE_PROVIDERS.map((provider) => (
+              <Link key={provider.slug} href={`/insurance/${provider.slug}`}>
+                <div className="flex items-start gap-3 hover:opacity-70 transition cursor-pointer">
+                  <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <span className="text-foreground font-medium hover:text-primary transition">{provider.name}</span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
