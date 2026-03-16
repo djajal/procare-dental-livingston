@@ -396,6 +396,25 @@ export default function Home() {
                 </a>
               </div>
             </div>
+            <div className="flex flex-col items-center gap-4">
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-96 w-full flex items-center justify-center overflow-hidden">
+                <a href="/dr-charles-ditta" className="hover:opacity-80 transition w-full h-full flex items-center justify-center">
+                  <img
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dr_charles_ditta_18cd048e.webp"
+                    alt="Dr. Charles Ditta, DMD, general dentist with 25+ years of experience in Livingston, NJ"
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+              </div>
+              <div className="text-center">
+                <a href="/dr-charles-ditta" className="hover:text-primary/80 transition">
+                  <h2 className="text-2xl font-bold text-primary">Dr. Charles Ditta</h2>
+                  <p className="text-lg text-accent font-semibold">DMD</p>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
