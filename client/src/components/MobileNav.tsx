@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Phone, MapPin } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function MobileNav() {
@@ -7,27 +7,9 @@ export function MobileNav() {
 
   return (
     <div className="lg:hidden flex items-center gap-2">
-      {/* Phone Button */}
-      <a
-        href="tel:(973) 533-1777"
-        className="p-2 hover:bg-slate-200 rounded-lg transition"
-        aria-label="Call ProCare Dental"
-      >
-        <Phone className="w-6 h-6 text-primary" />
-      </a>
-
-      {/* Maps Button */}
-      <a
-        href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039"
-        className="p-2 hover:bg-slate-200 rounded-lg transition"
-        aria-label="View ProCare Dental location on Google Maps"
-      >
-        <MapPin className="w-6 h-6 text-primary" />
-      </a>
-
       {/* Book Button */}
-      <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-6 py-2 text-sm font-semibold" aria-label="Book an appointment at ProCare Dental">
-        Book
+      <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-4 py-2 text-sm font-semibold" aria-label="Book an appointment at ProCare Dental">
+        Book An Appointment
       </Button>
 
       {/* Hamburger Menu Button */}

@@ -199,20 +199,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Top Contact Bar - Mobile */}
-        <div className="md:hidden bg-slate-800 text-white py-2 px-4">
-          <div className="container flex items-center justify-between gap-3">
-            {/* Phone Button */}
-            <a href="tel:(973) 533-1777" className="bg-white text-slate-800 rounded-full px-4 py-2 flex items-center gap-2 hover:bg-slate-100 transition font-semibold text-sm">
-              <Phone className="w-4 h-4" />
-              <span>(973) 533-1777</span>
-            </a>
-            {/* Maps Icon Only */}
-            <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="p-2 hover:bg-white/20 rounded-lg transition">
-              <MapPin className="w-6 h-6" />
-            </a>
-          </div>
-        </div>
+        {/* Top Contact Bar - Mobile - Hidden */}
+        {/* Removed for cleaner mobile header */}
 
         {/* Main Navigation */}
         <nav className="bg-slate-100 border-b border-border shadow-sm">
@@ -337,9 +325,9 @@ export default function Home() {
               Contact
             </a>
 
-            {/* Book Appointment Button */}
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-8 py-6 text-lg font-semibold" aria-label="Book an appointment at ProCare Dental">
-              Book an Appointment
+            {/* Book Button */}
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-4 py-2 text-sm font-semibold" aria-label="Book an appointment at ProCare Dental">
+              Book An Appointment
             </Button>
           </div>
 
