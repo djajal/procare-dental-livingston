@@ -176,6 +176,8 @@ export default function Home() {
               className="h-20 w-auto"
               width={80}
               height={80}
+              loading="eager"
+              decoding="sync"
             />
           </div>
           <div className="flex items-center gap-8">
@@ -331,6 +333,8 @@ export default function Home() {
                     src="https://lh3.googleusercontent.com/p/AF1QipN0dB0NAiD-y4J6zzLcXcf4nVCDeL7wLqvlHduw=s1024-v1"
                     alt="Dr. Kristina Ceravolo, DMD - Dentist in Livingston NJ"
                     className="w-full h-full object-contain"
+                    fetchPriority="high"
+                    loading="eager"
                   />
                 </a>
               </div>
@@ -384,6 +388,8 @@ export default function Home() {
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_technology_c78a18c7.png"
                 alt="Advanced Dental Technology - ProCare Dental Livingston"
                 className="w-full h-full object-contain"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="space-y-6">
@@ -412,6 +418,8 @@ export default function Home() {
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/nj_top_dentist_2026_a1720d57.png"
                   alt="NJ Top Dentist 2026 Award - ProCare Dental Livingston"
                   className="w-48 h-auto"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
