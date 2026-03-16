@@ -49,3 +49,17 @@
 - [ ] Generate/source images for all service pages
 - [ ] Upload images to CDN
 - [ ] Update service pages with images
+
+## Service Detail Pages
+- [ ] Create service detail page template
+- [ ] Teeth Whitening service page
+- [ ] Preventative Care service page
+- [ ] Cosmetic Dentistry service page
+- [ ] Family Dentistry service page
+- [ ] Dental Implants service page
+- [ ] Root Canal Treatment service page
+- [ ] Invisalign service page
+- [ ] Emergency Dentistry service page
+- [ ] Add breadcrumb navigation to service pages
+- [ ] Add schema markup to service pages
+- [ ] Update App.tsx with service page routes

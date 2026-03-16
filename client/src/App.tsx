@@ -22,6 +22,7 @@ import { NewPatientsPage, FinancialInformationPage, FormsPage } from "./pages/Pa
 import InsuranceMainPage from "./pages/InsuranceMainPage";
 import { DeltaDentalPage, AetnaPage, CignaPage, UnitedHealthcarePage, MetLifePage, GuardianPage, HorizonNJPage, HumanaPage, AmeriHealthPage, AmeritasPage, AnthemPage, AFLACPage, AssurantPage, BeamDentalPage, BCBSPage, CloverMedicarePage, CareingtonPage, DominionNationalPage, FidelioPage, GEHAPage, HealthplexPage, LincolnFinancialPage, ManhattanLifePage, MutualOfOmahaPage, PrincipalPage, SunlifePage, SolsticePage, TruAssurePage, UnitedConcordiaPage, UnumPage } from "./pages/InsurancePages";
 import { WestOrangeDeltaDental, VeronaDeltaDental, MontclairDeltaDental, WestOrangeAetna, VeronaAetna, MontclairAetna, WestOrangeCigna, VeronaCigna, MontclairCigna } from "./pages/LocationInsurancePages";
+import ServiceDetail from "./pages/ServiceDetail";
 
 /**
  * ProCare Dental - Professional Dental Website
@@ -47,7 +48,7 @@ function Router() {
       <Route path={"/dentist-florham-park"} component={DentistFlorhamPark} />
       <Route path={"/dentist-south-orange"} component={DentistSouthOrange} />
       <Route path={"/dentist-maplewood"} component={DentistMaplewood} />
-      <Route path={"/reviews"} component={Reviews} />
+      <Route path={"/reviews"} component={Reviews} />      <Route path={"/service/:id"} component={ServiceDetail} />
       <Route path={"/service/teeth-whitening"} component={TeethWhiteningService} />
       <Route path={"/service/preventative-care"} component={PreventativeCareService} />
       <Route path={"/service/cosmetic-dentistry"} component={CosmeticDentistryService} />
