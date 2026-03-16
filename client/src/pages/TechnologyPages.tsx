@@ -8,7 +8,7 @@ export function IntraoralCameraPage() {
     <div className="min-h-screen flex flex-col">
       <header className="bg-primary text-white py-3 px-4 text-right">
         <a href="tel:(973)533-1777" className="hover:underline">(973) 533-1777</a> | 
-        <span className="ml-2">22 Old Short Hills Rd Suite 207, Livingston, NJ 07039</span>
+        <span className="ml-2">22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
       </header>
 
       <nav className="bg-secondary px-6 py-4 flex items-center justify-between">
@@ -125,7 +125,7 @@ export function RotaryEndodonticsPage() {
     <div className="min-h-screen flex flex-col">
       <header className="bg-primary text-white py-3 px-4 text-right">
         <a href="tel:(973)533-1777" className="hover:underline">(973) 533-1777</a> | 
-        <span className="ml-2">22 Old Short Hills Rd Suite 207, Livingston, NJ 07039</span>
+        <span className="ml-2">22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
       </header>
 
       <nav className="bg-secondary px-6 py-4 flex items-center justify-between">
@@ -242,7 +242,7 @@ export function DexisDigitalXrayPage() {
     <div className="min-h-screen flex flex-col">
       <header className="bg-primary text-white py-3 px-4 text-right">
         <a href="tel:(973)533-1777" className="hover:underline">(973) 533-1777</a> | 
-        <span className="ml-2">22 Old Short Hills Rd Suite 207, Livingston, NJ 07039</span>
+        <span className="ml-2">22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
       </header>
 
       <nav className="bg-secondary px-6 py-4 flex items-center justify-between">
@@ -351,7 +351,7 @@ export function NomadProXrayPage() {
     <div className="min-h-screen flex flex-col">
       <header className="bg-primary text-white py-3 px-4 text-right">
         <a href="tel:(973)533-1777" className="hover:underline">(973) 533-1777</a> | 
-        <span className="ml-2">22 Old Short Hills Rd Suite 207, Livingston, NJ 07039</span>
+        <span className="ml-2">22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
       </header>
 
       <nav className="bg-secondary px-6 py-4 flex items-center justify-between">
@@ -468,7 +468,7 @@ export function AIDigitalDiagnosticsPage() {
     <div className="min-h-screen flex flex-col">
       <header className="bg-primary text-white py-3 px-4 text-right">
         <a href="tel:(973)533-1777" className="hover:underline">(973) 533-1777</a> | 
-        <span className="ml-2">22 Old Short Hills Rd Suite 207, Livingston, NJ 07039</span>
+        <span className="ml-2">22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
       </header>
 
       <nav className="bg-secondary px-6 py-4 flex items-center justify-between">

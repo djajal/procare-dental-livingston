@@ -19,7 +19,7 @@ const TownPage = ({ townName }: TownPageProps) => {
           </a>
           <a href="#" className="flex items-center gap-2 hover:text-secondary transition">
             <MapPin className="w-4 h-4" />
-            22 Old Short Hills Rd Suite 207, Livingston, NJ 07039
+            22 Old Short Hills Rd Ste 207, Livingston, NJ 07039
           </a>
         </div>
       </div>
@@ -112,7 +112,7 @@ const TownPage = ({ townName }: TownPageProps) => {
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-xl font-semibold text-primary mb-4">Location</h3>
-              <p className="text-foreground/80 mb-2">22 Old Short Hills Rd Suite 207</p>
+              <p className="text-foreground/80 mb-2">22 Old Short Hills Rd Ste 207</p>
               <p className="text-foreground/80 mb-4">Livingston, NJ 07039</p>
               <p className="text-foreground/80 mb-2"><strong>Phone:</strong> <a href="tel:(973) 533-1777" className="text-primary hover:underline">(973) 533-1777</a></p>
               <p className="text-foreground/80"><strong>Hours:</strong> Mon-Tue, Thu: 8am-6pm | Sat: 8am-1pm</p>

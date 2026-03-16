@@ -1,21 +1,36 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 export function MobileNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="lg:hidden flex items-center gap-4">
+    <div className="lg:hidden flex items-center gap-2">
+      {/* Phone Button */}
+      <a
+        href="tel:(973) 533-1777"
+        className="p-2 hover:bg-slate-200 rounded-lg transition"
+        aria-label="Call ProCare Dental"
+      >
+        <Phone className="w-6 h-6 text-primary" />
+      </a>
+
+      {/* Maps Button */}
+      <a
+        href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039"
+        className="p-2 hover:bg-slate-200 rounded-lg transition"
+        aria-label="View ProCare Dental location on Google Maps"
+      >
+        <MapPin className="w-6 h-6 text-primary" />
+      </a>
+
+      {/* Book Button */}
       <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-6 py-2 text-sm font-semibold" aria-label="Book an appointment at ProCare Dental">
         Book
       </Button>
+
+      {/* Hamburger Menu Button */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         className="p-2 hover:bg-slate-200 rounded-lg transition"
@@ -28,6 +43,17 @@ export function MobileNav() {
       {mobileMenuOpen && (
         <div className="absolute top-24 left-0 right-0 bg-white border-b border-border shadow-lg z-50">
           <div className="container px-4 py-4 space-y-4">
+            {/* Close Button */}
+            <div className="flex justify-end mb-2">
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 hover:bg-slate-200 rounded-lg transition"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
             {/* About */}
             <div>
               <div className="font-semibold text-primary mb-2">About</div>

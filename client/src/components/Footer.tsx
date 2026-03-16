@@ -86,7 +86,7 @@ export default function Footer() {
                 {
                   icon: MapPin,
                   title: "Location",
-                  content: "22 Old Short Hills Rd Suite 207, Livingston, NJ 07039",
+                  content: "22 Old Short Hills Rd Ste 207, Livingston, NJ 07039",
                   link: "https://maps.google.com/?q=22+Old+Short+Hills+Rd+Suite+207+Livingston+NJ+07039",
                 },
                 {

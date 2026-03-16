@@ -446,7 +446,7 @@ export default function ServiceDetail() {
           "description": service.shortDescription,
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "22 Old Short Hills Rd Suite 207",
+            "streetAddress": "22 Old Short Hills Rd Ste 207",
             "addressLocality": "Livingston",
             "addressRegion": "NJ",
             "postalCode": "07039"

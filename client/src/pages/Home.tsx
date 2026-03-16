@@ -104,7 +104,7 @@ export default function Home() {
       "description": "Professional dental care in Livingston, NJ offering family dentistry, cosmetic dentistry, dental implants, and emergency services.",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "22 Old Short Hills Rd Suite 207",
+        "streetAddress": "22 Old Short Hills Rd Ste 207",
         "addressLocality": "Livingston",
         "addressRegion": "NJ",
         "postalCode": "07039",
@@ -194,7 +194,7 @@ export default function Home() {
           <span className="hidden md:inline text-white/50">|</span>
           <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Suite+207+Livingston+NJ+07039" className="flex items-center gap-2 hover:text-accent transition">
             <MapPin className="w-4 h-4" />
-            <span>22 Old Short Hills Rd Suite 207, Livingston, NJ 07039</span>
+            <span>22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
           </a>
         </div>
       </div>
@@ -662,7 +662,7 @@ export default function Home() {
                 {
                   icon: MapPin,
                   title: "Location",
-                  content: "22 Old Short Hills Rd Suite 207, Livingston, NJ 07039",
+                  content: "22 Old Short Hills Rd Ste 207, Livingston, NJ 07039",
                   link: "https://maps.google.com/?q=22+Old+Short+Hills+Rd+Suite+207+Livingston+NJ+07039",
                 },
                 {

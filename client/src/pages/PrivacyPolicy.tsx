@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
           </a>
           <a href="#" className="flex items-center gap-2 hover:text-secondary transition">
             <MapPin className="w-4 h-4" />
-            22 Old Short Hills Rd Suite 207, Livingston, NJ 07039
+            22 Old Short Hills Rd Ste 207, Livingston, NJ 07039
           </a>
         </div>
       </div>
@@ -103,7 +103,7 @@ export default function PrivacyPolicy() {
               </p>
               <div className="bg-secondary p-6 rounded-lg mt-4">
                 <p className="font-semibold text-primary mb-2">ProCare Dental Livingston</p>
-                <p className="text-foreground/80">22 Old Short Hills Rd Suite 207</p>
+                <p className="text-foreground/80">22 Old Short Hills Rd Ste 207</p>
                 <p className="text-foreground/80">Livingston, NJ 07039</p>
                 <p className="text-foreground/80 mt-2">Phone: (973) 533-1777</p>
               </div>

@@ -15,7 +15,7 @@ export function NewPatientsPage() {
           </a>
           <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Suite+207,+Livingston,+NJ+07039" className="flex items-center gap-2 hover:opacity-80 transition">
             <MapPin className="w-4 h-4" />
-            <span>22 Old Short Hills Rd Suite 207, Livingston, NJ 07039</span>
+            <span>22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
           </a>
         </div>
       </div>
@@ -115,7 +115,7 @@ export function NewPatientsPage() {
             <div>
               <h3 className="font-bold mb-4">Contact</h3>
               <p className="text-sm">(973) 533-1777</p>
-              <p className="text-sm">22 Old Short Hills Rd Suite 207</p>
+              <p className="text-sm">22 Old Short Hills Rd Ste 207</p>
               <p className="text-sm">Livingston, NJ 07039</p>
             </div>
             <div>
@@ -149,7 +149,7 @@ export function FinancialInformationPage() {
           </a>
           <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Suite+207,+Livingston,+NJ+07039" className="flex items-center gap-2 hover:opacity-80 transition">
             <MapPin className="w-4 h-4" />
-            <span>22 Old Short Hills Rd Suite 207, Livingston, NJ 07039</span>
+            <span>22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
           </a>
         </div>
       </div>
@@ -228,7 +228,7 @@ export function FinancialInformationPage() {
             <div>
               <h3 className="font-bold mb-4">Contact</h3>
               <p className="text-sm">(973) 533-1777</p>
-              <p className="text-sm">22 Old Short Hills Rd Suite 207</p>
+              <p className="text-sm">22 Old Short Hills Rd Ste 207</p>
               <p className="text-sm">Livingston, NJ 07039</p>
             </div>
             <div>
@@ -262,7 +262,7 @@ export function FormsPage() {
           </a>
           <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Suite+207,+Livingston,+NJ+07039" className="flex items-center gap-2 hover:opacity-80 transition">
             <MapPin className="w-4 h-4" />
-            <span>22 Old Short Hills Rd Suite 207, Livingston, NJ 07039</span>
+            <span>22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
           </a>
         </div>
       </div>
@@ -346,7 +346,7 @@ export function FormsPage() {
             <div>
               <h3 className="font-bold mb-4">Contact</h3>
               <p className="text-sm">(973) 533-1777</p>
-              <p className="text-sm">22 Old Short Hills Rd Suite 207</p>
+              <p className="text-sm">22 Old Short Hills Rd Ste 207</p>
               <p className="text-sm">Livingston, NJ 07039</p>
             </div>
             <div>

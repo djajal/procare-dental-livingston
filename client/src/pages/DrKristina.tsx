@@ -16,7 +16,7 @@ export default function DrKristina() {
           </a>
           <a href="#" className="flex items-center gap-2 hover:text-secondary transition">
             <MapPin className="w-4 h-4" />
-            22 Old Short Hills Rd Suite 207, Livingston, NJ 07039
+            22 Old Short Hills Rd Ste 207, Livingston, NJ 07039
           </a>
         </div>
       </div>
@@ -149,7 +149,7 @@ export default function DrKristina() {
             <span className="text-foreground/40">|</span>
             <a href="#" className="flex items-center gap-2 text-primary hover:text-primary/80">
               <MapPin className="w-5 h-5" />
-              <span className="text-lg font-semibold">22 Old Short Hills Rd Suite 207, Livingston, NJ 07039</span>
+              <span className="text-lg font-semibold">22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
             </a>
           </div>
 

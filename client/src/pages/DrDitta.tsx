@@ -173,7 +173,7 @@ export default function DrDitta() {
                 <MapPin className="w-12 h-12 text-accent mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-primary mb-2">Location</h3>
                 <p className="text-foreground/70">
-                  22 Old Short Hills Rd Suite 207<br />
+                  22 Old Short Hills Rd Ste 207<br />
                   Livingston, NJ 07039
                 </p>
               </div>
@@ -216,7 +216,7 @@ export default function DrDitta() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <p className="text-white/70">(973) 533-1777</p>
-              <p className="text-white/70 text-sm mt-2">22 Old Short Hills Rd Suite 207<br />Livingston, NJ 07039</p>
+              <p className="text-white/70 text-sm mt-2">22 Old Short Hills Rd Ste 207<br />Livingston, NJ 07039</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Hours</h4>

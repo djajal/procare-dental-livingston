@@ -26,7 +26,7 @@ export default function Header() {
           <span className="hidden md:inline text-white/50">|</span>
           <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Suite+207+Livingston+NJ+07039" className="flex items-center gap-2 hover:text-accent transition">
             <MapPin className="w-4 h-4" />
-            <span>22 Old Short Hills Rd Suite 207, Livingston, NJ 07039</span>
+            <span>22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
           </a>
         </div>
       </div>

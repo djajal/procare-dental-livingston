@@ -115,7 +115,7 @@ export default function Reviews() {
           </a>
           <a href="#" className="flex items-center gap-2 hover:text-secondary transition">
             <MapPin className="w-4 h-4" />
-            22 Old Short Hills Rd Suite 207, Livingston, NJ 07039
+            22 Old Short Hills Rd Ste 207, Livingston, NJ 07039
           </a>
         </div>
       </div>
