@@ -344,7 +344,9 @@ export default function Home() {
           </div>
 
           {/* Mobile Navigation */}
-          <MobileNav />
+          <div className="lg:hidden">
+            <MobileNav />
+          </div>
         </div>
         </nav>
       </header>

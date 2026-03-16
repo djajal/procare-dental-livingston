@@ -1,6 +1,8 @@
 import { Phone, MapPin, ChevronDown } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { MobileNav } from "@/components/MobileNav";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,37 +17,56 @@ import {
 
 export default function Header() {
   return (
-    <>
-      {/* Top Contact Bar */}
-      <div className="bg-slate-800 text-white py-3 px-4">
+    <header className="sticky top-0 z-40 bg-white border-b border-border">
+      {/* Top Contact Bar - Desktop */}
+      <div className="hidden md:block bg-slate-800 text-white py-3 px-4">
         <div className="container flex items-center justify-end gap-8 text-sm md:text-base">
           <a href="tel:(973) 533-1777" className="flex items-center gap-2 hover:text-accent transition">
             <Phone className="w-4 h-4" />
             <span>(973) 533-1777</span>
           </a>
-          <span className="hidden md:inline text-white/50">|</span>
-          <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Suite+207+Livingston+NJ+07039" className="flex items-center gap-2 hover:text-accent transition">
+          <span className="text-white/50">|</span>
+          <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="flex items-center gap-2 hover:text-accent transition">
             <MapPin className="w-4 h-4" />
             <span>22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
           </a>
         </div>
       </div>
 
+      {/* Top Contact Bar - Mobile */}
+      <div className="md:hidden bg-slate-800 text-white py-2 px-4">
+        <div className="container flex items-center justify-between gap-3">
+          {/* Call Icon with Phone Number */}
+          <a href="tel:(973) 533-1777" className="flex items-center gap-2 hover:text-accent transition">
+            <Phone className="w-5 h-5" />
+            <span className="text-sm font-semibold">(973) 533-1777</span>
+          </a>
+          {/* Maps Icon Only */}
+          <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="p-2 hover:bg-white/20 rounded-lg transition">
+            <MapPin className="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+
       {/* Main Navigation */}
-      <nav className="sticky top-0 z-50 bg-slate-100 border-b border-border shadow-sm">
+      <nav className="bg-slate-100 border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-24 px-4">
           <div className="flex items-center gap-3">
             <Link href="/">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp"
-                alt="ProCare Dental"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new_257aba55.png"
+                alt="ProCare Dental logo - professional dental care in Livingston, NJ"
                 className="h-20 w-auto cursor-pointer"
                 width={80}
                 height={80}
+                loading="eager"
+                decoding="sync"
               />
             </Link>
           </div>
-          <div className="flex items-center gap-8">
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-8">
             {/* About Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-lg font-semibold text-foreground hover:text-primary transition">
@@ -158,12 +179,20 @@ export default function Header() {
             </a>
 
             {/* Book Appointment Button */}
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-8 py-6 text-lg font-semibold" aria-label="Book an appointment at ProCare Dental">
-              Book an Appointment
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6 py-2 h-auto text-base font-semibold" aria-label="Book an appointment at ProCare Dental">
+              Book An Appointment
             </Button>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="lg:hidden flex items-center gap-3">
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-4 py-2 h-auto text-sm font-semibold" aria-label="Book an appointment at ProCare Dental">
+              Book An Appointment
+            </Button>
+            <MobileNav />
           </div>
         </div>
       </nav>
-    </>
+    </header>
   );
 }
