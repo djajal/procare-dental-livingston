@@ -529,7 +529,7 @@ export default function Home() {
             {/* United Healthcare */}
             <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
               <div className="text-center">
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/8tQopdj7w1Dd_c6d47a8d.jpg" alt="United Healthcare insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/united-healthcare-logo_63043edb.png" alt="United Healthcare insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">United Healthcare</p>
               </div>
             </div>
