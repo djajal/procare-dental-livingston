@@ -346,7 +346,7 @@ export default function Home() {
                 </a>
                 {zocdocReviews ? (
                   <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 hover:opacity-80 transition">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/zocdoc_f153ee79.jpg" alt="ZocDoc" className="w-16 h-16 flex-shrink-0" />
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc" className="w-16 h-16 flex-shrink-0" />
                     <div className="flex flex-col">
                       <div className="flex items-center gap-2">
                         <span className="text-4xl font-bold text-foreground">{zocdocReviews.overallRating}</span>
@@ -361,7 +361,7 @@ export default function Home() {
                   </a>
                 ) : (
                   <div className="flex items-center gap-6">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/zocdoc_f153ee79.jpg" alt="ZocDoc" className="w-16 h-16 flex-shrink-0" />
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc" className="w-16 h-16 flex-shrink-0" />
                     <div className="flex flex-col">
                       <div className="flex items-center gap-2">
                         <span className="text-4xl font-bold text-foreground">4.98</span>
