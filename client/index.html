@@ -3,9 +3,7 @@
 
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProCare Dental - Dentist in Livingston NJ | Professional Dental Care</title>
     <meta name="description" content="ProCare Dental is a professional dental clinic in Livingston, NJ offering family dentistry, cosmetic dentistry, dental implants, teeth whitening, and emergency dental services." />
     <meta name="keywords" content="dentist in Livingston NJ, family dentistry, cosmetic dentistry, dental implants, emergency dental care" />
@@ -14,41 +12,131 @@
     <meta property="og:description" content="Professional dental care with advanced technology and compassionate service in Livingston, NJ." />
     <meta property="og:type" content="business.business" />
     <meta property="og:url" content="https://procardentallivingston.com" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta property="og:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp" />
+
+    <!-- =====================================================================
+         CRITICAL RESOURCE HINTS — order matters for browser pre-scanner
+    ====================================================================== -->
+
+    <!-- Preconnect to font origins first (highest priority) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
-    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyQuMh9.woff2" as="font" type="font/woff2" crossorigin />
-    <!-- Performance optimizations -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    <link rel="dns-prefetch" href="https://d2xsxph8kpxj0f.cloudfront.net" />
-    <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
-    <link rel="dns-prefetch" href="https://www.google.com" />
+
+    <!-- Preconnect to CDN hosting images used on every page -->
+    <link rel="preconnect" href="https://d2xsxph8kpxj0f.cloudfront.net" />
+
+    <!-- Preconnect to the LCP image origin -->
+    <link rel="preconnect" href="https://lh3.googleusercontent.com" />
+
+    <!-- DNS-prefetch for third-party origins not preconnected above -->
     <link rel="dns-prefetch" href="https://offsiteschedule.zocdoc.com" />
     <link rel="dns-prefetch" href="https://static.zocdoc.com" />
     <link rel="dns-prefetch" href="https://maps.googleapis.com" />
     <link rel="dns-prefetch" href="https://maps.gstatic.com" />
-    <!-- Preconnect to critical third-party origins -->
-    <link rel="preconnect" href="https://d2xsxph8kpxj0f.cloudfront.net" />
-    <link rel="preconnect" href="https://lh3.googleusercontent.com" />
-    <link rel="preconnect" href="https://offsiteschedule.zocdoc.com" />
-    <link rel="preconnect" href="https://maps.googleapis.com" />
-    <!-- Resource hints for critical images -->
-    <link rel="prefetch" href="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/nj_top_dentist_2026_a1720d57.png" />
-    <link rel="prefetch" href="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_technology_c78a18c7.png" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+
+    <!-- =====================================================================
+         LCP IMAGE PRELOAD — tells browser to fetch hero image immediately
+         instead of waiting for React to render and discover it
+    ====================================================================== -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://lh3.googleusercontent.com/p/AF1QipN0dB0NAiD-y4J6zzLcXcf4nVCDeL7wLqvlHduw=s1024-v1"
+      fetchpriority="high"
+    />
+    <!-- Preload logo used in the navbar -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp"
+      fetchpriority="high"
+    />
+
+    <!-- =====================================================================
+         FONTS — non-blocking load with print/onload trick
+    ====================================================================== -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Preload the two woff2 font files used above-the-fold -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyQuMh9.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- =====================================================================
+         CRITICAL CSS — inlined so the page is not blank while JS loads.
+         Matches the above-the-fold appearance of the React-rendered page.
+    ====================================================================== -->
+    <style>
+      /* Reset */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background: #ffffff;
+        color: #1a1a1a;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      /* Loading skeleton — visible while React JS is fetching / parsing */
+      #root:empty {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* Top contact bar skeleton */
+      #root:empty::before {
+        content: '';
+        display: block;
+        height: 44px;
+        background: #1e293b;
+        width: 100%;
+        flex-shrink: 0;
+      }
+
+      /* Nav skeleton */
+      #root:empty::after {
+        content: '';
+        display: block;
+        height: 96px;
+        background: #f1f5f9;
+        border-bottom: 1px solid #e2e8f0;
+        width: 100%;
+        flex-shrink: 0;
+      }
+
+      /* Prevent font-swap CLS */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      }
+
+      /* Ensure images don't cause layout shifts */
+      img { max-width: 100%; height: auto; }
+    </style>
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Analytics: defer so it never blocks rendering -->
     <script
       defer
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
-    <!-- ZocDoc widget loaded lazily via React component to prevent render blocking -->
+      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"
+    ></script>
   </body>
 
 </html>
