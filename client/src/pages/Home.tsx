@@ -200,22 +200,16 @@ export default function Home() {
         </div>
 
         {/* Top Contact Bar - Mobile */}
-        <div className="md:hidden bg-slate-800 text-white py-3 px-4">
+        <div className="md:hidden bg-slate-800 text-white py-2 px-4">
           <div className="container flex items-center justify-between gap-3">
-            {/* Phone Section */}
-            <div className="flex items-center gap-2">
-              <div className="flex flex-col">
-                <span className="text-xs text-white/70">Call Now</span>
-                <a href="tel:(973) 533-1777" className="flex items-center gap-1 hover:text-accent transition font-semibold text-sm">
-                  <Phone className="w-4 h-4" />
-                  <span>(973) 533-1777</span>
-                </a>
-              </div>
-            </div>
-            {/* Maps Link */}
-            <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="flex items-center gap-2 hover:text-accent transition">
-              <MapPin className="w-5 h-5" />
-              <span className="text-xs">Location</span>
+            {/* Phone Button */}
+            <a href="tel:(973) 533-1777" className="bg-white text-slate-800 rounded-full px-4 py-2 flex items-center gap-2 hover:bg-slate-100 transition font-semibold text-sm">
+              <Phone className="w-4 h-4" />
+              <span>(973) 533-1777</span>
+            </a>
+            {/* Maps Icon Only */}
+            <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="p-2 hover:bg-white/20 rounded-lg transition">
+              <MapPin className="w-6 h-6" />
             </a>
           </div>
         </div>
