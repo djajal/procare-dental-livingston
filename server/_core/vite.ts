@@ -50,7 +50,7 @@ export async function setupVite(app: Express, server: Server) {
 export function serveStatic(app: Express) {
   const distPath =
     process.env.NODE_ENV === "development"
-      ? path.resolve(import.meta.dirname, "../..", "dist", "public")
+      ? path.resolve(import.meta.dirname, "../\..", "dist", "public")
       : path.resolve(import.meta.dirname, "public");
   if (!fs.existsSync(distPath)) {
     console.error(
@@ -58,10 +58,37 @@ export function serveStatic(app: Express) {
     );
   }
 
+  // Add cache headers middleware for static assets
+  app.use((req, res, next) => {
+    // Cache assets with hash in filename for 1 year
+    if (req.path.match(/\.(js|css|woff2|woff|ttf|eot|svg|png|jpg|jpeg|webp|gif|ico)$/i)) {
+      // Check if filename contains hash (assets-HASH.js pattern)
+      if (req.path.match(/[a-zA-Z0-9]{8,}\.(js|css|woff2|woff|ttf|eot|svg|png|jpg|jpeg|webp|gif|ico)$/i)) {
+        // Immutable assets with hash - cache for 1 year
+        res.set({
+          'Cache-Control': 'public, max-age=31536000, immutable',
+          'Expires': new Date(Date.now() + 31536000000).toUTCString(),
+        });
+      } else {
+        // Assets without hash - cache for 1 day
+        res.set({
+          'Cache-Control': 'public, max-age=86400',
+          'Expires': new Date(Date.now() + 86400000).toUTCString(),
+        });
+      }
+    }
+    next();
+  });
+
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
+    // Don't cache HTML - always serve fresh
+    res.set({
+      'Cache-Control': 'public, max-age=0, must-revalidate',
+      'Expires': new Date(0).toUTCString(),
+    });
     res.sendFile(path.resolve(distPath, "index.html"));
   });
 }
