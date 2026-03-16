@@ -18,14 +18,16 @@ import { OralCancerScreeningsService, DigitalXrayService, OurTechnologyPage } fr
 import { VeneersPage, LumineersPage, TeethWhiteningPage, BondingPage } from "./pages/CosmeticServices";
 import TestimonialsPage from "./pages/Testimonials";
 import BlogPage from "./pages/Blog";
-import { NewPatientsPage, FinancialInformationPage, InsurancePage, FormsPage } from "./pages/PatientInformation";
+import { NewPatientsPage, FinancialInformationPage, FormsPage } from "./pages/PatientInformation";
+import InsuranceMainPage from "./pages/InsuranceMainPage";
+import { DeltaDentalPage, AetnaPage, CignaPage, UnitedHealthcarePage, MetLifePage, GuardianPage, HorizonNJPage, HumanaPage, AmeriHealthPage, AmeritasPage, AnthemPage, AFLACPage, AssurantPage, BeamDentalPage, BCBSPage, CloverMedicarePage, CareingtonPage, DominionNationalPage, FidelioPage, GEHAPage, HealthplexPage, LincolnFinancialPage, ManhattanLifePage, MutualOfOmahaPage, PrincipalPage, SunlifePage, SolsticePage, TruAssurePage, UnitedConcordiaPage, UnumPage } from "./pages/InsurancePages";
 
 /**
  * ProCare Dental - Professional Dental Website
  * Design: Modern Professional Healthcare with Navy Blue, Teal, and Soft Gray
  */
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -92,7 +94,37 @@ function Router() {
       <Route path={"/blog"} component={BlogPage} />
       <Route path={"/new-patients"} component={NewPatientsPage} />
       <Route path={"/financial-information"} component={FinancialInformationPage} />
-      <Route path={"/insurance"} component={InsurancePage} />
+      <Route path={"/insurance"} component={InsuranceMainPage} />
+      <Route path={"/insurance/delta-dental"} component={DeltaDentalPage} />
+      <Route path={"/insurance/aetna"} component={AetnaPage} />
+      <Route path={"/insurance/cigna"} component={CignaPage} />
+      <Route path={"/insurance/united-healthcare"} component={UnitedHealthcarePage} />
+      <Route path={"/insurance/metlife"} component={MetLifePage} />
+      <Route path={"/insurance/guardian"} component={GuardianPage} />
+      <Route path={"/insurance/horizon-nj-bcbs"} component={HorizonNJPage} />
+      <Route path={"/insurance/humana"} component={HumanaPage} />
+      <Route path={"/insurance/amerihealth"} component={AmeriHealthPage} />
+      <Route path={"/insurance/ameritas"} component={AmeritasPage} />
+      <Route path={"/insurance/anthem"} component={AnthemPage} />
+      <Route path={"/insurance/aflac"} component={AFLACPage} />
+      <Route path={"/insurance/assurant"} component={AssurantPage} />
+      <Route path={"/insurance/beam-dental"} component={BeamDentalPage} />
+      <Route path={"/insurance/blue-cross-blue-shield"} component={BCBSPage} />
+      <Route path={"/insurance/clover-medicare"} component={CloverMedicarePage} />
+      <Route path={"/insurance/careington"} component={CareingtonPage} />
+      <Route path={"/insurance/dominion-national"} component={DominionNationalPage} />
+      <Route path={"/insurance/fidelio"} component={FidelioPage} />
+      <Route path={"/insurance/geha"} component={GEHAPage} />
+      <Route path={"/insurance/healthplex"} component={HealthplexPage} />
+      <Route path={"/insurance/lincoln-financial-group"} component={LincolnFinancialPage} />
+      <Route path={"/insurance/manhattan-life"} component={ManhattanLifePage} />
+      <Route path={"/insurance/mutual-of-omaha"} component={MutualOfOmahaPage} />
+      <Route path={"/insurance/principal"} component={PrincipalPage} />
+      <Route path={"/insurance/sunlife"} component={SunlifePage} />
+      <Route path={"/insurance/solstice"} component={SolsticePage} />
+      <Route path={"/insurance/truassure"} component={TruAssurePage} />
+      <Route path={"/insurance/united-concordia"} component={UnitedConcordiaPage} />
+      <Route path={"/insurance/unum"} component={UnumPage} />
       <Route path={"/forms"} component={FormsPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
