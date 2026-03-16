@@ -570,7 +570,7 @@ export default function Home() {
       </section>
 
       {/* Google Maps Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-secondary">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>Visit Us in Livingston</h2>
