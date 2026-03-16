@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, MapPin, Clock, Smile, Sparkles, Shield, Users, Star, ChevronDown, Globe } from "lucide-react";
+import { Phone, MapPin, Clock, Smile, Sparkles, Shield, Users, Star, ChevronDown, Globe, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 import { toast } from "sonner";
@@ -16,6 +16,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { MobileNav } from "@/components/MobileNav";
 
 /**
  * ProCare Dental - SEO Optimized Professional Healthcare Design
@@ -77,6 +78,8 @@ export default function Home() {
   // The userAuth hooks provides authentication state
   // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
   let { user, loading, error, isAuthenticated, logout } = useAuth();
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -210,7 +213,8 @@ export default function Home() {
               decoding="sync"
             />
           </div>
-          <div className="flex items-center gap-8">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-8">
             {/* About Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-lg font-semibold text-foreground hover:text-primary transition">
@@ -323,6 +327,9 @@ export default function Home() {
               Book an Appointment
             </Button>
           </div>
+
+          {/* Mobile Navigation */}
+          <MobileNav />
         </div>
         </nav>
       </header>
