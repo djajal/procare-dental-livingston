@@ -88,8 +88,11 @@ export default function Home() {
   // Fetch ZocDoc reviews
   const { data: zocdocReviews, isLoading: reviewsLoading } = trpc.reviews.zocdoc.useQuery();
 
-  // Add JSON-LD schema markup
+  // Add JSON-LD schema markup and set document title
   useEffect(() => {
+    // Set the document title
+    document.title = "Dentist in Livingston NJ - ProCare Dental Care";
+
     const schema = {
       "@context": "https://schema.org",
       "@type": "Dentist",
