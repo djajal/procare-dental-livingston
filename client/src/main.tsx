@@ -59,3 +59,25 @@ createRoot(document.getElementById("root")!).render(
     </QueryClientProvider>
   </trpc.Provider>
 );
+
+// Defer Plausible analytics loading to after page interactive to prevent forced reflows
+if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+  requestIdleCallback(() => {
+    const script = document.createElement("script");
+    script.defer = true;
+    script.async = true;
+    script.src = "https://plausible.io/js/script.js";
+    script.setAttribute("data-domain", window.location.hostname);
+    document.body.appendChild(script);
+  });
+} else {
+  // Fallback for browsers without requestIdleCallback
+  setTimeout(() => {
+    const script = document.createElement("script");
+    script.defer = true;
+    script.async = true;
+    script.src = "https://plausible.io/js/script.js";
+    script.setAttribute("data-domain", window.location.hostname);
+    document.body.appendChild(script);
+  }, 3000);
+}
