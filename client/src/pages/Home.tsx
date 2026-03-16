@@ -377,42 +377,44 @@ export default function Home() {
                 )}
               </div>
             </div>
-            <div className="flex flex-col items-center gap-4">
-              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-96 w-full flex items-center justify-center overflow-hidden">
-                <a href="/dr-kristina-ceravolo" className="hover:opacity-80 transition w-full h-full flex items-center justify-center">
-                  <img
-                    src="https://lh3.googleusercontent.com/p/AF1QipN0dB0NAiD-y4J6zzLcXcf4nVCDeL7wLqvlHduw=s1024-v1"
-                    alt="Dr. Kristina Ceravolo, DMD, professional dentist providing comprehensive dental care in Livingston, NJ"
-                    className="w-full h-full object-contain"
-                    fetchPriority="high"
-                    loading="eager"
-                  />
-                </a>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col items-center gap-3">
+                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-64 w-64 flex items-center justify-center overflow-hidden">
+                  <a href="/dr-kristina-ceravolo" className="hover:opacity-80 transition w-full h-full flex items-center justify-center">
+                    <img
+                      src="https://lh3.googleusercontent.com/p/AF1QipN0dB0NAiD-y4J6zzLcXcf4nVCDeL7wLqvlHduw=s1024-v1"
+                      alt="Dr. Kristina Ceravolo, DMD, professional dentist providing comprehensive dental care in Livingston, NJ"
+                      className="w-full h-full object-contain"
+                      fetchPriority="high"
+                      loading="eager"
+                    />
+                  </a>
+                </div>
+                <div className="text-center">
+                  <a href="/dr-kristina-ceravolo" className="hover:text-primary/80 transition">
+                    <h3 className="text-xl font-bold text-primary">Dr. Kristina Ceravolo</h3>
+                    <p className="text-base text-accent font-semibold">DMD</p>
+                  </a>
+                </div>
               </div>
-              <div className="text-center">
-                <a href="/dr-kristina-ceravolo" className="hover:text-primary/80 transition">
-                  <h2 className="text-2xl font-bold text-primary">Dr. Kristina Ceravolo</h2>
-                  <p className="text-lg text-accent font-semibold">DMD</p>
-                </a>
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-4">
-              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-96 w-full flex items-center justify-center overflow-hidden">
-                <a href="/dr-charles-ditta" className="hover:opacity-80 transition w-full h-full flex items-center justify-center">
-                  <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dr_charles_ditta_18cd048e.webp"
-                    alt="Dr. Charles Ditta, DMD, general dentist with 25+ years of experience in Livingston, NJ"
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </a>
-              </div>
-              <div className="text-center">
-                <a href="/dr-charles-ditta" className="hover:text-primary/80 transition">
-                  <h2 className="text-2xl font-bold text-primary">Dr. Charles Ditta</h2>
-                  <p className="text-lg text-accent font-semibold">DMD</p>
-                </a>
+              <div className="flex flex-col items-center gap-3">
+                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-64 w-64 flex items-center justify-center overflow-hidden">
+                  <a href="/dr-charles-ditta" className="hover:opacity-80 transition w-full h-full flex items-center justify-center">
+                    <img
+                      src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dr_charles_ditta_18cd048e.webp"
+                      alt="Dr. Charles Ditta, DMD, general dentist with 25+ years of experience in Livingston, NJ"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                </div>
+                <div className="text-center">
+                  <a href="/dr-charles-ditta" className="hover:text-primary/80 transition">
+                    <h3 className="text-xl font-bold text-primary">Dr. Charles Ditta</h3>
+                    <p className="text-base text-accent font-semibold">DMD</p>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
