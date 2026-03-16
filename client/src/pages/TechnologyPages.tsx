@@ -13,7 +13,7 @@ export function IntraoralCameraPage() {
 
       <nav className="bg-secondary px-6 py-4 flex items-center justify-between">
         <Link href="/">
-          <img src="https://cdn.example.com/procare_dental_logo_new.png" alt="ProCare Dental" className="h-14" />
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp" alt="ProCare Dental" className="h-14" />
         </Link>
         <div className="flex gap-6">
           <Link href="/">Home</Link>
@@ -130,7 +130,7 @@ export function RotaryEndodonticsPage() {
 
       <nav className="bg-secondary px-6 py-4 flex items-center justify-between">
         <Link href="/">
-          <img src="https://cdn.example.com/procare_dental_logo_new.png" alt="ProCare Dental" className="h-14" />
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp" alt="ProCare Dental" className="h-14" />
         </Link>
         <div className="flex gap-6">
           <Link href="/">Home</Link>
@@ -247,7 +247,7 @@ export function DexisDigitalXrayPage() {
 
       <nav className="bg-secondary px-6 py-4 flex items-center justify-between">
         <Link href="/">
-          <img src="https://cdn.example.com/procare_dental_logo_new.png" alt="ProCare Dental" className="h-14" />
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp" alt="ProCare Dental" className="h-14" />
         </Link>
         <div className="flex gap-6">
           <Link href="/">Home</Link>
@@ -356,7 +356,7 @@ export function NomadProXrayPage() {
 
       <nav className="bg-secondary px-6 py-4 flex items-center justify-between">
         <Link href="/">
-          <img src="https://cdn.example.com/procare_dental_logo_new.png" alt="ProCare Dental" className="h-14" />
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp" alt="ProCare Dental" className="h-14" />
         </Link>
         <div className="flex gap-6">
           <Link href="/">Home</Link>
@@ -473,7 +473,7 @@ export function AIDigitalDiagnosticsPage() {
 
       <nav className="bg-secondary px-6 py-4 flex items-center justify-between">
         <Link href="/">
-          <img src="https://cdn.example.com/procare_dental_logo_new.png" alt="ProCare Dental" className="h-14" />
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp" alt="ProCare Dental" className="h-14" />
         </Link>
         <div className="flex gap-6">
           <Link href="/">Home</Link>
