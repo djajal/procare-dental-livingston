@@ -346,7 +346,9 @@ export default function Home() {
                 </a>
                 {zocdocReviews ? (
                   <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:opacity-80 transition">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/zocdoc_43a1c4cc.svg" alt="ZocDoc" className="w-8 h-8" />
+                    <div className="w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-sm font-bold text-gray-800">Z</span>
+                    </div>
                     <div className="flex flex-col">
                       <div className="flex items-center gap-1">
                         <span className="text-lg font-semibold text-foreground">{zocdocReviews.overallRating}</span>
@@ -361,7 +363,9 @@ export default function Home() {
                   </a>
                 ) : (
                   <div className="flex items-center gap-3">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/zocdoc_43a1c4cc.svg" alt="ZocDoc" className="w-8 h-8" />
+                    <div className="w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-sm font-bold text-gray-800">Z</span>
+                    </div>
                     <div className="flex flex-col">
                       <div className="flex items-center gap-1">
                         <span className="text-lg font-semibold text-foreground">4.98</span>
