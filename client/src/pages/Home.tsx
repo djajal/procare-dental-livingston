@@ -539,19 +539,19 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>Visit Us in Livingston</h2>
             <p className="text-xl text-foreground/70">Find us on the map and get directions</p>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg" style={{ height: '600px' }}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.6596816282286!2d-74.3029631227733!3d40.76950923409121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3abf98bd285d9%3A0x2d9473985b08046!2sProCare%20Dental%20Livingston!5e0!3m2!1sen!2sus!4v1773093153871!5m2!1sen!2sus"
-              width="600"
-              height="600"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="ProCare Dental location on Google Maps"
-              aria-label="ProCare Dental location map"
-            />
-          </div>
+        </div>
+        <div className="w-full" style={{ height: '600px' }}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.6596816282286!2d-74.3029631227733!3d40.76950923409121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3abf98bd285d9%3A0x2d9473985b08046!2sProCare%20Dental%20Livingston!5e0!3m2!1sen!2sus!4v1773093153871!5m2!1sen!2sus"
+            width="100%"
+            height="600"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="ProCare Dental location on Google Maps"
+            aria-label="ProCare Dental location map"
+          />
         </div>
       </section>
 
