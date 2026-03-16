@@ -489,7 +489,7 @@ export default function Home() {
             {/* Delta Dental */}
             <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
               <div className="text-center">
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/mW45putU4a5Z_3f28e41f.webp" alt="Delta Dental insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/deltadental-large_56cd0d9a.png" alt="Delta Dental insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Delta Dental</p>
               </div>
             </div>
