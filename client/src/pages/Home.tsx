@@ -184,20 +184,41 @@ export default function Home() {
   return (
     <>
       <header className="sticky top-0 z-40 bg-white border-b border-border">
-        {/* Top Contact Bar */}
-        <div className="bg-slate-800 text-white py-3 px-4">
-        <div className="container flex items-center justify-end gap-8 text-sm md:text-base">
-          <a href="tel:(973) 533-1777" className="flex items-center gap-2 hover:text-accent transition">
-            <Phone className="w-4 h-4" />
-            <span>(973) 533-1777</span>
-          </a>
-          <span className="hidden md:inline text-white/50">|</span>
-          <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Suite+207+Livingston+NJ+07039" className="flex items-center gap-2 hover:text-accent transition">
-            <MapPin className="w-4 h-4" />
-            <span>22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
-          </a>
+        {/* Top Contact Bar - Desktop */}
+        <div className="hidden md:block bg-slate-800 text-white py-3 px-4">
+          <div className="container flex items-center justify-end gap-8 text-sm md:text-base">
+            <a href="tel:(973) 533-1777" className="flex items-center gap-2 hover:text-accent transition">
+              <Phone className="w-4 h-4" />
+              <span>(973) 533-1777</span>
+            </a>
+            <span className="text-white/50">|</span>
+            <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="flex items-center gap-2 hover:text-accent transition">
+              <MapPin className="w-4 h-4" />
+              <span>22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
+            </a>
+          </div>
         </div>
-      </div>
+
+        {/* Top Contact Bar - Mobile */}
+        <div className="md:hidden bg-slate-800 text-white py-3 px-4">
+          <div className="container flex items-center justify-between gap-3">
+            {/* Phone Section */}
+            <div className="flex items-center gap-2">
+              <div className="flex flex-col">
+                <span className="text-xs text-white/70">Call Now</span>
+                <a href="tel:(973) 533-1777" className="flex items-center gap-1 hover:text-accent transition font-semibold text-sm">
+                  <Phone className="w-4 h-4" />
+                  <span>(973) 533-1777</span>
+                </a>
+              </div>
+            </div>
+            {/* Maps Link */}
+            <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="flex items-center gap-2 hover:text-accent transition">
+              <MapPin className="w-5 h-5" />
+              <span className="text-xs">Location</span>
+            </a>
+          </div>
+        </div>
 
         {/* Main Navigation */}
         <nav className="bg-slate-100 border-b border-border shadow-sm">
