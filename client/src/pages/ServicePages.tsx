@@ -63,14 +63,9 @@ function ServicePageTemplate({ serviceId, title, description, benefits, faqs }: 
           </button>
           <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">{title}</h1>
           <p className="text-xl text-foreground/80 leading-relaxed mb-8">{description}</p>
-          <div className="flex gap-4">
-            <a href="tel:(973) 533-1777" className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition font-semibold">
-              Call Now
-            </a>
-            <a href="/#contact" className="bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition font-semibold">
-              Book Appointment
-            </a>
-          </div>
+          <a href="tel:(973) 533-1777" className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition font-semibold">
+            Call Now
+          </a>
         </div>
       </section>
 
