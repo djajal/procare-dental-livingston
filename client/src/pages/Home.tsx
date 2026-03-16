@@ -513,7 +513,7 @@ export default function Home() {
             {/* MetLife */}
             <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
               <div className="text-center">
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/0UOJD1NqtXmV_a302593b.jpg" alt="MetLife insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/metlife-large_bdcee156.png" alt="MetLife insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">MetLife</p>
               </div>
             </div>
@@ -521,7 +521,7 @@ export default function Home() {
             {/* Guardian */}
             <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
               <div className="text-center">
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/J6H7JKx4T04W_ae93af69.png" alt="Guardian insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/guardian-large_e7a69834.png" alt="Guardian insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Guardian</p>
               </div>
             </div>
