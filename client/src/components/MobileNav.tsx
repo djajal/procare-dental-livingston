@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function MobileNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <div className="lg:hidden flex items-center gap-2">
@@ -23,7 +34,7 @@ export function MobileNav() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="absolute top-24 left-0 right-0 bg-white border-b border-border shadow-lg z-50">
+        <div className="fixed top-24 left-0 right-0 bottom-0 bg-white border-b border-border shadow-lg z-50 overflow-y-auto">
           <div className="container px-4 py-4 space-y-4">
             {/* Close Button */}
             <div className="flex justify-end mb-2">
