@@ -44,3 +44,8 @@
 - [x] Breadcrumb navigation component on all insurance pages
 - [x] Location-specific insurance pages (West Orange, Verona, Montclair)
 - [x] FAQ schema markup (JSON-LD) on all insurance pages
+
+## Service Page Images
+- [ ] Generate/source images for all service pages
+- [ ] Upload images to CDN
+- [ ] Update service pages with images

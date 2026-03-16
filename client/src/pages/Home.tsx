@@ -28,26 +28,31 @@ const SERVICES = [
     id: "teeth-whitening",
     title: "Teeth Whitening",
     description: "Professional whitening treatments for a brighter, more confident smile.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/teeth_whitening_service_392268ec.webp",
   },
   {
     id: "preventative-care",
     title: "Preventative Care",
     description: "Regular checkups and cleanings to maintain optimal oral health.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_cleanings_service_98148a61.webp",
   },
   {
     id: "cosmetic-dentistry",
     title: "Cosmetic Dentistry",
     description: "Enhance your smile with veneers, bonding, and other cosmetic solutions.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/porcelain_crowns_service_459e4140.webp",
   },
   {
     id: "family-dentistry",
     title: "Family Dentistry",
     description: "Comprehensive care for patients of all ages in a welcoming environment.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_cleanings_service_98148a61.webp",
   },
   {
     id: "dental-implants",
     title: "Dental Implants",
     description: "Restore your smile with permanent dental implants.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_bridge_service_af7a4c06.webp",
   },
   {
     id: "root-canal",
