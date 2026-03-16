@@ -178,7 +178,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp"
-              alt="ProCare Dental"
+              alt="ProCare Dental logo - professional dental care in Livingston, NJ"
               className="h-20 w-auto"
               width={80}
               height={80}
@@ -339,7 +339,7 @@ export default function Home() {
                 <a href="/dr-kristina-ceravolo" className="hover:opacity-80 transition w-full h-full flex items-center justify-center">
                   <img
                     src="https://lh3.googleusercontent.com/p/AF1QipN0dB0NAiD-y4J6zzLcXcf4nVCDeL7wLqvlHduw=s1024-v1"
-                    alt="Dr. Kristina Ceravolo, DMD - Dentist in Livingston NJ"
+                    alt="Dr. Kristina Ceravolo, DMD, professional dentist providing comprehensive dental care in Livingston, NJ"
                     className="w-full h-full object-contain"
                     fetchPriority="high"
                     loading="eager"
@@ -394,7 +394,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-96 flex items-center justify-center overflow-hidden">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_technology_d2e7feb4.webp"
-                alt="Advanced Dental Technology - ProCare Dental Livingston"
+                alt="State-of-the-art dental technology and equipment used at ProCare Dental for advanced patient care in Livingston, NJ"
                 className="w-full h-full object-contain"
                 loading="lazy"
                 decoding="async"

@@ -25,7 +25,7 @@ export default function DrKristina() {
       <nav className="bg-secondary py-4 sticky top-0 z-50 shadow-sm">
         <div className="container flex justify-between items-center">
           <button onClick={() => navigate("/")} className="flex items-center gap-2 hover:opacity-80 transition">
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp" alt="ProCare Dental" className="h-14" />
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp" alt="ProCare Dental logo - return to home page" className="h-14" />
           </button>
           <div className="flex gap-8 items-center">
             <a href="/" className="text-foreground hover:text-primary transition">Home</a>
@@ -95,7 +95,7 @@ export default function DrKristina() {
               <div className="rounded-2xl overflow-hidden shadow-lg mb-6 w-full max-w-md">
                 <img
                   src="https://lh3.googleusercontent.com/p/AF1QipN0dB0NAiD-y4J6zzLcXcf4nVCDeL7wLqvlHduw=s1024-v1"
-                  alt="Dr. Kristina Ceravolo, DMD - Dentist in Livingston NJ"
+                  alt="Dr. Kristina Ceravolo, DMD, professional dentist and founder of ProCare Dental in Livingston, NJ"
                   className="w-full h-auto object-contain"
                 />
               </div>
