@@ -31,6 +31,7 @@ import ServiceDetail from "./pages/ServiceDetail";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
+    <main>
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/dr-kristina-ceravolo"} component={DrKristina} />
@@ -142,6 +143,7 @@ function Router() {
       {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
+    </main>
   );
 }
 
