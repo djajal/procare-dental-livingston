@@ -497,7 +497,7 @@ export default function Home() {
             {/* Aetna */}
             <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
               <div className="text-center">
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/nbuF1sqVtYPj_0a7bb9bc.jpg" alt="Aetna insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Aetna_Logo_ss_Violet_RGB_Coated_91557f6f.png" alt="Aetna insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Aetna</p>
               </div>
             </div>
