@@ -479,87 +479,92 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 items-center justify-center">
             {/* Delta Dental */}
-            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+            <a href="/insurance/delta-dental" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
               <div className="text-center">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/deltadental-large_56cd0d9a.png" alt="Delta Dental insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Delta Dental</p>
               </div>
-            </div>
+            </a>
 
             {/* Aetna */}
-            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+            <a href="/insurance/aetna" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
               <div className="text-center">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Aetna_Logo_ss_Violet_RGB_Coated_91557f6f.png" alt="Aetna insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Aetna</p>
               </div>
-            </div>
+            </a>
 
             {/* Cigna */}
-            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+            <a href="/insurance/cigna" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
               <div className="text-center">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/cigna-large_745182f3.png" alt="Cigna insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Cigna</p>
               </div>
-            </div>
+            </a>
 
             {/* MetLife */}
-            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+            <a href="/insurance/metlife" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
               <div className="text-center">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/metlife-large_bdcee156.png" alt="MetLife insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">MetLife</p>
               </div>
-            </div>
+            </a>
 
             {/* Guardian */}
-            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+            <a href="/insurance/guardian" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
               <div className="text-center">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/guardian-large_e7a69834.png" alt="Guardian insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Guardian</p>
               </div>
-            </div>
+            </a>
 
             {/* United Healthcare */}
-            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+            <a href="/insurance/united-healthcare" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
               <div className="text-center">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/united-healthcare-logo_63043edb.png" alt="United Healthcare insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">United Healthcare</p>
               </div>
-            </div>
+            </a>
 
             {/* Ameritas */}
-            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+            <a href="/insurance/ameritas" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
               <div className="text-center">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/RqoQUYBD42I6_1d3c3c22.png" alt="Ameritas insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Ameritas</p>
               </div>
-            </div>
+            </a>
 
             {/* Clover Health */}
-            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+            <a href="/insurance/clover-health" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
               <div className="text-center">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/KwlRpqpghXCP_6e9581d0.jpg" alt="Clover Health insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Clover Health</p>
               </div>
-            </div>
+            </a>
 
             {/* BCBS (Anthem) */}
-            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+            <a href="/insurance/anthem-bcbs" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
               <div className="text-center">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/anthembcbs-large_9b5bec76.png" alt="Anthem BCBS insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">BCBS (Anthem)</p>
               </div>
-            </div>
+            </a>
 
             {/* Humana */}
-            <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+            <a href="/insurance/humana" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
               <div className="text-center">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/humana-large_a30abd7f.png" alt="Humana insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Humana</p>
               </div>
-            </div>
+            </a>
           </div>
-          <div className="mt-12 text-center">
-            <p className="text-foreground/70 mb-4">Don't see your insurance? Call us at <a href="tel:+19735331777" className="font-semibold text-primary hover:underline">(973) 533-1777</a></p>
+          <div className="mt-12 text-center space-y-4">
+            <p className="text-foreground/70">Don't see your insurance? Call us at <a href="tel:+19735331777" className="font-semibold text-primary hover:underline">(973) 533-1777</a></p>
+            <div>
+              <Button asChild className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg">
+                <a href="/insurance">View All Insurance Plans</a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
