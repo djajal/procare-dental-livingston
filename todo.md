@@ -39,3 +39,8 @@
 - [x] Main Insurance page with all 30 providers
 - [x] 8 featured insurance landing pages (Delta Dental, Aetna, Cigna, United Healthcare, MetLife, Guardian, Horizon NJ BCBS, Humana)
 - [x] Upgrade to web-db-user for backend routing
+
+## New Features in Progress
+- [x] Breadcrumb navigation component on all insurance pages
+- [x] Location-specific insurance pages (West Orange, Verona, Montclair)
+- [x] FAQ schema markup (JSON-LD) on all insurance pages

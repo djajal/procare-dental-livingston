@@ -4,6 +4,7 @@ import { CheckCircle, HelpCircle, DollarSign, Clock } from "lucide-react";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 import {
   Accordion,
   AccordionContent,
@@ -29,6 +30,17 @@ function createInsurancePage(props: InsurancePageProps) {
     return (
       <div className="min-h-screen bg-white">
         <Header />
+
+        {/* Breadcrumb Navigation */}
+        <div className="bg-gray-50 py-4 px-4">
+          <div className="container">
+            <Breadcrumb items={[
+              { label: "Home", href: "/" },
+              { label: "Insurance", href: "/insurance" },
+              { label: props.insuranceName },
+            ]} />
+          </div>
+        </div>
 
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-primary/10 to-accent/10 py-16">
@@ -206,6 +218,22 @@ function createInsurancePage(props: InsurancePageProps) {
         </section>
 
         <Footer />
+
+        {/* FAQ Schema Markup for SEO */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: props.faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          })}
+        </script>
       </div>
     );
   };

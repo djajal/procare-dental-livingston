@@ -21,6 +21,7 @@ import BlogPage from "./pages/Blog";
 import { NewPatientsPage, FinancialInformationPage, FormsPage } from "./pages/PatientInformation";
 import InsuranceMainPage from "./pages/InsuranceMainPage";
 import { DeltaDentalPage, AetnaPage, CignaPage, UnitedHealthcarePage, MetLifePage, GuardianPage, HorizonNJPage, HumanaPage, AmeriHealthPage, AmeritasPage, AnthemPage, AFLACPage, AssurantPage, BeamDentalPage, BCBSPage, CloverMedicarePage, CareingtonPage, DominionNationalPage, FidelioPage, GEHAPage, HealthplexPage, LincolnFinancialPage, ManhattanLifePage, MutualOfOmahaPage, PrincipalPage, SunlifePage, SolsticePage, TruAssurePage, UnitedConcordiaPage, UnumPage } from "./pages/InsurancePages";
+import { WestOrangeDeltaDental, VeronaDeltaDental, MontclairDeltaDental, WestOrangeAetna, VeronaAetna, MontclairAetna, WestOrangeCigna, VeronaCigna, MontclairCigna } from "./pages/LocationInsurancePages";
 
 /**
  * ProCare Dental - Professional Dental Website
@@ -125,6 +126,16 @@ function Router() {
       <Route path={"/insurance/truassure"} component={TruAssurePage} />
       <Route path={"/insurance/united-concordia"} component={UnitedConcordiaPage} />
       <Route path={"/insurance/unum"} component={UnumPage} />
+      {/* Location-specific insurance pages */}
+      <Route path={"/insurance/delta-dental/west-orange"} component={WestOrangeDeltaDental} />
+      <Route path={"/insurance/delta-dental/verona"} component={VeronaDeltaDental} />
+      <Route path={"/insurance/delta-dental/montclair"} component={MontclairDeltaDental} />
+      <Route path={"/insurance/aetna/west-orange"} component={WestOrangeAetna} />
+      <Route path={"/insurance/aetna/verona"} component={VeronaAetna} />
+      <Route path={"/insurance/aetna/montclair"} component={MontclairAetna} />
+      <Route path={"/insurance/cigna/west-orange"} component={WestOrangeCigna} />
+      <Route path={"/insurance/cigna/verona"} component={VeronaCigna} />
+      <Route path={"/insurance/cigna/montclair"} component={MontclairCigna} />
       <Route path={"/forms"} component={FormsPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
