@@ -158,6 +158,18 @@ export default function Home() {
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
+  // Load ZocDoc script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://offsiteschedule.zocdoc.com/plugin/embed';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <>
       <header className="sticky top-0 z-40 bg-white border-b border-border">
