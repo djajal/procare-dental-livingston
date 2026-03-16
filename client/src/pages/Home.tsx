@@ -505,7 +505,7 @@ export default function Home() {
             {/* Cigna */}
             <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
               <div className="text-center">
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/ODwhVIvXIWrM_a03ee5e5.jpg" alt="Cigna insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/cigna-large_745182f3.png" alt="Cigna insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
                 <p className="font-semibold text-foreground text-sm">Cigna</p>
               </div>
             </div>
