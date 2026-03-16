@@ -330,52 +330,52 @@ export default function Home() {
                 </Button>
               </div>
               <div className="flex flex-wrap gap-8 pt-6">
-                <a href="https://www.google.com/search?q=ProCare+Dental+Livingston" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:opacity-80 transition">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/icons8-google-48_9e208c44.png" alt="Google" className="w-8 h-8" />
+                 <a href="https://www.google.com/search?q=ProCare+Dental+Livingston" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 hover:opacity-80 transition">
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/icons8-google-48_9e208c44.png" alt="Google" className="w-16 h-16" />
                   <div className="flex flex-col">
-                    <div className="flex items-center gap-1">
-                      <span className="text-lg font-semibold text-foreground">4.9</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-4xl font-bold text-foreground">4.9</span>
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
                     </div>
-                    <span className="text-xs text-foreground/60">119 Reviews</span>
+                    <span className="text-base text-foreground/60">119 Reviews</span>
                   </div>
                 </a>
                 {zocdocReviews ? (
-                  <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:opacity-80 transition">
-                    <div className="w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-sm font-bold text-gray-800">Z</span>
+                  <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 hover:opacity-80 transition">
+                    <div className="w-16 h-16 bg-yellow-300 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-3xl font-bold text-gray-800">Z</span>
                     </div>
                     <div className="flex flex-col">
-                      <div className="flex items-center gap-1">
-                        <span className="text-lg font-semibold text-foreground">{zocdocReviews.overallRating}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-4xl font-bold text-foreground">{zocdocReviews.overallRating}</span>
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                            <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
                           ))}
                         </div>
                       </div>
-                      <span className="text-xs text-foreground/60">{zocdocReviews.reviewCount} Reviews</span>
+                      <span className="text-base text-foreground/60">{zocdocReviews.reviewCount} Reviews</span>
                     </div>
                   </a>
                 ) : (
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-sm font-bold text-gray-800">Z</span>
+                  <div className="flex items-center gap-6">
+                    <div className="w-16 h-16 bg-yellow-300 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-3xl font-bold text-gray-800">Z</span>
                     </div>
                     <div className="flex flex-col">
-                      <div className="flex items-center gap-1">
-                        <span className="text-lg font-semibold text-foreground">4.98</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-4xl font-bold text-foreground">4.98</span>
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                            <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
                           ))}
                         </div>
                       </div>
-                      <span className="text-xs text-foreground/60">45 Reviews</span>
+                      <span className="text-base text-foreground/60">45 Reviews</span>
                     </div>
                   </div>
                 )}
