@@ -44,7 +44,7 @@
       defer
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
-    <script defer>(function (d) {var script = d.createElement('script'); script.type = 'text/javascript'; script.async = true; script.src = 'https://offsiteschedule.zocdoc.com/plugin/embed';var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);})(document);</script>
+    <!-- ZocDoc widget loaded lazily via React component to prevent render blocking -->
   </body>
 
 </html>
