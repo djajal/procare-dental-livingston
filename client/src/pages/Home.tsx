@@ -329,33 +329,52 @@ export default function Home() {
                   Book Appointment
                 </Button>
               </div>
-              <div className="flex flex-wrap gap-6 pt-4">
-                <div className="flex items-center gap-2">
-                  <Globe className="w-4 h-4 text-blue-600" />
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
+              <div className="flex flex-wrap gap-8 pt-6">
+                <a href="https://www.google.com/search?q=ProCare+Dental+Livingston" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:opacity-80 transition">
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/icons8-google-48_9e208c44.png" alt="Google" className="w-8 h-8" />
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-1">
+                      <span className="text-lg font-semibold text-foreground">4.9</span>
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                    </div>
+                    <span className="text-xs text-foreground/60">119 Reviews</span>
                   </div>
-                  <span className="text-sm text-foreground/70">119 Google</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm0 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z" />
-                  </svg>
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
+                </a>
+                {zocdocReviews ? (
+                  <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:opacity-80 transition">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/zocdoc_43a1c4cc.svg" alt="ZocDoc" className="w-8 h-8" />
+                    <div className="flex flex-col">
+                      <div className="flex items-center gap-1">
+                        <span className="text-lg font-semibold text-foreground">{zocdocReviews.overallRating}</span>
+                        <div className="flex">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                      </div>
+                      <span className="text-xs text-foreground/60">{zocdocReviews.reviewCount} Reviews</span>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="flex items-center gap-3">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/zocdoc_43a1c4cc.svg" alt="ZocDoc" className="w-8 h-8" />
+                    <div className="flex flex-col">
+                      <div className="flex items-center gap-1">
+                        <span className="text-lg font-semibold text-foreground">4.98</span>
+                        <div className="flex">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                      </div>
+                      <span className="text-xs text-foreground/60">45 Reviews</span>
+                    </div>
                   </div>
-                  {zocdocReviews ? (
-                    <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/70 hover:text-primary transition">
-                      {zocdocReviews.reviewCount} ZocDoc
-                    </a>
-                  ) : (
-                    <span className="text-sm text-foreground/70">45 ZocDoc</span>
-                  )}
-                </div>
+                )}
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
