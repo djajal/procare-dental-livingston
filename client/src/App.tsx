@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import { IntraoralCameraPage, RotaryEndodonticsPage, DexisDigitalXrayPage, NomadProXrayPage, AIDigitalDiagnosticsPage } from "./pages/TechnologyPages";
 import DrKristina from "./pages/DrKristina";
+import DrDitta from "./pages/DrDitta";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import DentistWestOrange from "./pages/DentistWestOrange";
 import { DentistVerona, DentistMontclair, DentistBloomfield, DentistEssexFells } from "./pages/TownPages";
@@ -35,6 +36,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/dr-kristina-ceravolo"} component={DrKristina} />
+      <Route path={"/dr-charles-ditta"} component={DrDitta} />
       <Route path={"/privacy-policy"} component={PrivacyPolicy} />
       <Route path={"/dentist-west-orange"} component={DentistWestOrange} />
       <Route path={"/dentist-verona"} component={DentistVerona} />
