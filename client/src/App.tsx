@@ -51,7 +51,7 @@ function Router() {
       <Route path={"/dentist-florham-park"} component={DentistFlorhamPark} />
       <Route path={"/dentist-south-orange"} component={DentistSouthOrange} />
       <Route path={"/dentist-maplewood"} component={DentistMaplewood} />
-      <Route path={"/reviews"} component={Reviews} />      <Route path={"/service/:id"} component={ServiceDetail} />
+      <Route path={"/reviews"} component={Reviews} />
       <Route path={"/service/teeth-whitening"} component={TeethWhiteningService} />
       <Route path={"/service/preventative-care"} component={PreventativeCareService} />
       <Route path={"/service/cosmetic-dentistry"} component={CosmeticDentistryService} />
@@ -141,6 +141,8 @@ function Router() {
       <Route path={"/insurance/cigna/verona"} component={VeronaCigna} />
       <Route path={"/insurance/cigna/montclair"} component={MontclairCigna} />
       <Route path={"/forms"} component={FormsPage} />
+      {/* Catch-all service route for dynamic services */}
+      <Route path={"/service/:id"} component={ServiceDetail} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
