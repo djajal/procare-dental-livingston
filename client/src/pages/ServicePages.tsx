@@ -36,7 +36,7 @@ function ServicePageTemplate({ serviceId, title, description, benefits, faqs }: 
           <div className="flex items-center gap-3">
             <button onClick={() => navigate("/")} className="hover:opacity-80 transition">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_transparent_3d817dc4.png"
                 alt="ProCare Dental"
                 className="h-20 w-auto"
                 width={80}

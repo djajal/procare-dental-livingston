@@ -100,7 +100,7 @@ export default function Home() {
       "@context": "https://schema.org",
       "@type": "Dentist",
       "name": "ProCare Dental",
-        "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp",
+        "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_transparent_3d817dc4.png",
       "description": "Professional dental care in Livingston, NJ offering family dentistry, cosmetic dentistry, dental implants, and emergency services.",
       "address": {
         "@type": "PostalAddress",
@@ -219,7 +219,7 @@ export default function Home() {
         <div className="container flex items-center justify-between h-24 px-4">
           <div className="flex items-center gap-3">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_transparent_3d817dc4.png"
               alt="ProCare Dental logo - professional dental care in Livingston, NJ"
               className="h-20 w-auto"
               width={80}

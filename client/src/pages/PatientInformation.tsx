@@ -24,7 +24,7 @@ export function NewPatientsPage() {
       <nav className="bg-secondary border-b border-border sticky top-0 z-50">
         <div className="container flex items-center justify-between py-4">
           <Link href="/">
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp" alt="ProCare Dental" className="h-14" />
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_transparent_3d817dc4.png" alt="ProCare Dental" className="h-14" />
           </Link>
           <div className="flex items-center gap-8">
             <Link href="/" className="text-foreground hover:text-primary transition">Services</Link>
@@ -158,7 +158,7 @@ export function FinancialInformationPage() {
       <nav className="bg-secondary border-b border-border sticky top-0 z-50">
         <div className="container flex items-center justify-between py-4">
           <Link href="/">
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp" alt="ProCare Dental" className="h-14" />
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_transparent_3d817dc4.png" alt="ProCare Dental" className="h-14" />
           </Link>
           <div className="flex items-center gap-8">
             <Link href="/" className="text-foreground hover:text-primary transition">Services</Link>
@@ -271,7 +271,7 @@ export function FormsPage() {
       <nav className="bg-secondary border-b border-border sticky top-0 z-50">
         <div className="container flex items-center justify-between py-4">
           <Link href="/">
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new-itoU26Uu5fW47iKpWCMPA7.webp" alt="ProCare Dental" className="h-14" />
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_transparent_3d817dc4.png" alt="ProCare Dental" className="h-14" />
           </Link>
           <div className="flex items-center gap-8">
             <Link href="/" className="text-foreground hover:text-primary transition">Services</Link>
