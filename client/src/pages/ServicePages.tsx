@@ -422,3 +422,44 @@ export function EmergencyDentistryService() {
     />
   );
 }
+
+// Periodontal Disease Service Page
+export function PeriodontalDiseaseService() {
+  return (
+    <ServicePageTemplate
+      serviceId="periodontal-disease"
+      title="Periodontal (Gum) Disease Treatment"
+      description="Comprehensive treatment for gum disease and periodontal conditions. Early detection and treatment can prevent tooth loss and improve your overall health."
+      benefits={[
+        "Prevention of tooth loss",
+        "Improved gum health",
+        "Reduced inflammation and bleeding",
+        "Better overall health outcomes",
+        "Professional plaque and tartar removal",
+        "Personalized treatment plans",
+      ]}
+      faqs={[
+        {
+          question: "What is periodontal disease?",
+          answer: "Periodontal disease is an infection of the gums and bone that support your teeth. It ranges from gingivitis (mild gum inflammation) to periodontitis (severe infection affecting the bone).",
+        },
+        {
+          question: "What are the signs of gum disease?",
+          answer: "Signs include red, swollen, or bleeding gums, persistent bad breath, loose teeth, and receding gums. If you notice any of these symptoms, schedule an appointment immediately.",
+        },
+        {
+          question: "How is gum disease treated?",
+          answer: "Treatment depends on the severity. Early stages are treated with professional cleaning and improved oral hygiene. Advanced cases may require scaling and root planing or other specialized procedures.",
+        },
+        {
+          question: "Can gum disease be prevented?",
+          answer: "Yes, regular brushing, flossing, professional cleanings, and avoiding tobacco can help prevent gum disease. Early treatment is key to stopping progression.",
+        },
+        {
+          question: "Does gum disease affect overall health?",
+          answer: "Yes, gum disease has been linked to heart disease, diabetes, and other systemic conditions. Treating gum disease can improve your overall health.",
+        },
+      ]}
+    />
+  );
+}
