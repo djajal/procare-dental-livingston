@@ -128,6 +128,13 @@ export function MobileNav() {
               )}
             </div>
 
+            {/* Blog */}
+            <div className="py-3">
+              <button onClick={() => { navigate('/blog'); setMobileMenuOpen(false); }} className="font-semibold text-primary hover:text-primary/80 transition text-left">
+                Blog
+              </button>
+            </div>
+
             {/* Contact */}
             <div className="py-3">
               <button onClick={() => { navigate('/'); setMobileMenuOpen(false); }} className="font-semibold text-primary hover:text-primary/80 transition text-left">

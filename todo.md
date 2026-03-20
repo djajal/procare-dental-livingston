@@ -73,3 +73,4 @@
 - [x] Add blog routes to App.tsx
 - [x] Implement SEO schema markup (JSON-LD)
 - [x] Create comprehensive vitest tests (28 tests, all passing)
+- [x] Add blog navigation to header (desktop and mobile)

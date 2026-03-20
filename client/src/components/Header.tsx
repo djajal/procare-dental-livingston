@@ -173,6 +173,11 @@ export default function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            {/* Blog Link */}
+            <Link href="/blog" className="text-lg font-semibold text-foreground hover:text-primary transition">
+              Blog
+            </Link>
+
             {/* Contact Link */}
             <a href="#contact" className="text-lg font-semibold text-foreground hover:text-primary transition">
               Contact
