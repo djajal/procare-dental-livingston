@@ -50,7 +50,7 @@ export default function Header() {
 
       {/* Main Navigation */}
       <nav className="bg-slate-100 border-b border-border shadow-sm">
-        <div className="container flex items-center justify-between h-24 px-4">
+        <div className="container flex items-center justify-between h-auto px-4 py-3">
           <div className="flex items-center gap-3">
             <Link href="/">
               <img
@@ -66,11 +66,11 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-2 justify-center flex-1 flex-wrap">
             {/* About Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-lg font-semibold text-foreground hover:text-primary transition">
-                About <ChevronDown className="w-4 h-4" />
+              <DropdownMenuTrigger className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
+                About <ChevronDown className="w-3 h-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem><Link href="/dr-kristina-ceravolo">Meet the Doctors</Link></DropdownMenuItem>
@@ -81,8 +81,8 @@ export default function Header() {
 
             {/* Our Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-lg font-semibold text-foreground hover:text-primary transition">
-                Our Services <ChevronDown className="w-4 h-4" />
+              <DropdownMenuTrigger className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
+                Our Services <ChevronDown className="w-3 h-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-auto p-4">
                 <div className="grid grid-cols-3 gap-6 min-w-max">
@@ -159,8 +159,8 @@ export default function Header() {
 
             {/* Patient Information Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-lg font-semibold text-foreground hover:text-primary transition">
-                Patient Information <ChevronDown className="w-4 h-4" />
+              <DropdownMenuTrigger className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
+                Patient Info <ChevronDown className="w-3 h-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem><Link href="/new-patients">New Patients</Link></DropdownMenuItem>
@@ -173,15 +173,16 @@ export default function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Blog Link */}
-            <Link href="/blog" className="text-lg font-semibold text-foreground hover:text-primary transition">
-              Blog
-            </Link>
-
-            {/* Contact Link */}
-            <a href="#contact" className="text-lg font-semibold text-foreground hover:text-primary transition">
-              Contact
-            </a>
+            {/* Blog & Contact Links */}
+            <div className="flex items-center gap-2">
+              <Link href="/blog" className="text-xs font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
+                Blog
+              </Link>
+              <span className="text-gray-300">|</span>
+              <a href="#contact" className="text-xs font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
+                Contact
+              </a>
+            </div>
 
             {/* Book Appointment Button */}
             <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6 py-2 h-auto text-base font-semibold" aria-label="Book an appointment at ProCare Dental">
