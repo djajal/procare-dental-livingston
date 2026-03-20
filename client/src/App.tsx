@@ -19,6 +19,7 @@ import { OralCancerScreeningsService, DigitalXrayService, OurTechnologyPage } fr
 import { VeneersPage, LumineersPage, TeethWhiteningPage, BondingPage } from "./pages/CosmeticServices";
 import TestimonialsPage from "./pages/Testimonials";
 import BlogPage from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import { NewPatientsPage, FinancialInformationPage, FormsPage } from "./pages/PatientInformation";
 import InsuranceMainPage from "./pages/InsuranceMainPage";
 import { DeltaDentalPage, AetnaPage, CignaPage, UnitedHealthcarePage, MetLifePage, GuardianPage, HorizonNJPage, HumanaPage, AmeriHealthPage, AmeritasPage, AnthemPage, AFLACPage, AssurantPage, BeamDentalPage, BCBSPage, CloverMedicarePage, CareingtonPage, DominionNationalPage, FidelioPage, GEHAPage, HealthplexPage, LincolnFinancialPage, ManhattanLifePage, MutualOfOmahaPage, PrincipalPage, SunlifePage, SolsticePage, TruAssurePage, UnitedConcordiaPage, UnumPage } from "./pages/InsurancePages";
@@ -97,6 +98,7 @@ function Router() {
       <Route path={"/service/bonding-gallery"} component={BondingPage} />
       <Route path={"/testimonials"} component={TestimonialsPage} />
       <Route path={"/blog"} component={BlogPage} />
+      <Route path={"/blog/:id"} component={BlogPost} />
       <Route path={"/new-patients"} component={NewPatientsPage} />
       <Route path={"/financial-information"} component={FinancialInformationPage} />
       <Route path={"/insurance"} component={InsuranceMainPage} />
