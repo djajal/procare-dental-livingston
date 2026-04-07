@@ -135,8 +135,8 @@ export default function Home() {
       "priceRange": "$$",
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "119"
+        "ratingValue": "5.0",
+        "reviewCount": "120"
       }
     };
 
@@ -378,14 +378,14 @@ export default function Home() {
                   <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/icons8-google-48_9e208c44.png" alt="Google" className="w-16 h-16" />
                   <div className="flex flex-col">
                     <div className="flex items-center gap-2">
-                      <span className="text-4xl font-bold text-foreground">4.9</span>
+                      <span className="text-4xl font-bold text-foreground">5.0</span>
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
                     </div>
-                    <span className="text-base text-foreground/60">119 Reviews</span>
+                    <span className="text-base text-foreground/60">120 Reviews</span>
                   </div>
                 </a>
                 {zocdocReviews ? (
