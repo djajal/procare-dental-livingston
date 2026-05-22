@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import Header from "./components/Header";
 import Home from "./pages/Home";
 import { IntraoralCameraPage, RotaryEndodonticsPage, DexisDigitalXrayPage, NomadProXrayPage, AIDigitalDiagnosticsPage } from "./pages/TechnologyPages";
 import DrKristina from "./pages/DrKristina";
@@ -33,6 +34,8 @@ import ServiceDetail from "./pages/ServiceDetail";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
+    <>
+    <Header />
     <main>
     <Switch>
       <Route path={"/"} component={Home} />
@@ -150,6 +153,7 @@ function Router() {
       <Route component={NotFound} />
     </Switch>
     </main>
+    </>
   );
 }
 
