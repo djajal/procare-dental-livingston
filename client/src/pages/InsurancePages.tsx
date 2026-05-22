@@ -207,9 +207,11 @@ function createInsurancePage(props: InsurancePageProps) {
               Contact ProCare Dental in Livingston, NJ today to verify your {props.insuranceName} coverage and schedule your dental visit.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-                <a href="tel:(973) 533-1777">Call (973) 533-1777</a>
-              </Button>
+              <a href="tel:(973) 533-1777">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+                  Call (973) 533-1777
+                </Button>
+              </a>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 Book Online
               </Button>

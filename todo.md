@@ -78,3 +78,6 @@
 ## Homepage Updates
 - [x] Update Google review rating to 5.0
 - [x] Update review count to 120
+
+## Bug Fixes
+- [x] Fix nested anchor tag error on Aetna insurance page
