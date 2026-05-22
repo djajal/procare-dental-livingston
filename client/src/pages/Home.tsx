@@ -22,7 +22,7 @@ import { MobileNav } from "@/components/MobileNav";
  * ProCare Dental - SEO Optimized Professional Healthcare Design
  * H1: "Dentist in Livingston NJ"
  * H2: All services offered
- * Color Scheme: Navy Blue (#003D7A) + Teal (#00B4A6) + Soft Gray (#F5F5F5)
+ * Color Scheme: Forest Green (#1B5E3F) + Gold (#B8956A) + Soft Gray (#F5F5F5)
  * Typography: Poppins (headers) + Inter (body)
  */
 

@@ -81,3 +81,11 @@
 
 ## Bug Fixes
 - [x] Fix nested anchor tag error on Aetna insurance page
+
+## Logo & Theme Update
+- [x] Upload new ProCare Dental logo to CDN
+- [x] Update logo references across all pages
+- [x] Apply forest green (#1B5E3F) and gold (#B8956A) color theme
+- [x] Update CSS variables for new theme
+- [x] Update component colors throughout site
+- [x] Set up storage proxy for logo serving

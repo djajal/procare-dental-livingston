@@ -54,7 +54,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link href="/">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_new_257aba55.png"
+                src="/manus-storage/procare-dental-logo_105a5a08.png"
                 alt="ProCare Dental logo - professional dental care in Livingston, NJ"
                 className="h-20 w-auto cursor-pointer"
                 width={80}

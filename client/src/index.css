@@ -43,20 +43,20 @@
 }
 
 :root {
-  /* ProCare Dental Color Scheme */
-  --primary: #003D7A; /* Navy Blue */
+  /* ProCare Dental Color Scheme - Forest Green & Gold */
+  --primary: #1B5E3F; /* Forest Green */
   --primary-foreground: #FFFFFF;
-  --accent: #00B4A6; /* Teal */
+  --accent: #B8956A; /* Gold */
   --accent-foreground: #FFFFFF;
   --secondary: #F5F5F5; /* Soft Gray */
-  --secondary-foreground: #2C3E50; /* Charcoal */
-  --sidebar-primary: #003D7A;
+  --secondary-foreground: #1B5E3F; /* Forest Green */
+  --sidebar-primary: #1B5E3F;
   --sidebar-primary-foreground: #FFFFFF;
-  --chart-1: #003D7A;
-  --chart-2: #00B4A6;
-  --chart-3: #0066CC;
-  --chart-4: #004D99;
-  --chart-5: #002B5C;
+  --chart-1: #1B5E3F;
+  --chart-2: #B8956A;
+  --chart-3: #2D7A52;
+  --chart-4: #0F3D24;
+  --chart-5: #1B5E3F;
   --radius: 0.65rem;
   --background: #FFFFFF;
   --foreground: #2C3E50;
@@ -70,13 +70,13 @@
   --destructive-foreground: #FFFFFF;
   --border: #E5E7EB;
   --input: #F3F4F6;
-  --ring: #003D7A;
+  --ring: #1B5E3F;
   --sidebar: #FFFFFF;
   --sidebar-foreground: #2C3E50;
   --sidebar-accent: #F5F5F5;
-  --sidebar-accent-foreground: #003D7A;
+  --sidebar-accent-foreground: #1B5E3F;
   --sidebar-border: #E5E7EB;
-  --sidebar-ring: #003D7A;
+  --sidebar-ring: #1B5E3F;
 }
 
 .dark {
