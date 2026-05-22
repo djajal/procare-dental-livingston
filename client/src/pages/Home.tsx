@@ -1,16 +1,22 @@
-import { Button } from "@/components/ui/button";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
-import { Plus, Star } from "lucide-react";
+import { Plus, Star, Sparkles } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 /**
- * ProCare Dental - Redesigned Homepage
- * Swish Dental Style with Forest Green & Gold Theme
+ * ProCare Dental - Swish Style with Original Content
+ * Forest Green (#1B5E3F) + Gold (#B8956A)
  */
 
 const SERVICES = [
+  {
+    id: "teeth-whitening",
+    title: "Teeth Whitening",
+    description: "Professional whitening treatments for a brighter, more confident smile.",
+  },
   {
     id: "preventative-care",
     title: "Preventative Care",
@@ -22,9 +28,24 @@ const SERVICES = [
     description: "Enhance your smile with veneers, bonding, and other cosmetic solutions.",
   },
   {
+    id: "family-dentistry",
+    title: "Family Dentistry",
+    description: "Comprehensive care for patients of all ages in a welcoming environment.",
+  },
+  {
     id: "dental-implants",
     title: "Dental Implants",
     description: "Restore your smile with permanent dental implants.",
+  },
+  {
+    id: "root-canal",
+    title: "Root Canal Treatment",
+    description: "Expert endodontic care to save your natural teeth.",
+  },
+  {
+    id: "invisalign",
+    title: "Invisalign",
+    description: "Clear aligner therapy for straighter teeth without traditional braces.",
   },
   {
     id: "emergency-dentistry",
@@ -44,15 +65,17 @@ export default function Home() {
       "@context": "https://schema.org",
       "@type": "Dentist",
       "name": "ProCare Dental",
-      "description": "Professional dental care in Livingston, NJ",
+      "description": "Professional dental care in Livingston, NJ offering family dentistry, cosmetic dentistry, dental implants, and emergency services.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "22 Old Short Hills Rd Ste 207",
         "addressLocality": "Livingston",
         "addressRegion": "NJ",
         "postalCode": "07039",
+        "addressCountry": "US"
       },
       "telephone": "(973) 533-1777",
+      "url": "https://procardentallivingston.com",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
@@ -90,32 +113,118 @@ export default function Home() {
               {/* Main Heading */}
               <div className="space-y-4">
                 <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">
-                  Seeing the dentist just got cooler
+                  Dentist in<br />
+                  Livingston NJ
                 </h1>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Welcome to ProCare Dental, where seeing the dentist is something you actually look forward to. We are dedicated to helping you achieve your healthiest smile, delivering compassionate dental care and an extraordinary dental experience.
+                  Professional dental care combining advanced technology with compassionate service. Family dentistry, cosmetic dentistry, and emergency dental services for Livingston, NJ residents.
                 </p>
               </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-6 text-base font-semibold">
-                  Book an Appointment
-                </Button>
+                <a href="tel:(973) 533-1777">
+                  <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-6 text-base font-semibold">
+                    Call Now
+                  </Button>
+                </a>
                 <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5 rounded-full px-8 py-6 text-base font-semibold">
-                  Find a Studio Near You
+                  Book Appointment
                 </Button>
+              </div>
+
+              {/* Reviews */}
+              <div className="flex flex-wrap gap-8 pt-4">
+                <a href="https://www.google.com/search?q=ProCare+Dental+Livingston" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:opacity-80 transition">
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/icons8-google-48_9e208c44.png" alt="Google" className="w-12 h-12" />
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-2">
+                      <span className="text-3xl font-bold text-foreground">5.0</span>
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                    </div>
+                    <span className="text-sm text-foreground/60">120 Reviews</span>
+                  </div>
+                </a>
+                {zocdocReviews ? (
+                  <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:opacity-80 transition">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc" className="w-12 h-12 flex-shrink-0" />
+                    <div className="flex flex-col">
+                      <div className="flex items-center gap-2">
+                        <span className="text-3xl font-bold text-foreground">{zocdocReviews.overallRating}</span>
+                        <div className="flex">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                      </div>
+                      <span className="text-sm text-foreground/60">{zocdocReviews.reviewCount} Reviews</span>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="flex items-center gap-4">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc" className="w-12 h-12 flex-shrink-0" />
+                    <div className="flex flex-col">
+                      <div className="flex items-center gap-2">
+                        <span className="text-3xl font-bold text-foreground">4.98</span>
+                        <div className="flex">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                      </div>
+                      <span className="text-sm text-foreground/60">45 Reviews</span>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
-            {/* Right Image */}
-            <div className="relative">
-              <div className="relative w-full aspect-square rounded-3xl overflow-hidden bg-accent/20 flex items-center justify-center">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/nj_top_dentist_2026_a1720d57.png"
-                  alt="Modern dental office"
-                  className="w-full h-full object-cover"
-                />
+            {/* Right Side - Doctors */}
+            <div className="flex flex-col gap-8">
+              {/* Dr. Kristina */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl h-64 w-64 flex items-center justify-center overflow-hidden">
+                  <a href="/dr-kristina-ceravolo" className="hover:opacity-80 transition w-full h-full flex items-center justify-center">
+                    <img
+                      src="https://lh3.googleusercontent.com/p/AF1QipN0dB0NAiD-y4J6zzLcXcf4nVCDeL7wLqvlHduw=s1024-v1"
+                      alt="Dr. Kristina Ceravolo, DMD"
+                      className="w-full h-full object-contain"
+                      fetchPriority="high"
+                      loading="eager"
+                    />
+                  </a>
+                </div>
+                <div className="text-center">
+                  <a href="/dr-kristina-ceravolo" className="hover:text-primary/80 transition">
+                    <h3 className="text-xl font-bold text-primary">Dr. Kristina Ceravolo</h3>
+                    <p className="text-base text-accent font-semibold">DMD</p>
+                  </a>
+                </div>
+              </div>
+
+              {/* Dr. Ditta */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl h-64 w-64 flex items-center justify-center overflow-hidden">
+                  <a href="/dr-charles-ditta" className="hover:opacity-80 transition w-full h-full flex items-center justify-center">
+                    <img
+                      src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dr_charles_ditta_18cd048e.webp"
+                      alt="Dr. Charles Ditta, DMD"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                </div>
+                <div className="text-center">
+                  <a href="/dr-charles-ditta" className="hover:text-primary/80 transition">
+                    <h3 className="text-xl font-bold text-primary">Dr. Charles Ditta</h3>
+                    <p className="text-base text-accent font-semibold">DMD</p>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -123,44 +232,39 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+      <div className="h-1 bg-gradient-to-r from-primary/20 via-accent to-primary/20" />
 
-      {/* Services Section */}
+      {/* Dream Smile Section */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Image */}
-            <div className="relative order-2 lg:order-1">
-              <div className="relative w-full aspect-square rounded-3xl overflow-hidden bg-accent/20 flex items-center justify-center">
+            <div className="relative">
+              <div className="relative w-full aspect-square rounded-3xl overflow-hidden bg-accent/10 flex items-center justify-center max-w-md mx-auto">
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_technology_c78a18c7.png"
-                  alt="Patient smiling"
+                  alt="Advanced dental technology"
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
 
             {/* Right Content */}
-            <div className="space-y-8 order-1 lg:order-2">
-              <div className="space-y-4">
-                <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Dental Care You'll Love</p>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary leading-tight">
-                  Helping you achieve<br />
-                  <span className="text-accent">your dream smile</span>
-                </h2>
-              </div>
-
+            <div className="space-y-6">
+              <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Dental Care You'll Love</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary leading-tight">
+                Helping you achieve<br />
+                <span className="text-accent">your dream smile</span>
+              </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Our goal as family dentists is to establish lifelong connections with our patients. We strive to create healthy smiles and change the way you think about seeing the dentist.
               </p>
-
               <p className="text-lg text-gray-600 leading-relaxed">
                 At our dental practice, we are dedicated to preventing, diagnosing, and treating oral health issues. We prioritize your comfort, utilize the newest dental technology, and provide comprehensive dental care for the whole family.
               </p>
-
-              <Link href="/about" className="inline-block">
-                <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5 rounded-full px-8 py-6 text-base font-semibold">
-                  Learn More About Us
+              <Link href="/dr-kristina-ceravolo">
+                <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5 rounded-full px-8 py-6 text-base font-semibold mt-4">
+                  Meet Our Doctors
                 </Button>
               </Link>
             </div>
@@ -168,70 +272,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reviews Section */}
-      <section className="py-16 md:py-20 bg-gray-50">
-        <div className="container px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Google Reviews */}
-            <div className="bg-white rounded-2xl p-8 text-center">
-              <div className="flex justify-center mb-4">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                </svg>
-              </div>
-              <div className="flex justify-center gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="text-3xl font-bold text-primary mb-1">5.0</p>
-              <p className="text-gray-600">120 Reviews</p>
-            </div>
-
-            {/* Placeholder Reviews */}
-            <div className="bg-white rounded-2xl p-8 text-center">
-              <div className="flex justify-center mb-4">
-                <div className="w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center font-bold text-gray-800">Z</div>
-              </div>
-              <div className="flex justify-center gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="text-3xl font-bold text-primary mb-1">4.98</p>
-              <p className="text-gray-600">45 Reviews</p>
-            </div>
-
-            {/* CTA Card */}
-            <div className="bg-accent rounded-2xl p-8 text-center text-white">
-              <p className="text-lg font-semibold mb-4">Ready to get started?</p>
-              <Button className="bg-white text-accent hover:bg-gray-100 rounded-full px-8 py-6 text-base font-semibold w-full">
-                Book Now
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="py-20 md:py-28 bg-white">
+      {/* Services Section */}
+      <section id="services" className="py-20 md:py-28 bg-gray-50">
         <div className="container px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Our Services</h2>
-            <p className="text-lg text-gray-600">Comprehensive dental care for the whole family</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+              Dental Services in Livingston, NJ
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Comprehensive dental care tailored to your needs
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service) => (
               <Link key={service.id} href={`/service/${service.id}`}>
-                <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition cursor-pointer group">
-                  <div className="w-12 h-12 bg-accent/20 rounded-lg mb-4 group-hover:bg-accent/30 transition" />
-                  <h3 className="text-lg font-bold text-primary mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-600">{service.description}</p>
-                </div>
+                <Card className="border border-border hover:shadow-lg transition-shadow duration-300 group cursor-pointer h-full bg-white">
+                  <CardHeader className="pb-4">
+                    <Sparkles className="w-10 h-10 text-accent mb-3 group-hover:scale-110 transition-transform" />
+                    <h3 className="text-lg font-semibold text-primary">{service.title}</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                  </CardContent>
+                </Card>
               </Link>
             ))}
           </div>
