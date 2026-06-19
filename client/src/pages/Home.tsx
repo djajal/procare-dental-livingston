@@ -1,14 +1,29 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Phone, MapPin, Clock, Smile, Sparkles, Shield, Users, Star, ChevronDown, Globe, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+
+import { toast } from "sonner";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
-import { Plus, Star, Sparkles } from "lucide-react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { MobileNav } from "@/components/MobileNav";
 
 /**
- * ProCare Dental - Swish Style with Original Content
- * Forest Green (#1B5E3F) + Gold (#B8956A)
+ * ProCare Dental - SEO Optimized Professional Healthcare Design
+ * H1: "Dentist in Livingston NJ"
+ * H2: All services offered
+ * Color Scheme: Forest Green (#1B5E3F) + Gold (#B8956A) + Soft Gray (#F5F5F5)
+ * Typography: Poppins (headers) + Inter (body)
  */
 
 const SERVICES = [
@@ -16,26 +31,31 @@ const SERVICES = [
     id: "teeth-whitening",
     title: "Teeth Whitening",
     description: "Professional whitening treatments for a brighter, more confident smile.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/teeth_whitening_service_392268ec.webp",
   },
   {
     id: "preventative-care",
     title: "Preventative Care",
     description: "Regular checkups and cleanings to maintain optimal oral health.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_cleanings_service_98148a61.webp",
   },
   {
     id: "cosmetic-dentistry",
     title: "Cosmetic Dentistry",
     description: "Enhance your smile with veneers, bonding, and other cosmetic solutions.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/porcelain_crowns_service_459e4140.webp",
   },
   {
     id: "family-dentistry",
     title: "Family Dentistry",
     description: "Comprehensive care for patients of all ages in a welcoming environment.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_cleanings_service_98148a61.webp",
   },
   {
     id: "dental-implants",
     title: "Dental Implants",
     description: "Restore your smile with permanent dental implants.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_bridge_service_af7a4c06.webp",
   },
   {
     id: "root-canal",
@@ -55,16 +75,32 @@ const SERVICES = [
 ];
 
 export default function Home() {
-  const { user } = useAuth();
-  const { data: zocdocReviews } = trpc.reviews.zocdoc.useQuery();
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  // Fetch ZocDoc reviews
+  const { data: zocdocReviews, isLoading: reviewsLoading } = trpc.reviews.zocdoc.useQuery();
+
+  // Add JSON-LD schema markup and set document title
   useEffect(() => {
+    // Set the document title
     document.title = "Dentist in Livingston NJ - ProCare Dental Care";
 
     const schema = {
       "@context": "https://schema.org",
       "@type": "Dentist",
       "name": "ProCare Dental",
+        "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_transparent_3d817dc4.png",
       "description": "Professional dental care in Livingston, NJ offering family dentistry, cosmetic dentistry, dental implants, and emergency services.",
       "address": {
         "@type": "PostalAddress",
@@ -76,6 +112,27 @@ export default function Home() {
       },
       "telephone": "(973) 533-1777",
       "url": "https://procardentallivingston.com",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ],
+      "priceRange": "$$",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
@@ -89,109 +146,288 @@ export default function Home() {
     document.head.appendChild(script);
 
     return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
+      document.head.removeChild(script);
+    };
+  }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.phone) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
+    toast.success("Thank you! We'll contact you soon.");
+    setFormData({ name: "", email: "", phone: "", message: "" });
+  };
+
+  // Load ZocDoc script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://offsiteschedule.zocdoc.com/plugin/embed';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      try {
+        document.body.removeChild(script);
+      } catch (e) {
+        // Script may already be removed
       }
     };
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-24">
-        <div className="container px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-8">
-              {/* Decorative Plus Signs */}
-              <div className="flex gap-2 text-accent">
-                <Plus className="w-5 h-5" />
-                <Plus className="w-5 h-5" />
-                <Plus className="w-5 h-5" />
-              </div>
+    <>
+      <header className="sticky top-0 z-40 bg-white border-b border-border">
+        {/* Top Contact Bar - Desktop */}
+        <div className="hidden md:block bg-slate-800 text-white py-3 px-4">
+          <div className="container flex items-center justify-end gap-8 text-sm md:text-base">
+            <a href="tel:(973) 533-1777" className="flex items-center gap-2 hover:text-accent transition">
+              <Phone className="w-4 h-4" />
+              <span>(973) 533-1777</span>
+            </a>
+            <span className="text-white/50">|</span>
+            <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="flex items-center gap-2 hover:text-accent transition">
+              <MapPin className="w-4 h-4" />
+              <span>22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
+            </a>
+          </div>
+        </div>
 
-              {/* Main Heading */}
-              <div className="space-y-4">
-                <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">
-                  Dentist in<br />
-                  Livingston NJ
-                </h1>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Professional dental care combining advanced technology with compassionate service. Family dentistry, cosmetic dentistry, and emergency dental services for Livingston, NJ residents.
-                </p>
-              </div>
+        {/* Top Contact Bar - Mobile */}
+        <div className="md:hidden bg-slate-800 text-white py-2 px-4">
+          <div className="container flex items-center justify-between gap-3">
+            {/* Call Icon with Phone Number */}
+            <a href="tel:(973) 533-1777" className="flex items-center gap-2 hover:text-accent transition">
+              <Phone className="w-5 h-5" />
+              <span className="text-sm font-semibold">(973) 533-1777</span>
+            </a>
+            {/* Maps Icon Only */}
+            <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="p-2 hover:bg-white/20 rounded-lg transition">
+              <MapPin className="w-6 h-6" />
+            </a>
+          </div>
+        </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+        {/* Main Navigation */}
+        <nav className="bg-slate-100 border-b border-border shadow-sm">
+        <div className="container flex items-center justify-between h-24 px-4">
+          <div className="flex items-center gap-3">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/procare_dental_logo_transparent_3d817dc4.png"
+              alt="ProCare Dental logo - professional dental care in Livingston, NJ"
+              className="h-20 w-auto"
+              width={80}
+              height={80}
+              loading="eager"
+              decoding="sync"
+            />
+          </div>
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-8">
+            {/* About Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-lg font-semibold text-foreground hover:text-primary transition">
+                About <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>Meet the Doctors</DropdownMenuItem>
+                <DropdownMenuItem>Meet the Staff</DropdownMenuItem>
+                <DropdownMenuItem>Office Tour</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Our Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-lg font-semibold text-foreground hover:text-primary transition">
+                Our Services <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-auto p-4">
+                <div className="grid grid-cols-3 gap-6 min-w-max">
+                  {/* Column 1 */}
+                  <div>
+                    <div className="text-sm font-semibold text-primary mb-2">Preventative & General</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/dental-hygiene" className="block hover:text-primary transition">Dental Hygiene</a>
+                      <a href="/service/oral-cancer-screenings" className="block hover:text-primary transition">Oral Cancer Screenings</a>
+                      <a href="/service/digital-xray" className="block hover:text-primary transition">Digital X-Ray</a>
+                    </div>
+                    
+                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Cosmetic Services</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/lumineers" className="block hover:text-primary transition">Lumineers</a>
+                      <a href="/service/veneers" className="block hover:text-primary transition">Veneers</a>
+                      <a href="/service/zoom-whitening" className="block hover:text-primary transition">Zoom Whitening</a>
+                      <a href="/service/snap-on-smile" className="block hover:text-primary transition">Snap On Smile</a>
+                      <a href="/service/bonding" className="block hover:text-primary transition">Bonding & White Fillings</a>
+                    </div>
+                  </div>
+                  
+                  {/* Column 2 */}
+                  <div>
+                    <div className="text-sm font-semibold text-primary mb-2">Restorative</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/dental-implants" className="block hover:text-primary transition">Dental Implants</a>
+                      <a href="/service/bridges" className="block hover:text-primary transition">Bridges</a>
+                      <a href="/service/crowns" className="block hover:text-primary transition">Crowns</a>
+                      <a href="/service/dentures" className="block hover:text-primary transition">Dentures</a>
+                      <a href="/service/inlays-onlays" className="block hover:text-primary transition">Inlays & Onlays</a>
+                    </div>
+                    
+                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Endodontics</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/root-canal" className="block hover:text-primary transition">Root Canal Treatment</a>
+                      <a href="/service/root-canal-retreatment" className="block hover:text-primary transition">Retreatment</a>
+                    </div>
+                  </div>
+                  
+                  {/* Column 3 */}
+                  <div>
+                    <div className="text-sm font-semibold text-primary mb-2">Periodontic</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/periodontal-disease" className="block hover:text-primary transition">Gum Disease Treatment</a>
+                      <a href="/service/scaling-root-planing" className="block hover:text-primary transition">Scaling & Root Planing</a>
+                    </div>
+                    
+                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Oral Surgery</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/wisdom-teeth" className="block hover:text-primary transition">Wisdom Teeth Extraction</a>
+                      <a href="/service/extractions" className="block hover:text-primary transition">Extractions</a>
+                      <a href="/service/sleep-apnea" className="block hover:text-primary transition">Sleep Apnea Treatment</a>
+                    </div>
+                    
+                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Pediatric & Specialty</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/service/sealants" className="block hover:text-primary transition">Sealants</a>
+                      <a href="/service/mouth-guards" className="block hover:text-primary transition">Mouth Guards</a>
+                      <a href="/service/night-guards" className="block hover:text-primary transition">Night Guards</a>
+                      <a href="/service/tmj" className="block hover:text-primary transition">TMJ Treatment</a>
+                      <a href="/service/occlusal-adjustment" className="block hover:text-primary transition">Occlusal Adjustment</a>
+                    </div>
+                    
+                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Technology</div>
+                    <div className="space-y-1 text-sm">
+                      <a href="/our-technology" className="block hover:text-primary transition">Our Advanced Technology</a>
+                    </div>
+                  </div>
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Patient Information Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-lg font-semibold text-foreground hover:text-primary transition">
+                Patient Information <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem><Link href="/new-patients">New Patients</Link></DropdownMenuItem>
+                <DropdownMenuItem><Link href="/financial-information">Financial Information</Link></DropdownMenuItem>
+                <DropdownMenuItem><Link href="/insurance">Insurance</Link></DropdownMenuItem>
+                <DropdownMenuItem><Link href="/forms">Forms</Link></DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Contact Link */}
+            <a href="#contact" className="text-lg font-semibold text-foreground hover:text-primary transition">
+              Contact
+            </a>
+
+            {/* Book Button */}
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-4 py-2 text-sm font-semibold" aria-label="Book an appointment at ProCare Dental">
+              Book An Appointment
+            </Button>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="lg:hidden">
+            <MobileNav />
+          </div>
+        </div>
+        </nav>
+      </header>
+
+      <main className="min-h-screen bg-white">
+      {/* Hero Section with H1 */}
+      <section className="bg-gradient-to-br from-white via-secondary to-white py-20 md:py-32">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight" role="heading" aria-level={1}>
+                Dentist in Livingston NJ
+              </h1>
+              <p className="text-xl text-foreground/80 leading-relaxed">
+                Professional dental care combining advanced technology with compassionate service. Family dentistry, cosmetic dentistry, and emergency dental services for Livingston, NJ residents.
+              </p>
+              <div className="flex gap-4 pt-4">
                 <a href="tel:(973) 533-1777">
-                  <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-6 text-base font-semibold">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90">
                     Call Now
                   </Button>
                 </a>
-                <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5 rounded-full px-8 py-6 text-base font-semibold">
+                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white rounded-full" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
                   Book Appointment
                 </Button>
               </div>
-
-              {/* Reviews */}
-              <div className="flex flex-wrap gap-8 pt-4">
-                <a href="https://www.google.com/search?q=ProCare+Dental+Livingston" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:opacity-80 transition">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/icons8-google-48_9e208c44.png" alt="Google" className="w-12 h-12" />
+              <div className="flex flex-wrap gap-8 pt-6">
+                 <a href="https://www.google.com/search?q=ProCare+Dental+Livingston" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 hover:opacity-80 transition">
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/icons8-google-48_9e208c44.png" alt="Google" className="w-16 h-16" />
                   <div className="flex flex-col">
                     <div className="flex items-center gap-2">
-                      <span className="text-3xl font-bold text-foreground">5.0</span>
+                      <span className="text-4xl font-bold text-foreground">5.0</span>
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                          <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
                     </div>
-                    <span className="text-sm text-foreground/60">120 Reviews</span>
+                    <span className="text-base text-foreground/60">120 Reviews</span>
                   </div>
                 </a>
                 {zocdocReviews ? (
-                  <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:opacity-80 transition">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc" className="w-12 h-12 flex-shrink-0" />
+                  <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 hover:opacity-80 transition">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc" className="w-16 h-16 flex-shrink-0" />
                     <div className="flex flex-col">
                       <div className="flex items-center gap-2">
-                        <span className="text-3xl font-bold text-foreground">{zocdocReviews.overallRating}</span>
+                        <span className="text-4xl font-bold text-foreground">{zocdocReviews.overallRating}</span>
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                            <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
                           ))}
                         </div>
                       </div>
-                      <span className="text-sm text-foreground/60">{zocdocReviews.reviewCount} Reviews</span>
+                      <span className="text-base text-foreground/60">{zocdocReviews.reviewCount} Reviews</span>
                     </div>
                   </a>
                 ) : (
-                  <div className="flex items-center gap-4">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc" className="w-12 h-12 flex-shrink-0" />
+                  <div className="flex items-center gap-6">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc" className="w-16 h-16 flex-shrink-0" />
                     <div className="flex flex-col">
                       <div className="flex items-center gap-2">
-                        <span className="text-3xl font-bold text-foreground">4.98</span>
+                        <span className="text-4xl font-bold text-foreground">4.98</span>
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                            <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
                           ))}
                         </div>
                       </div>
-                      <span className="text-sm text-foreground/60">45 Reviews</span>
+                      <span className="text-base text-foreground/60">45 Reviews</span>
                     </div>
                   </div>
                 )}
               </div>
             </div>
-
-            {/* Right Side - Doctors */}
-            <div className="flex flex-col gap-8">
-              {/* Dr. Kristina */}
+            <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center gap-3">
-                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl h-64 w-64 flex items-center justify-center overflow-hidden">
+                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-64 w-64 flex items-center justify-center overflow-hidden">
                   <a href="/dr-kristina-ceravolo" className="hover:opacity-80 transition w-full h-full flex items-center justify-center">
                     <img
                       src="https://lh3.googleusercontent.com/p/AF1QipN0dB0NAiD-y4J6zzLcXcf4nVCDeL7wLqvlHduw=s1024-v1"
-                      alt="Dr. Kristina Ceravolo, DMD"
+                      alt="Dr. Kristina Ceravolo, DMD, professional dentist providing comprehensive dental care in Livingston, NJ"
                       className="w-full h-full object-contain"
                       fetchPriority="high"
                       loading="eager"
@@ -205,14 +441,12 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-
-              {/* Dr. Ditta */}
               <div className="flex flex-col items-center gap-3">
-                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl h-64 w-64 flex items-center justify-center overflow-hidden">
+                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-64 w-64 flex items-center justify-center overflow-hidden">
                   <a href="/dr-charles-ditta" className="hover:opacity-80 transition w-full h-full flex items-center justify-center">
                     <img
                       src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dr_charles_ditta_18cd048e.webp"
-                      alt="Dr. Charles Ditta, DMD"
+                      alt="Dr. Charles Ditta, DMD, general dentist with 25+ years of experience in Livingston, NJ"
                       className="w-full h-full object-contain"
                       loading="lazy"
                       decoding="async"
@@ -231,89 +465,379 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-primary/20 via-accent to-primary/20" />
-
-      {/* Dream Smile Section */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="container px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Image */}
-            <div className="relative">
-              <div className="relative w-full aspect-square rounded-3xl overflow-hidden bg-accent/10 flex items-center justify-center max-w-md mx-auto">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/dental_technology_c78a18c7.png"
-                  alt="Advanced dental technology"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Right Content */}
-            <div className="space-y-6">
-              <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Dental Care You'll Love</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary leading-tight">
-                Helping you achieve<br />
-                <span className="text-accent">your dream smile</span>
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Our goal as family dentists is to establish lifelong connections with our patients. We strive to create healthy smiles and change the way you think about seeing the dentist.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                At our dental practice, we are dedicated to preventing, diagnosing, and treating oral health issues. We prioritize your comfort, utilize the newest dental technology, and provide comprehensive dental care for the whole family.
-              </p>
-              <Link href="/dr-kristina-ceravolo">
-                <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5 rounded-full px-8 py-6 text-base font-semibold mt-4">
-                  Meet Our Doctors
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-20 md:py-28 bg-gray-50">
-        <div className="container px-4">
+      {/* Services Section with H2 Tags */}
+      <section id="services" className="py-20 md:py-32 bg-white">
+        <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>
               Dental Services in Livingston, NJ
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
               Comprehensive dental care tailored to your needs
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {SERVICES.map((service) => (
-              <Link key={service.id} href={`/service/${service.id}`}>
-                <Card className="border border-border hover:shadow-lg transition-shadow duration-300 group cursor-pointer h-full bg-white">
+              <a href={`/service/${service.id}`} key={service.id}>
+                <Card className="border border-border hover:shadow-lg transition-shadow duration-300 group cursor-pointer h-full">
                   <CardHeader className="pb-4">
-                    <Sparkles className="w-10 h-10 text-accent mb-3 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-lg font-semibold text-primary">{service.title}</h3>
+                    <Sparkles className="w-12 h-12 text-accent mb-3 group-hover:scale-110 transition-transform" />
+                    <h2 className="text-lg font-semibold text-primary">{service.title}</h2>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                    <p className="text-foreground/70 text-sm leading-relaxed">{service.description}</p>
                   </CardContent>
                 </Card>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-primary text-white">
-        <div className="container px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready for your best smile?</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Schedule your appointment today and experience the ProCare Dental difference.
-          </p>
-          <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-6 text-base font-semibold">
-            Book an Appointment
-          </Button>
+      {/* About Section */}
+      <section id="about" className="py-20 md:py-32 bg-secondary">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl h-96 flex items-center justify-center overflow-hidden">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/nj_top_dentist_d348b59e.webp"
+                alt="NJ Top Dentist 2026 Award - ProCare Dental Livingston"
+                className="w-full h-full object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary" role="heading" aria-level={2}>Why Choose ProCare Dental?</h2>
+              <p className="text-lg text-foreground/80 leading-relaxed">
+                At ProCare Dental in Livingston, NJ, we're committed to providing the highest quality dental care using the latest technology and techniques. Our experienced team of dentists is dedicated to making your dental experience comfortable and stress-free.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "State-of-the-art dental technology",
+                  "Experienced and compassionate dentists",
+                  "Personalized treatment plans",
+                  "Comfortable, welcoming environment",
+                  "Over 25 years of trusted experience",
+                  "Emergency dental services available",
+                  "NJ Top Dentist Award 2026",
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-accent" />
+                    <span className="text-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+            </div>
+          </div>
         </div>
       </section>
-    </div>
+
+      {/* Trust Badges Section */}
+      <section className="py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>Accepted Insurance Plans</h2>
+            <p className="text-xl text-foreground/70">We work with major insurance providers to make dental care accessible</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 items-center justify-center">
+            {/* Delta Dental */}
+            <a href="/insurance/delta-dental" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/deltadental-large_56cd0d9a.png" alt="Delta Dental insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Delta Dental</p>
+              </div>
+            </a>
+
+            {/* Aetna */}
+            <a href="/insurance/aetna" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Aetna_Logo_ss_Violet_RGB_Coated_91557f6f.png" alt="Aetna insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Aetna</p>
+              </div>
+            </a>
+
+            {/* Cigna */}
+            <a href="/insurance/cigna" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/cigna-large_745182f3.png" alt="Cigna insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Cigna</p>
+              </div>
+            </a>
+
+            {/* MetLife */}
+            <a href="/insurance/metlife" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/metlife-large_bdcee156.png" alt="MetLife insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">MetLife</p>
+              </div>
+            </a>
+
+            {/* Guardian */}
+            <a href="/insurance/guardian" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/guardian-large_e7a69834.png" alt="Guardian insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Guardian</p>
+              </div>
+            </a>
+
+            {/* United Healthcare */}
+            <a href="/insurance/united-healthcare" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/united-healthcare-logo_63043edb.png" alt="United Healthcare insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">United Healthcare</p>
+              </div>
+            </a>
+
+            {/* Ameritas */}
+            <a href="/insurance/ameritas" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/RqoQUYBD42I6_1d3c3c22.png" alt="Ameritas insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Ameritas</p>
+              </div>
+            </a>
+
+            {/* Clover Health */}
+            <a href="/insurance/clover-health" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/KwlRpqpghXCP_6e9581d0.jpg" alt="Clover Health insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Clover Health</p>
+              </div>
+            </a>
+
+            {/* BCBS (Anthem) */}
+            <a href="/insurance/anthem-bcbs" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/anthembcbs-large_9b5bec76.png" alt="Anthem BCBS insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">BCBS (Anthem)</p>
+              </div>
+            </a>
+
+            {/* Humana */}
+            <a href="/insurance/humana" className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer">
+              <div className="text-center">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/humana-large_a30abd7f.png" alt="Humana insurance logo" className="h-16 mx-auto mb-3" loading="lazy" />
+                <p className="font-semibold text-foreground text-sm">Humana</p>
+              </div>
+            </a>
+          </div>
+          <div className="mt-12 text-center space-y-4">
+            <p className="text-foreground/70">Don't see your insurance? Call us at <a href="tel:+19735331777" className="font-semibold text-primary hover:underline">(973) 533-1777</a></p>
+            <div>
+              <Button asChild className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg">
+                <a href="/insurance">View All Insurance Plans</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Maps Section */}
+      <section className="py-20 md:py-32 bg-secondary">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>Visit Us in Livingston</h2>
+            <p className="text-xl text-foreground/70">Find us on the map and get directions</p>
+          </div>
+        </div>
+        <div className="w-full" style={{ height: '600px' }}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.6596816282286!2d-74.3029631227733!3d40.76950923409121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3abf98bd285d9%3A0x2d9473985b08046!2sProCare%20Dental%20Livingston!5e0!3m2!1sen!2sus!4v1773093153871!5m2!1sen!2sus"
+            width="100%"
+            height="600"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="ProCare Dental location on Google Maps"
+            aria-label="ProCare Dental location map"
+          />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 md:py-32 bg-white">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>Get In Touch</h2>
+              <p className="text-xl text-foreground/70">
+                Have questions? We'd love to hear from you.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {[
+                {
+                  icon: Phone,
+                  title: "Phone",
+                  content: "(973) 533-1777",
+                  link: "tel:(973) 533-1777",
+                },
+                {
+                  icon: MapPin,
+                  title: "Location",
+                  content: "22 Old Short Hills Rd Ste 207, Livingston, NJ 07039",
+                  link: "https://maps.google.com/?q=22+Old+Short+Hills+Rd+Suite+207+Livingston+NJ+07039",
+                },
+                {
+                  icon: Clock,
+                  title: "Hours",
+                  content: "Mon-Tue, Thu: 8am-6pm | Sat: 8am-1pm",
+                  link: "#",
+                },
+              ].map((item, idx) => (
+                <a key={idx} href={item.link} className="text-center hover:opacity-80 transition">
+                  <item.icon className="w-12 h-12 text-accent mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-primary mb-2">{item.title}</h3>
+                  <p className="text-foreground/70 text-sm">{item.content}</p>
+                </a>
+              ))}
+            </div>
+
+            {/* Contact Form */}
+            <Card className="border border-border">
+              <CardHeader>
+                <CardTitle className="text-primary">Send us a Message</CardTitle>
+                <CardDescription>Fill out the form below and we'll get back to you soon.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Name *
+                      </label>
+                      <Input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Your name"
+                        className="border-border"
+                        aria-label="Your full name"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Email *
+                      </label>
+                      <Input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="your@email.com"
+                        className="border-border"
+                        aria-label="Your email address"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Phone *
+                    </label>
+                    <Input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="(XXX) XXX-XXXX"
+                      className="border-border"
+                      aria-label="Your phone number"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Message
+                    </label>
+                    <Textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Tell us how we can help..."
+                      className="border-border min-h-32"
+                      aria-label="Your message"
+                    />
+                  </div>
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-lg">
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-primary text-white py-12">
+        <div className="container">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h3 className="font-bold text-lg mb-4">ProCare Dental</h3>
+              <p className="text-white/80 text-sm">
+                Professional dental care with a personal touch in Livingston, NJ.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-sm text-white/80">
+                <li><a href="#services" className="hover:text-white transition">Preventative Care</a></li>
+                <li><a href="#services" className="hover:text-white transition">Cosmetic Dentistry</a></li>
+                <li><a href="#services" className="hover:text-white transition">Family Dentistry</a></li>
+                <li><a href="#services" className="hover:text-white transition">Dental Implants</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm text-white/80">
+                <li><a href="#about" className="hover:text-white transition">About Us</a></li>
+                <li><a href="/reviews" className="hover:text-white transition">Reviews</a></li>
+                <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
+                <li><a href="/privacy-policy" className="hover:text-white transition">Privacy Policy</a></li>
+                <li><a href="/sitemap" className="hover:text-white transition">Sitemap</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Nearby Towns</h4>
+              <ul className="space-y-2 text-sm text-white/80">
+                <li><a href="/dentist-west-orange" className="hover:text-white transition">West Orange</a></li>
+                <li><a href="/dentist-verona" className="hover:text-white transition">Verona</a></li>
+                <li><a href="/dentist-montclair" className="hover:text-white transition">Montclair</a></li>
+                <li><a href="/dentist-bloomfield" className="hover:text-white transition">Bloomfield</a></li>
+                <li><a href="/dentist-essex-fells" className="hover:text-white transition">Essex Fells</a></li>
+                <li><a href="/dentist-short-hills" className="hover:text-white transition">Short Hills</a></li>
+                <li><a href="/dentist-millburn" className="hover:text-white transition">Millburn</a></li>
+                <li><a href="/dentist-madison" className="hover:text-white transition">Madison</a></li>
+                <li><a href="/dentist-chatham" className="hover:text-white transition">Chatham</a></li>
+                <li><a href="/dentist-summit" className="hover:text-white transition">Summit</a></li>
+                <li><a href="/dentist-florham-park" className="hover:text-white transition">Florham Park</a></li>
+                <li><a href="/dentist-south-orange" className="hover:text-white transition">South Orange</a></li>
+                <li><a href="/dentist-maplewood" className="hover:text-white transition">Maplewood</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Contact</h4>
+              <p className="text-sm text-white/80 mb-2"><a href="tel:(973) 533-1777" className="hover:text-white transition">(973) 533-1777</a></p>
+              <p className="text-sm text-white/80">Livingston, NJ 07039</p>
+            </div>
+          </div>
+          <div className="border-t border-white/20 pt-8 mb-8">
+            <div className="flex justify-center mb-6">
+              <div>
+                <a style={{display: 'block'}} href='https://www.zocdoc.com/practice/procare-dental-livingston-168071?lock=true&isNewPatient=false&referrerType=widget' className='zd-plugin' data-type='book-button' data-practice-id='168071' title='ProCare Dental Livingston'>
+                  <img src='https://offsiteSchedule.zocdoc.com/images/remote/zd_bookonline_162x48.png?type=bobjs&monolith_provider_id=168071&practice_id=pt_v_yyrdwF5k2edNrvM8lGNw' alt='ProCare Dental Livingston' title='ProCare Dental Livingston' style={{border: '0'}}/>
+                </a>
+              </div>
+            </div>
+            <p className="text-center text-sm text-white/70">&copy; 2026 ProCare Dental. All rights reserved. | Dentist in Livingston, NJ</p>
+          </div>
+        </div>
+      </footer>
+      </main>
+    </>
   );
 }

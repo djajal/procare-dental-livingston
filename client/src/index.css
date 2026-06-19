@@ -57,7 +57,7 @@
   --chart-3: #2D7A52;
   --chart-4: #0F3D24;
   --chart-5: #1B5E3F;
-  --radius: 9999px; /* Pill shape for buttons */
+  --radius: 0.65rem;
   --background: #FFFFFF;
   --foreground: #2C3E50;
   --card: #F9FAFB;

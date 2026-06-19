@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Shield, DollarSign, Clock } from "lucide-react";
 import { Link } from "wouter";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 /**
@@ -56,6 +57,8 @@ const TOP_INSURANCES = [
 export default function InsuranceMainPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Header />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 to-accent/10 py-16">
         <div className="container">

@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, HelpCircle, DollarSign, Clock } from "lucide-react";
 import { Link } from "wouter";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import {
@@ -28,6 +29,8 @@ function createInsurancePage(props: InsurancePageProps) {
   return function InsurancePage() {
     return (
       <div className="min-h-screen bg-white">
+        <Header />
+
         {/* Breadcrumb Navigation */}
         <div className="bg-gray-50 py-4 px-4">
           <div className="container">

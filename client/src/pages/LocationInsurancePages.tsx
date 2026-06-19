@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Button } from "@/components/ui/button";
@@ -20,6 +21,7 @@ function LocationInsurancePage({ location, insuranceName, insuranceSlug }: Locat
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
+      <Header />
       <main className="flex-1 w-full">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <Breadcrumb items={breadcrumbItems} />
