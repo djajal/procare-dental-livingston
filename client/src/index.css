@@ -226,3 +226,21 @@
     min-width: 44px;
   }
 }
+
+/* Sub-navigation hover arrow */
+.group\/link::after {
+  content: '→';
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  color: var(--primary);
+  font-size: 0.875rem;
+}
+
+.group\/link:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(2px);
+}
