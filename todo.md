@@ -112,3 +112,7 @@
 - [x] Add focus trap and Escape key handling to mobile nav
 - [x] Add aria-required to required form fields
 - [x] Run automated accessibility tests (18 tests, all passing)
+
+## UI Adjustments
+- [x] Make CTA buttons larger (padding, font size)
+- [x] Make navigation font larger

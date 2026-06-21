@@ -364,10 +364,10 @@ export default function Home() {
                 Professional dental care combining advanced technology with compassionate service. Family dentistry, cosmetic dentistry, and emergency dental services for Livingston, NJ residents.
               </p>
               <div className="flex gap-4 pt-4">
-                <a href="tel:9735331777" className="inline-flex items-center justify-center rounded-md bg-primary hover:bg-primary/90 text-white text-sm font-medium h-11 px-8" aria-label="Call ProCare Dental now at (973) 533-1777">
+                <a href="tel:9735331777" className="inline-flex items-center justify-center rounded-full bg-primary hover:bg-primary/90 text-white text-lg font-semibold h-14 px-10" aria-label="Call ProCare Dental now at (973) 533-1777">
                     Call Now
                 </a>
-                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white rounded-full" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white rounded-full text-lg font-semibold h-14 px-10" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
                   Book Appointment
                 </Button>
               </div>
