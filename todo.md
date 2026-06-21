@@ -116,3 +116,6 @@
 ## UI Adjustments
 - [x] Make CTA buttons larger (padding, font size)
 - [x] Make navigation font larger
+
+## Service Page SEO Descriptions
+- [x] Add ~1000 character SEO descriptions to all 8 service pages (teeth whitening, preventative care, cosmetic dentistry, family dentistry, dental implants, root canal, Invisalign, emergency dentistry)
