@@ -11,8 +11,9 @@ interface BreadcrumbProps {
 }
 
 /**
- * Breadcrumb navigation component for improved UX and SEO
+ * Breadcrumb navigation component for improved UX, SEO, and accessibility
  * Displays hierarchical navigation path with structured data
+ * ADA compliant: proper aria-current, no nested anchors
  */
 export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
@@ -21,22 +22,25 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
       className="bg-gray-50 py-3 px-4 mb-6 rounded-md border border-gray-200"
     >
       <ol className="flex flex-wrap items-center gap-2 text-sm">
-        {items.map((item, index) => (
-          <li key={index} className="flex items-center gap-2">
-            {item.href ? (
-              <Link href={item.href}>
-                <a className="text-blue-600 hover:text-blue-800 hover:underline font-medium">
+        {items.map((item, index) => {
+          const isLast = index === items.length - 1;
+          return (
+            <li key={index} className="flex items-center gap-2">
+              {item.href && !isLast ? (
+                <Link href={item.href} className="text-primary hover:text-primary/80 hover:underline font-medium">
                   {item.label}
-                </a>
-              </Link>
-            ) : (
-              <span className="text-gray-700 font-medium">{item.label}</span>
-            )}
-            {index < items.length - 1 && (
-              <ChevronRight className="w-4 h-4 text-gray-400" />
-            )}
-          </li>
-        ))}
+                </Link>
+              ) : (
+                <span className="text-gray-700 font-medium" aria-current={isLast ? "page" : undefined}>
+                  {item.label}
+                </span>
+              )}
+              {!isLast && (
+                <ChevronRight className="w-4 h-4 text-gray-400" aria-hidden="true" />
+              )}
+            </li>
+          );
+        })}
       </ol>
 
       {/* Schema.org BreadcrumbList structured data for SEO */}

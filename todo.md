@@ -89,3 +89,26 @@
 - [x] Update CSS variables for new theme
 - [x] Update component colors throughout site
 - [x] Set up storage proxy for logo serving
+
+## ADA Compliance (Web Accessibility)
+- [x] Add skip-to-main-content link
+- [x] Add proper ARIA landmarks (header, nav, main, footer)
+- [x] Ensure visible focus indicators on all interactive elements
+- [x] Fix color contrast to meet WCAG 2.1 AA (4.5:1 ratio)
+- [x] Add alt text to all images
+- [x] Ensure keyboard navigation for all menus/dropdowns
+- [x] Add proper form labels with htmlFor/id pairing and error indicators
+- [x] Ensure proper heading hierarchy (h1 > h2 > h3)
+- [x] Add aria-labels to icon-only buttons
+- [x] Add accessibility statement page (/accessibility)
+- [x] Add way to report accessibility issues (phone + address on accessibility page)
+- [x] Ensure text cues when color conveys information
+- [x] Add lang attribute to HTML
+- [x] Ensure all links have descriptive text
+- [x] Fix nested anchor tags in Breadcrumb component
+- [x] Add aria-hidden to decorative icons (stars)
+- [x] Fix phone links to use proper tel: format
+- [x] Add aria-expanded/aria-controls to mobile menu
+- [x] Add focus trap and Escape key handling to mobile nav
+- [x] Add aria-required to required form fields
+- [x] Run automated accessibility tests (18 tests, all passing)

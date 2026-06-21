@@ -357,31 +357,29 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight" role="heading" aria-level={1}>
+              <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">
                 Dentist in Livingston NJ
               </h1>
               <p className="text-xl text-foreground/80 leading-relaxed">
                 Professional dental care combining advanced technology with compassionate service. Family dentistry, cosmetic dentistry, and emergency dental services for Livingston, NJ residents.
               </p>
               <div className="flex gap-4 pt-4">
-                <a href="tel:(973) 533-1777">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                <a href="tel:9735331777" className="inline-flex items-center justify-center rounded-md bg-primary hover:bg-primary/90 text-white text-sm font-medium h-11 px-8" aria-label="Call ProCare Dental now at (973) 533-1777">
                     Call Now
-                  </Button>
                 </a>
                 <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white rounded-full" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
                   Book Appointment
                 </Button>
               </div>
               <div className="flex flex-wrap gap-8 pt-6">
-                 <a href="https://www.google.com/search?q=ProCare+Dental+Livingston" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 hover:opacity-80 transition">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/icons8-google-48_9e208c44.png" alt="Google" className="w-16 h-16" />
+                 <a href="https://www.google.com/search?q=ProCare+Dental+Livingston" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 hover:opacity-80 transition" aria-label="View ProCare Dental Google reviews - 5.0 stars from 120 reviews">
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/icons8-google-48_9e208c44.png" alt="Google Reviews logo" className="w-16 h-16" />
                   <div className="flex flex-col">
                     <div className="flex items-center gap-2">
                       <span className="text-4xl font-bold text-foreground">5.0</span>
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                          <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                         ))}
                       </div>
                     </div>
@@ -389,14 +387,14 @@ export default function Home() {
                   </div>
                 </a>
                 {zocdocReviews ? (
-                  <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 hover:opacity-80 transition">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc" className="w-16 h-16 flex-shrink-0" />
+                  <a href={zocdocReviews.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 hover:opacity-80 transition" aria-label={`View ProCare Dental ZocDoc reviews - ${zocdocReviews.overallRating} stars from ${zocdocReviews.reviewCount} reviews`}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc Reviews logo" className="w-16 h-16 flex-shrink-0" />
                     <div className="flex flex-col">
                       <div className="flex items-center gap-2">
                         <span className="text-4xl font-bold text-foreground">{zocdocReviews.overallRating}</span>
-                        <div className="flex">
+                        <div className="flex" aria-hidden="true">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                            <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                           ))}
                         </div>
                       </div>
@@ -405,13 +403,13 @@ export default function Home() {
                   </a>
                 ) : (
                   <div className="flex items-center gap-6">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc" className="w-16 h-16 flex-shrink-0" />
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663355308413/VwPTW3VCJkeR46zZ3DPjBz/Zocdoc_b07a021e.png" alt="ZocDoc Reviews logo" className="w-16 h-16 flex-shrink-0" />
                     <div className="flex flex-col">
                       <div className="flex items-center gap-2">
                         <span className="text-4xl font-bold text-foreground">4.98</span>
-                        <div className="flex">
+                        <div className="flex" aria-hidden="true">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                            <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                           ))}
                         </div>
                       </div>
@@ -707,59 +705,65 @@ export default function Home() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
-                        Name *
+                      <label htmlFor="contact-name" className="block text-sm font-medium text-foreground mb-2">
+                        Name <span aria-label="required">*</span>
                       </label>
                       <Input
+                        id="contact-name"
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="Your name"
                         className="border-border"
-                        aria-label="Your full name"
+                        required
+                        aria-required="true"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
-                        Email *
+                      <label htmlFor="contact-email" className="block text-sm font-medium text-foreground mb-2">
+                        Email <span aria-label="required">*</span>
                       </label>
                       <Input
+                        id="contact-email"
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="your@email.com"
                         className="border-border"
-                        aria-label="Your email address"
+                        required
+                        aria-required="true"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
-                      Phone *
+                    <label htmlFor="contact-phone" className="block text-sm font-medium text-foreground mb-2">
+                      Phone <span aria-label="required">*</span>
                     </label>
                     <Input
+                      id="contact-phone"
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="(XXX) XXX-XXXX"
                       className="border-border"
-                      aria-label="Your phone number"
+                      required
+                      aria-required="true"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="contact-message" className="block text-sm font-medium text-foreground mb-2">
                       Message
                     </label>
                     <Textarea
+                      id="contact-message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Tell us how we can help..."
                       className="border-border min-h-32"
-                      aria-label="Your message"
                     />
                   </div>
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-lg">
@@ -773,7 +777,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-12">
+      <footer className="bg-primary text-white py-12" role="contentinfo">
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
@@ -821,7 +825,7 @@ export default function Home() {
             </div>
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
-              <p className="text-sm text-white/80 mb-2"><a href="tel:(973) 533-1777" className="hover:text-white transition">(973) 533-1777</a></p>
+              <p className="text-sm text-white/80 mb-2"><a href="tel:9735331777" className="hover:text-white transition" aria-label="Call ProCare Dental at (973) 533-1777">(973) 533-1777</a></p>
               <p className="text-sm text-white/80">Livingston, NJ 07039</p>
             </div>
           </div>

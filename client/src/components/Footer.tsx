@@ -43,7 +43,7 @@ export default function Footer() {
       <section className="py-16 md:py-20 bg-white border-t border-border">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
               Visit Us in Livingston
             </h2>
             <p className="text-xl text-foreground/70">Find us on the map and get directions</p>
@@ -69,7 +69,7 @@ export default function Footer() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" role="heading" aria-level={2}>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
                 Get In Touch
               </h2>
               <p className="text-xl text-foreground/70">Have questions? We'd love to hear from you.</p>
@@ -81,7 +81,7 @@ export default function Footer() {
                   icon: Phone,
                   title: "Phone",
                   content: "(973) 533-1777",
-                  link: "tel:(973) 533-1777",
+                  link: "tel:9735331777",
                 },
                 {
                   icon: MapPin,
@@ -93,15 +93,19 @@ export default function Footer() {
                   icon: Clock,
                   title: "Hours",
                   content: "Mon-Tue, Thu: 8am-6pm | Sat: 8am-1pm",
-                  link: "#",
+                  link: undefined as unknown as string,
                 },
-              ].map((item, idx) => (
-                <a key={idx} href={item.link} className="text-center hover:opacity-80 transition">
-                  <item.icon className="w-12 h-12 text-accent mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-primary mb-2">{item.title}</h3>
-                  <p className="text-foreground/70 text-sm">{item.content}</p>
-                </a>
-              ))}
+              ].map((item, idx) => {
+                const Wrapper = item.link ? 'a' : 'div';
+                const wrapperProps = item.link ? { href: item.link, 'aria-label': `${item.title}: ${item.content}` } : {};
+                return (
+                  <Wrapper key={idx} {...wrapperProps as any} className="text-center hover:opacity-80 transition">
+                    <item.icon className="w-12 h-12 text-accent mx-auto mb-4" aria-hidden="true" />
+                    <h3 className="text-lg font-semibold text-primary mb-2">{item.title}</h3>
+                    <p className="text-foreground/70 text-sm">{item.content}</p>
+                  </Wrapper>
+                );
+              })}
             </div>
 
             {/* Contact Form */}
@@ -114,59 +118,65 @@ export default function Footer() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
-                        Name *
+                      <label htmlFor="footer-name" className="block text-sm font-medium text-foreground mb-2">
+                        Name <span aria-label="required">*</span>
                       </label>
                       <Input
+                        id="footer-name"
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="Your name"
                         className="border-border"
-                        aria-label="Your full name"
+                        required
+                        aria-required="true"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
-                        Email *
+                      <label htmlFor="footer-email" className="block text-sm font-medium text-foreground mb-2">
+                        Email <span aria-label="required">*</span>
                       </label>
                       <Input
+                        id="footer-email"
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="your@email.com"
                         className="border-border"
-                        aria-label="Your email address"
+                        required
+                        aria-required="true"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
-                      Phone *
+                    <label htmlFor="footer-phone" className="block text-sm font-medium text-foreground mb-2">
+                      Phone <span aria-label="required">*</span>
                     </label>
                     <Input
+                      id="footer-phone"
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="(XXX) XXX-XXXX"
                       className="border-border"
-                      aria-label="Your phone number"
+                      required
+                      aria-required="true"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="footer-message" className="block text-sm font-medium text-foreground mb-2">
                       Message
                     </label>
                     <Textarea
+                      id="footer-message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Tell us how we can help..."
                       className="border-border min-h-32"
-                      aria-label="Your message"
                     />
                   </div>
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-lg">
@@ -205,6 +215,7 @@ export default function Footer() {
                 <li><Link href="/reviews" className="hover:text-white transition">Reviews</Link></li>
                 <li><Link href="/insurance" className="hover:text-white transition">Insurance</Link></li>
                 <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
+                <li><Link href="/accessibility" className="hover:text-white transition">Accessibility</Link></li>
               </ul>
             </div>
             <div>

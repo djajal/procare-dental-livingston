@@ -42,9 +42,31 @@
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <style>
+      /* Skip link for accessibility - hidden until focused */
+      .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1B5E3F;
+        color: #FFFFFF;
+        padding: 12px 24px;
+        z-index: 9999;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 0 0 8px 8px;
+        text-decoration: none;
+        transition: top 0.2s;
+      }
+      .skip-link:focus {
+        top: 0;
+        outline: 3px solid #B8956A;
+        outline-offset: 2px;
+      }
       /* Critical CSS for above-the-fold content */
       :root {
         --primary: #1B5E3F;

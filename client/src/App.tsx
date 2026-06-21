@@ -25,6 +25,7 @@ import InsuranceMainPage from "./pages/InsuranceMainPage";
 import { DeltaDentalPage, AetnaPage, CignaPage, UnitedHealthcarePage, MetLifePage, GuardianPage, HorizonNJPage, HumanaPage, AmeriHealthPage, AmeritasPage, AnthemPage, AFLACPage, AssurantPage, BeamDentalPage, BCBSPage, CloverMedicarePage, CareingtonPage, DominionNationalPage, FidelioPage, GEHAPage, HealthplexPage, LincolnFinancialPage, ManhattanLifePage, MutualOfOmahaPage, PrincipalPage, SunlifePage, SolsticePage, TruAssurePage, UnitedConcordiaPage, UnumPage } from "./pages/InsurancePages";
 import { WestOrangeDeltaDental, VeronaDeltaDental, MontclairDeltaDental, WestOrangeAetna, VeronaAetna, MontclairAetna, WestOrangeCigna, VeronaCigna, MontclairCigna } from "./pages/LocationInsurancePages";
 import ServiceDetail from "./pages/ServiceDetail";
+import Accessibility from "./pages/Accessibility";
 
 /**
  * ProCare Dental - Professional Dental Website
@@ -33,7 +34,7 @@ import ServiceDetail from "./pages/ServiceDetail";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
-    <main>
+    <main id="main-content" tabIndex={-1}>
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/dr-kristina-ceravolo"} component={DrKristina} />
@@ -143,6 +144,7 @@ function Router() {
       <Route path={"/insurance/cigna/verona"} component={VeronaCigna} />
       <Route path={"/insurance/cigna/montclair"} component={MontclairCigna} />
       <Route path={"/forms"} component={FormsPage} />
+      <Route path={"/accessibility"} component={Accessibility} />
       {/* Catch-all service route for dynamic services */}
       <Route path={"/service/:id"} component={ServiceDetail} />
       <Route path={"/404"} component={NotFound} />

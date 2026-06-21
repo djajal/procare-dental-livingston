@@ -17,17 +17,17 @@ import {
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-white border-b border-border">
+    <header className="sticky top-0 z-40 bg-white border-b border-border" role="banner">
       {/* Top Contact Bar - Desktop */}
-      <div className="hidden md:block bg-slate-800 text-white py-3 px-4">
+      <div className="hidden md:block bg-slate-800 text-white py-3 px-4" role="complementary" aria-label="Contact information">
         <div className="container flex items-center justify-end gap-8 text-sm md:text-base">
-          <a href="tel:(973) 533-1777" className="flex items-center gap-2 hover:text-accent transition">
-            <Phone className="w-4 h-4" />
+          <a href="tel:9735331777" className="flex items-center gap-2 hover:text-accent transition" aria-label="Call ProCare Dental at (973) 533-1777">
+            <Phone className="w-4 h-4" aria-hidden="true" />
             <span>(973) 533-1777</span>
           </a>
           <span className="text-white/50">|</span>
-          <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="flex items-center gap-2 hover:text-accent transition">
-            <MapPin className="w-4 h-4" />
+          <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="flex items-center gap-2 hover:text-accent transition" aria-label="View office location: 22 Old Short Hills Rd Ste 207, Livingston, NJ 07039">
+            <MapPin className="w-4 h-4" aria-hidden="true" />
             <span>22 Old Short Hills Rd Ste 207, Livingston, NJ 07039</span>
           </a>
         </div>
@@ -37,19 +37,19 @@ export default function Header() {
       <div className="md:hidden bg-slate-800 text-white py-2 px-4">
         <div className="container flex items-center justify-between gap-3">
           {/* Call Icon with Phone Number */}
-          <a href="tel:(973) 533-1777" className="flex items-center gap-2 hover:text-accent transition">
-            <Phone className="w-5 h-5" />
+          <a href="tel:9735331777" className="flex items-center gap-2 hover:text-accent transition" aria-label="Call ProCare Dental at (973) 533-1777">
+            <Phone className="w-5 h-5" aria-hidden="true" />
             <span className="text-sm font-semibold">(973) 533-1777</span>
           </a>
           {/* Maps Icon Only */}
-          <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="p-2 hover:bg-white/20 rounded-lg transition">
-            <MapPin className="w-6 h-6" />
+          <a href="https://maps.google.com/?q=22+Old+Short+Hills+Rd+Ste+207+Livingston+NJ+07039" className="p-2 hover:bg-white/20 rounded-lg transition" aria-label="View office location on Google Maps">
+            <MapPin className="w-6 h-6" aria-hidden="true" />
           </a>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-slate-100 border-b border-border shadow-sm">
+      <nav className="bg-slate-100 border-b border-border shadow-sm" aria-label="Main navigation">
         <div className="container flex items-center justify-between h-auto px-4 py-3">
           <div className="flex items-center gap-3">
             <Link href="/">
@@ -69,8 +69,8 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-2 justify-center flex-1 flex-wrap">
             {/* About Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
-                About <ChevronDown className="w-3 h-3" />
+              <DropdownMenuTrigger className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-primary transition whitespace-nowrap" aria-label="About menu">
+                About <ChevronDown className="w-3 h-3" aria-hidden="true" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem><Link href="/dr-kristina-ceravolo">Meet the Doctors</Link></DropdownMenuItem>
@@ -81,8 +81,8 @@ export default function Header() {
 
             {/* Our Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
-                Our Services <ChevronDown className="w-3 h-3" />
+              <DropdownMenuTrigger className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-primary transition whitespace-nowrap" aria-label="Our Services menu">
+                Our Services <ChevronDown className="w-3 h-3" aria-hidden="true" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-auto p-4">
                 <div className="grid grid-cols-3 gap-6 min-w-max">
@@ -159,8 +159,8 @@ export default function Header() {
 
             {/* Patient Information Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
-                Patient Info <ChevronDown className="w-3 h-3" />
+              <DropdownMenuTrigger className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-primary transition whitespace-nowrap" aria-label="Patient Information menu">
+                Patient Info <ChevronDown className="w-3 h-3" aria-hidden="true" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem><Link href="/new-patients">New Patients</Link></DropdownMenuItem>
