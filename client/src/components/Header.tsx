@@ -69,8 +69,8 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-2 justify-center flex-1 flex-wrap">
             {/* About Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-semibold text-foreground hover:text-primary transition whitespace-nowrap" aria-label="About menu">
-                About <ChevronDown className="w-3.5 h-3.5" aria-hidden="true" />
+              <DropdownMenuTrigger className="flex items-center gap-1 text-base font-semibold text-foreground hover:text-primary transition whitespace-nowrap" aria-label="About menu">
+                About <ChevronDown className="w-4 h-4" aria-hidden="true" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem><Link href="/dr-kristina-ceravolo">Meet the Doctors</Link></DropdownMenuItem>
@@ -81,8 +81,8 @@ export default function Header() {
 
             {/* Our Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-semibold text-foreground hover:text-primary transition whitespace-nowrap" aria-label="Our Services menu">
-                Our Services <ChevronDown className="w-3.5 h-3.5" aria-hidden="true" />
+              <DropdownMenuTrigger className="flex items-center gap-1 text-base font-semibold text-foreground hover:text-primary transition whitespace-nowrap" aria-label="Our Services menu">
+                Our Services <ChevronDown className="w-4 h-4" aria-hidden="true" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-auto p-4">
                 <div className="grid grid-cols-3 gap-6 min-w-max">
@@ -159,8 +159,8 @@ export default function Header() {
 
             {/* Patient Information Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-semibold text-foreground hover:text-primary transition whitespace-nowrap" aria-label="Patient Information menu">
-                Patient Information <ChevronDown className="w-3.5 h-3.5" aria-hidden="true" />
+              <DropdownMenuTrigger className="flex items-center gap-1 text-base font-semibold text-foreground hover:text-primary transition whitespace-nowrap" aria-label="Patient Information menu">
+                Patient Information <ChevronDown className="w-4 h-4" aria-hidden="true" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem><Link href="/new-patients">New Patients</Link></DropdownMenuItem>
@@ -175,11 +175,11 @@ export default function Header() {
 
             {/* Blog & Contact Links */}
             <div className="flex items-center gap-2">
-              <Link href="/blog" className="text-sm font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
+              <Link href="/blog" className="text-base font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
                 Blog
               </Link>
               <span className="text-gray-300">|</span>
-              <a href="#contact" className="text-sm font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
+              <a href="#contact" className="text-base font-semibold text-foreground hover:text-primary transition whitespace-nowrap">
                 Contact
               </a>
             </div>
