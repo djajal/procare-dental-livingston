@@ -100,7 +100,7 @@ export default function Home() {
       "@context": "https://schema.org",
       "@type": "Dentist",
       "name": "ProCare Dental",
-        "image": "/manus-storage/ProcCareDentalLogo_1f51c486.jpeg",
+        "image": "/manus-storage/ProcCareDentalLogo_48aaf1e9.png",
       "description": "Professional dental care in Livingston, NJ offering family dentistry, cosmetic dentistry, dental implants, and emergency services.",
       "address": {
         "@type": "PostalAddress",
@@ -219,7 +219,7 @@ export default function Home() {
         <div className="container flex items-center justify-between h-24 px-4">
           <div className="flex items-center gap-3">
             <img
-              src="/manus-storage/ProcCareDentalLogo_1f51c486.jpeg"
+              src="/manus-storage/ProcCareDentalLogo_48aaf1e9.png"
               alt="ProCare Dental logo - professional dental care in Livingston, NJ"
               className="h-20 w-auto"
               width={80}
