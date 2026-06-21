@@ -88,16 +88,16 @@ export default function Header() {
                 <div className="grid grid-cols-3 gap-6 min-w-max">
                   {/* Column 1 */}
                   <div>
-                    <div className="text-sm font-semibold text-primary mb-2">Preventative & General</div>
-                    <div className="space-y-1 text-sm">
+                    <div className="text-base font-semibold text-primary mb-2">Preventative & General</div>
+                    <div className="space-y-1 text-base">
                       <Link href="/service/dental-hygiene" className="block hover:text-primary transition">Dental Hygiene</Link>
                       <Link href="/service/preventative-care" className="block hover:text-primary transition">Preventative Care</Link>
                       <Link href="/service/family-dentistry" className="block hover:text-primary transition">Family Dentistry</Link>
                       <Link href="/service/teeth-whitening" className="block hover:text-primary transition">Teeth Whitening</Link>
                     </div>
                     
-                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Cosmetic Services</div>
-                    <div className="space-y-1 text-sm">
+                    <div className="text-base font-semibold text-primary mt-4 mb-2">Cosmetic Services</div>
+                    <div className="space-y-1 text-base">
                       <Link href="/service/lumineers" className="block hover:text-primary transition">Lumineers</Link>
                       <Link href="/service/veneers" className="block hover:text-primary transition">Veneers</Link>
                       <Link href="/service/zoom-whitening" className="block hover:text-primary transition">Zoom Whitening</Link>
@@ -108,8 +108,8 @@ export default function Header() {
                   
                   {/* Column 2 */}
                   <div>
-                    <div className="text-sm font-semibold text-primary mb-2">Restorative</div>
-                    <div className="space-y-1 text-sm">
+                    <div className="text-base font-semibold text-primary mb-2">Restorative</div>
+                    <div className="space-y-1 text-base">
                       <Link href="/service/dental-implants" className="block hover:text-primary transition">Dental Implants</Link>
                       <Link href="/service/bridges" className="block hover:text-primary transition">Bridges</Link>
                       <Link href="/service/crowns" className="block hover:text-primary transition">Crowns</Link>
@@ -117,8 +117,8 @@ export default function Header() {
                       <Link href="/service/inlays-onlays" className="block hover:text-primary transition">Inlays & Onlays</Link>
                     </div>
                     
-                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Endodontics</div>
-                    <div className="space-y-1 text-sm">
+                    <div className="text-base font-semibold text-primary mt-4 mb-2">Endodontics</div>
+                    <div className="space-y-1 text-base">
                       <Link href="/service/root-canal" className="block hover:text-primary transition">Root Canal Treatment</Link>
                       <Link href="/service/root-canal-retreatment" className="block hover:text-primary transition">Retreatment</Link>
                     </div>
@@ -126,21 +126,21 @@ export default function Header() {
                   
                   {/* Column 3 */}
                   <div>
-                    <div className="text-sm font-semibold text-primary mb-2">Periodontic</div>
-                    <div className="space-y-1 text-sm">
+                    <div className="text-base font-semibold text-primary mb-2">Periodontic</div>
+                    <div className="space-y-1 text-base">
                       <Link href="/service/periodontal-disease" className="block hover:text-primary transition">Gum Disease Treatment</Link>
                       <Link href="/service/scaling-root-planing" className="block hover:text-primary transition">Scaling & Root Planing</Link>
                     </div>
                     
-                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Oral Surgery</div>
-                    <div className="space-y-1 text-sm">
+                    <div className="text-base font-semibold text-primary mt-4 mb-2">Oral Surgery</div>
+                    <div className="space-y-1 text-base">
                       <Link href="/service/wisdom-teeth" className="block hover:text-primary transition">Wisdom Teeth Extraction</Link>
                       <Link href="/service/extractions" className="block hover:text-primary transition">Extractions</Link>
                       <Link href="/service/sleep-apnea" className="block hover:text-primary transition">Sleep Apnea Treatment</Link>
                     </div>
                     
-                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Pediatric & Specialty</div>
-                    <div className="space-y-1 text-sm">
+                    <div className="text-base font-semibold text-primary mt-4 mb-2">Pediatric & Specialty</div>
+                    <div className="space-y-1 text-base">
                       <Link href="/service/sealants" className="block hover:text-primary transition">Sealants</Link>
                       <Link href="/service/mouth-guards" className="block hover:text-primary transition">Mouth Guards</Link>
                       <Link href="/service/night-guards" className="block hover:text-primary transition">Night Guards</Link>
@@ -148,8 +148,8 @@ export default function Header() {
                       <Link href="/service/occlusal-adjustment" className="block hover:text-primary transition">Occlusal Adjustment</Link>
                     </div>
                     
-                    <div className="text-sm font-semibold text-primary mt-4 mb-2">Technology</div>
-                    <div className="space-y-1 text-sm">
+                    <div className="text-base font-semibold text-primary mt-4 mb-2">Technology</div>
+                    <div className="space-y-1 text-base">
                       <Link href="/our-technology" className="block hover:text-primary transition">Our Advanced Technology</Link>
                     </div>
                   </div>
