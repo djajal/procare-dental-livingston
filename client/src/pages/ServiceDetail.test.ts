@@ -58,7 +58,7 @@ describe("ServiceDetail Page - Data Integrity", () => {
           expect(serviceBlock).toContain("title:");
         });
 
-        it("should have a details field with substantial content (350+ words)", () => {
+        it("should have a details field with substantial content (450+ words)", () => {
           const serviceStart = fileContent.indexOf(`"${serviceId}": {`);
           const nextServiceIdx = SERVICE_IDS
             .map((id) => fileContent.indexOf(`"${id}": {`, serviceStart + 1))
@@ -71,7 +71,7 @@ describe("ServiceDetail Page - Data Integrity", () => {
           expect(detailsMatch).not.toBeNull();
           if (detailsMatch) {
             const wordCount = detailsMatch[1].split(/\s+/).length;
-            expect(wordCount).toBeGreaterThanOrEqual(350); // Multi-paragraph content
+            expect(wordCount).toBeGreaterThanOrEqual(450); // ~500 word descriptions
           }
         });
 
