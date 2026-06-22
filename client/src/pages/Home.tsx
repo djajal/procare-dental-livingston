@@ -306,13 +306,13 @@ export default function Home() {
                       <a href="/service/sealants" className="block hover:text-primary transition">Sealants</a>
                       <a href="/service/mouth-guards" className="block hover:text-primary transition">Mouth Guards</a>
                       <a href="/service/night-guards" className="block hover:text-primary transition">Night Guards</a>
-                      <a href="/service/tmj" className="block hover:text-primary transition">TMJ Treatment</a>
+                      <a href="/service/tmj-treatment" className="block hover:text-primary transition">TMJ Treatment</a>
                       <a href="/service/occlusal-adjustment" className="block hover:text-primary transition">Occlusal Adjustment</a>
                     </div>
                     
                     <div className="text-sm font-semibold text-primary mt-4 mb-2">Technology</div>
                     <div className="space-y-1 text-sm">
-                      <a href="/our-technology" className="block hover:text-primary transition">Our Advanced Technology</a>
+                      <a href="/service/advanced-technology" className="block hover:text-primary transition">Our Advanced Technology</a>
                     </div>
                   </div>
                 </div>

@@ -90,19 +90,18 @@ export default function Header() {
                   <div>
                     <div className="text-lg font-semibold text-primary mb-2">Preventative & General</div>
                     <div className="space-y-2 text-lg">
-                      <Link href="/service/dental-hygiene" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Dental Hygiene</Link>
-                      <Link href="/service/preventative-care" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Preventative Care</Link>
-                      <Link href="/service/family-dentistry" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Family Dentistry</Link>
-                      <Link href="/service/teeth-whitening" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Teeth Whitening</Link>
+                      <Link href="/service/dental-hygiene" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Dental Hygiene</Link>
+                      <Link href="/service/oral-cancer-screenings" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Oral Cancer Screenings</Link>
+                      <Link href="/service/digital-xray" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Digital X-Ray</Link>
                     </div>
                     
                     <div className="text-lg font-semibold text-primary mt-4 mb-2">Cosmetic Services</div>
                     <div className="space-y-2 text-lg">
-                      <Link href="/service/lumineers" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Lumineers</Link>
-                      <Link href="/service/veneers" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Veneers</Link>
-                      <Link href="/service/zoom-whitening" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Zoom Whitening</Link>
-                      <Link href="/service/snap-on-smile" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Snap On Smile</Link>
-                      <Link href="/service/bonding" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Bonding & White Fillings</Link>
+                      <Link href="/service/lumineers" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Lumineers</Link>
+                      <Link href="/service/veneers" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Veneers</Link>
+                      <Link href="/service/zoom-whitening" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Zoom Whitening</Link>
+                      <Link href="/service/snap-on-smile" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Snap On Smile</Link>
+                      <Link href="/service/bonding" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Bonding & White Fillings</Link>
                     </div>
                   </div>
                   
@@ -110,47 +109,47 @@ export default function Header() {
                   <div>
                     <div className="text-lg font-semibold text-primary mb-2">Restorative</div>
                     <div className="space-y-2 text-lg">
-                      <Link href="/service/dental-implants" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Dental Implants</Link>
-                      <Link href="/service/bridges" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Bridges</Link>
-                      <Link href="/service/crowns" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Crowns</Link>
-                      <Link href="/service/dentures" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Dentures</Link>
-                      <Link href="/service/inlays-onlays" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Inlays & Onlays</Link>
+                      <Link href="/service/dental-implants" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Dental Implants</Link>
+                      <Link href="/service/bridges" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Bridges</Link>
+                      <Link href="/service/crowns" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Crowns</Link>
+                      <Link href="/service/dentures" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Dentures</Link>
+                      <Link href="/service/inlays-onlays" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Inlays & Onlays</Link>
                     </div>
                     
                     <div className="text-lg font-semibold text-primary mt-4 mb-2">Endodontics</div>
                     <div className="space-y-2 text-lg">
-                      <Link href="/service/root-canal" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Root Canal Treatment</Link>
-                      <Link href="/service/root-canal-retreatment" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Retreatment</Link>
+                      <Link href="/service/root-canal" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Root Canal Treatment</Link>
+                      <Link href="/service/root-canal-retreatment" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Retreatment</Link>
+                    </div>
+                    
+                    <div className="text-lg font-semibold text-primary mt-4 mb-2">Periodontic</div>
+                    <div className="space-y-2 text-lg">
+                      <Link href="/service/periodontal-disease" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Gum Disease Treatment</Link>
+                      <Link href="/service/scaling-root-planing" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Scaling & Root Planing</Link>
                     </div>
                   </div>
                   
                   {/* Column 3 */}
                   <div>
-                    <div className="text-lg font-semibold text-primary mb-2">Periodontic</div>
+                    <div className="text-lg font-semibold text-primary mb-2">Oral Surgery</div>
                     <div className="space-y-2 text-lg">
-                      <Link href="/service/periodontal-disease" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Gum Disease Treatment</Link>
-                      <Link href="/service/scaling-root-planing" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Scaling & Root Planing</Link>
-                    </div>
-                    
-                    <div className="text-lg font-semibold text-primary mt-4 mb-2">Oral Surgery</div>
-                    <div className="space-y-2 text-lg">
-                      <Link href="/service/wisdom-teeth" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Wisdom Teeth Extraction</Link>
-                      <Link href="/service/extractions" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Extractions</Link>
-                      <Link href="/service/sleep-apnea" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Sleep Apnea Treatment</Link>
+                      <Link href="/service/wisdom-teeth" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Wisdom Teeth Extraction</Link>
+                      <Link href="/service/extractions" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Extractions</Link>
+                      <Link href="/service/sleep-apnea" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Sleep Apnea Treatment</Link>
                     </div>
                     
                     <div className="text-lg font-semibold text-primary mt-4 mb-2">Pediatric & Specialty</div>
                     <div className="space-y-2 text-lg">
-                      <Link href="/service/sealants" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Sealants</Link>
-                      <Link href="/service/mouth-guards" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Mouth Guards</Link>
-                      <Link href="/service/night-guards" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Night Guards</Link>
-                      <Link href="/service/tmj" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">TMJ Treatment</Link>
-                      <Link href="/service/occlusal-adjustment" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Occlusal Adjustment</Link>
+                      <Link href="/service/sealants" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Sealants</Link>
+                      <Link href="/service/mouth-guards" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Mouth Guards</Link>
+                      <Link href="/service/night-guards" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Night Guards</Link>
+                      <Link href="/service/tmj-treatment" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">TMJ Treatment</Link>
+                      <Link href="/service/occlusal-adjustment" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Occlusal Adjustment</Link>
                     </div>
                     
                     <div className="text-lg font-semibold text-primary mt-4 mb-2">Technology</div>
                     <div className="space-y-2 text-lg">
-                      <Link href="/our-technology" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200 group/link relative">Our Advanced Technology</Link>
+                      <Link href="/service/advanced-technology" className="block hover:text-primary hover:bg-primary/5 hover:pl-2 rounded-md px-1 py-0.5 transition-all duration-200">Our Advanced Technology</Link>
                     </div>
                   </div>
                 </div>

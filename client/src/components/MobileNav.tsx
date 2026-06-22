@@ -155,13 +155,48 @@ export function MobileNav() {
                 />
               </button>
               {expandedSections.includes('services') && (
-                <div id="mobile-services-section" role="region" aria-label="Services submenu" className="space-y-2 pl-4 pb-3 text-sm">
-                  <button onClick={() => handleNavigation('/service/preventative-care')} className="block hover:text-primary transition text-left w-full py-1">Preventative Care</button>
-                  <button onClick={() => handleNavigation('/service/cosmetic-dentistry')} className="block hover:text-primary transition text-left w-full py-1">Cosmetic Dentistry</button>
+                <div id="mobile-services-section" role="region" aria-label="Services submenu" className="space-y-3 pl-4 pb-3 text-sm">
+                  <div className="font-semibold text-primary text-xs uppercase tracking-wide pt-1">Preventative & General</div>
+                  <button onClick={() => handleNavigation('/service/dental-hygiene')} className="block hover:text-primary transition text-left w-full py-1">Dental Hygiene</button>
+                  <button onClick={() => handleNavigation('/service/oral-cancer-screenings')} className="block hover:text-primary transition text-left w-full py-1">Oral Cancer Screenings</button>
+                  <button onClick={() => handleNavigation('/service/digital-xray')} className="block hover:text-primary transition text-left w-full py-1">Digital X-Ray</button>
+                  
+                  <div className="font-semibold text-primary text-xs uppercase tracking-wide pt-2">Cosmetic Services</div>
+                  <button onClick={() => handleNavigation('/service/lumineers')} className="block hover:text-primary transition text-left w-full py-1">Lumineers</button>
+                  <button onClick={() => handleNavigation('/service/veneers')} className="block hover:text-primary transition text-left w-full py-1">Veneers</button>
+                  <button onClick={() => handleNavigation('/service/zoom-whitening')} className="block hover:text-primary transition text-left w-full py-1">Zoom Whitening</button>
+                  <button onClick={() => handleNavigation('/service/snap-on-smile')} className="block hover:text-primary transition text-left w-full py-1">Snap On Smile</button>
+                  <button onClick={() => handleNavigation('/service/bonding')} className="block hover:text-primary transition text-left w-full py-1">Bonding & White Fillings</button>
+                  
+                  <div className="font-semibold text-primary text-xs uppercase tracking-wide pt-2">Restorative</div>
                   <button onClick={() => handleNavigation('/service/dental-implants')} className="block hover:text-primary transition text-left w-full py-1">Dental Implants</button>
+                  <button onClick={() => handleNavigation('/service/bridges')} className="block hover:text-primary transition text-left w-full py-1">Bridges</button>
+                  <button onClick={() => handleNavigation('/service/crowns')} className="block hover:text-primary transition text-left w-full py-1">Crowns</button>
+                  <button onClick={() => handleNavigation('/service/dentures')} className="block hover:text-primary transition text-left w-full py-1">Dentures</button>
+                  <button onClick={() => handleNavigation('/service/inlays-onlays')} className="block hover:text-primary transition text-left w-full py-1">Inlays & Onlays</button>
+                  
+                  <div className="font-semibold text-primary text-xs uppercase tracking-wide pt-2">Endodontics</div>
                   <button onClick={() => handleNavigation('/service/root-canal')} className="block hover:text-primary transition text-left w-full py-1">Root Canal Treatment</button>
-                  <button onClick={() => handleNavigation('/service/invisalign')} className="block hover:text-primary transition text-left w-full py-1">Invisalign</button>
-                  <button onClick={() => handleNavigation('/service/emergency-dentistry')} className="block hover:text-primary transition text-left w-full py-1">Emergency Dentistry</button>
+                  <button onClick={() => handleNavigation('/service/root-canal-retreatment')} className="block hover:text-primary transition text-left w-full py-1">Retreatment</button>
+                  
+                  <div className="font-semibold text-primary text-xs uppercase tracking-wide pt-2">Periodontic</div>
+                  <button onClick={() => handleNavigation('/service/periodontal-disease')} className="block hover:text-primary transition text-left w-full py-1">Gum Disease Treatment</button>
+                  <button onClick={() => handleNavigation('/service/scaling-root-planing')} className="block hover:text-primary transition text-left w-full py-1">Scaling & Root Planing</button>
+                  
+                  <div className="font-semibold text-primary text-xs uppercase tracking-wide pt-2">Oral Surgery</div>
+                  <button onClick={() => handleNavigation('/service/wisdom-teeth')} className="block hover:text-primary transition text-left w-full py-1">Wisdom Teeth Extraction</button>
+                  <button onClick={() => handleNavigation('/service/extractions')} className="block hover:text-primary transition text-left w-full py-1">Extractions</button>
+                  <button onClick={() => handleNavigation('/service/sleep-apnea')} className="block hover:text-primary transition text-left w-full py-1">Sleep Apnea Treatment</button>
+                  
+                  <div className="font-semibold text-primary text-xs uppercase tracking-wide pt-2">Pediatric & Specialty</div>
+                  <button onClick={() => handleNavigation('/service/sealants')} className="block hover:text-primary transition text-left w-full py-1">Sealants</button>
+                  <button onClick={() => handleNavigation('/service/mouth-guards')} className="block hover:text-primary transition text-left w-full py-1">Mouth Guards</button>
+                  <button onClick={() => handleNavigation('/service/night-guards')} className="block hover:text-primary transition text-left w-full py-1">Night Guards</button>
+                  <button onClick={() => handleNavigation('/service/tmj-treatment')} className="block hover:text-primary transition text-left w-full py-1">TMJ Treatment</button>
+                  <button onClick={() => handleNavigation('/service/occlusal-adjustment')} className="block hover:text-primary transition text-left w-full py-1">Occlusal Adjustment</button>
+                  
+                  <div className="font-semibold text-primary text-xs uppercase tracking-wide pt-2">Technology</div>
+                  <button onClick={() => handleNavigation('/service/advanced-technology')} className="block hover:text-primary transition text-left w-full py-1">Our Advanced Technology</button>
                 </div>
               )}
             </div>

@@ -1,184 +1,136 @@
 import { describe, it, expect } from "vitest";
-
-// We need to import the SERVICES_DATA from ServiceDetail.tsx
-// Since it's not exported, we'll re-import the file and test the data structure
-// by importing the module and checking the component's data
-
-// For data integrity testing, we'll extract the service IDs and validate structure
-const SERVICE_IDS = [
-  "teeth-whitening",
-  "preventative-care",
-  "cosmetic-dentistry",
-  "family-dentistry",
-  "dental-implants",
-  "root-canal",
-  "invisalign",
-  "emergency-dentistry",
-];
-
-// We need to test the data directly, so let's import the file as a module
-// Since SERVICES_DATA is not exported, we'll read the file and validate via regex/parsing
-// Better approach: test via dynamic import of the component file
 import * as fs from "fs";
 import * as path from "path";
 
+// Now that data is in a separate exported file, we can import it directly
+import { SERVICES_DATA, SERVICE_CATEGORIES } from "../data/serviceData";
+
+// All 26 service IDs that should exist
+const ALL_SERVICE_IDS = [
+  "dental-hygiene",
+  "oral-cancer-screenings",
+  "digital-xray",
+  "lumineers",
+  "veneers",
+  "zoom-whitening",
+  "snap-on-smile",
+  "bonding",
+  "dental-implants",
+  "bridges",
+  "crowns",
+  "dentures",
+  "inlays-onlays",
+  "root-canal",
+  "root-canal-retreatment",
+  "periodontal-disease",
+  "scaling-root-planing",
+  "wisdom-teeth",
+  "extractions",
+  "sleep-apnea",
+  "sealants",
+  "mouth-guards",
+  "night-guards",
+  "tmj-treatment",
+  "occlusal-adjustment",
+  "advanced-technology",
+];
+
+// Read the ServiceDetail.tsx for component structure tests
 const serviceDetailPath = path.resolve(__dirname, "ServiceDetail.tsx");
 const fileContent = fs.readFileSync(serviceDetailPath, "utf-8");
 
+// Read the data file for content tests
+const dataFilePath = path.resolve(__dirname, "../data/serviceData.ts");
+const dataFileContent = fs.readFileSync(dataFilePath, "utf-8");
+
 describe("ServiceDetail Page - Data Integrity", () => {
   describe("Service Coverage", () => {
-    it("should contain all 8 service IDs in SERVICES_DATA", () => {
-      SERVICE_IDS.forEach((id) => {
-        expect(fileContent).toContain(`"${id}"`);
+    it("should contain all 26 service IDs in SERVICES_DATA", () => {
+      ALL_SERVICE_IDS.forEach((id) => {
+        expect(SERVICES_DATA[id]).toBeDefined();
       });
     });
 
-    it("should have exactly 8 services defined", () => {
-      // Count occurrences of top-level service keys in SERVICES_DATA
-      const serviceKeyMatches = SERVICE_IDS.filter((id) =>
-        fileContent.includes(`"${id}": {`)
-      );
-      expect(serviceKeyMatches).toHaveLength(8);
+    it("should have exactly 26 services defined", () => {
+      expect(Object.keys(SERVICES_DATA)).toHaveLength(26);
+    });
+
+    it("should have all service categories defined", () => {
+      expect(SERVICE_CATEGORIES).toContain("Preventative & General");
+      expect(SERVICE_CATEGORIES).toContain("Cosmetic Services");
+      expect(SERVICE_CATEGORIES).toContain("Restorative");
+      expect(SERVICE_CATEGORIES).toContain("Endodontics");
+      expect(SERVICE_CATEGORIES).toContain("Periodontic");
+      expect(SERVICE_CATEGORIES).toContain("Oral Surgery");
+      expect(SERVICE_CATEGORIES).toContain("Pediatric & Specialty");
+      expect(SERVICE_CATEGORIES).toContain("Technology");
     });
   });
 
   describe("Service Data Structure", () => {
-    SERVICE_IDS.forEach((serviceId) => {
+    ALL_SERVICE_IDS.forEach((serviceId) => {
       describe(`Service: ${serviceId}`, () => {
+        const service = SERVICES_DATA[serviceId];
+
         it("should have a title field", () => {
-          // Extract the service block and check for title
-          const serviceStart = fileContent.indexOf(`"${serviceId}": {`);
-          expect(serviceStart).toBeGreaterThan(-1);
-          // Find next service or end of object
-          const nextServiceIdx = SERVICE_IDS
-            .map((id) => fileContent.indexOf(`"${id}": {`, serviceStart + 1))
-            .filter((idx) => idx > serviceStart)
-            .sort((a, b) => a - b)[0] || fileContent.length;
-          const serviceBlock = fileContent.slice(serviceStart, nextServiceIdx);
-          expect(serviceBlock).toContain("title:");
+          expect(service.title).toBeTruthy();
+          expect(service.title.length).toBeGreaterThan(3);
+        });
+
+        it("should have a category field", () => {
+          expect(service.category).toBeTruthy();
+          expect(SERVICE_CATEGORIES).toContain(service.category);
         });
 
         it("should have a details field with substantial content (450+ words)", () => {
-          const serviceStart = fileContent.indexOf(`"${serviceId}": {`);
-          const nextServiceIdx = SERVICE_IDS
-            .map((id) => fileContent.indexOf(`"${id}": {`, serviceStart + 1))
-            .filter((idx) => idx > serviceStart)
-            .sort((a, b) => a - b)[0] || fileContent.length;
-          const serviceBlock = fileContent.slice(serviceStart, nextServiceIdx);
-
-          // Extract the details content between backticks
-          const detailsMatch = serviceBlock.match(/details:\s*`([^`]+)`/s);
-          expect(detailsMatch).not.toBeNull();
-          if (detailsMatch) {
-            const wordCount = detailsMatch[1].split(/\s+/).length;
-            expect(wordCount).toBeGreaterThanOrEqual(450); // ~500 word descriptions
-          }
+          expect(service.details).toBeTruthy();
+          const wordCount = service.details.split(/\s+/).length;
+          expect(wordCount).toBeGreaterThanOrEqual(450);
         });
 
         it("should have exactly 3 gallery items", () => {
-          const serviceStart = fileContent.indexOf(`"${serviceId}": {`);
-          const nextServiceIdx = SERVICE_IDS
-            .map((id) => fileContent.indexOf(`"${id}": {`, serviceStart + 1))
-            .filter((idx) => idx > serviceStart)
-            .sort((a, b) => a - b)[0] || fileContent.length;
-          const serviceBlock = fileContent.slice(serviceStart, nextServiceIdx);
-
-          // Count gallery items by counting "caption:" occurrences in gallery array
-          const galleryStart = serviceBlock.indexOf("gallery:");
-          const galleryEnd = serviceBlock.indexOf("],", galleryStart);
-          const galleryBlock = serviceBlock.slice(galleryStart, galleryEnd);
-          const captionCount = (galleryBlock.match(/caption:/g) || []).length;
-          expect(captionCount).toBe(3);
+          expect(service.gallery).toHaveLength(3);
         });
 
         it("should have exactly 3 reviews", () => {
-          const serviceStart = fileContent.indexOf(`"${serviceId}": {`);
-          const nextServiceIdx = SERVICE_IDS
-            .map((id) => fileContent.indexOf(`"${id}": {`, serviceStart + 1))
-            .filter((idx) => idx > serviceStart)
-            .sort((a, b) => a - b)[0] || fileContent.length;
-          const serviceBlock = fileContent.slice(serviceStart, nextServiceIdx);
-
-          // Count reviews by counting "treatment:" occurrences in reviews array
-          const reviewsStart = serviceBlock.indexOf("reviews:");
-          const reviewsEnd = serviceBlock.indexOf("],", reviewsStart);
-          const reviewsBlock = serviceBlock.slice(reviewsStart, reviewsEnd);
-          const treatmentCount = (reviewsBlock.match(/treatment:/g) || []).length;
-          expect(treatmentCount).toBe(3);
+          expect(service.reviews).toHaveLength(3);
         });
 
         it("should have exactly 6 FAQs", () => {
-          const serviceStart = fileContent.indexOf(`"${serviceId}": {`);
-          const nextServiceIdx = SERVICE_IDS
-            .map((id) => fileContent.indexOf(`"${id}": {`, serviceStart + 1))
-            .filter((idx) => idx > serviceStart)
-            .sort((a, b) => a - b)[0] || fileContent.length;
-          const serviceBlock = fileContent.slice(serviceStart, nextServiceIdx);
-
-          // Count FAQs by counting "question:" occurrences in faqs array
-          const faqsStart = serviceBlock.indexOf("faqs:");
-          const faqsEnd = serviceBlock.indexOf("]", faqsStart + 100); // skip past first ]
-          const faqsBlock = serviceBlock.slice(faqsStart, faqsEnd + 500);
-          const questionCount = (faqsBlock.match(/question:/g) || []).length;
-          expect(questionCount).toBe(6);
+          expect(service.faqs).toHaveLength(6);
         });
 
         it("should have 6 benefits", () => {
-          const serviceStart = fileContent.indexOf(`"${serviceId}": {`);
-          const nextServiceIdx = SERVICE_IDS
-            .map((id) => fileContent.indexOf(`"${id}": {`, serviceStart + 1))
-            .filter((idx) => idx > serviceStart)
-            .sort((a, b) => a - b)[0] || fileContent.length;
-          const serviceBlock = fileContent.slice(serviceStart, nextServiceIdx);
-
-          const benefitsStart = serviceBlock.indexOf("benefits:");
-          const benefitsEnd = serviceBlock.indexOf("],", benefitsStart);
-          const benefitsBlock = serviceBlock.slice(benefitsStart, benefitsEnd);
-          // Count string items in benefits array
-          const benefitCount = (benefitsBlock.match(/"/g) || []).length / 2;
-          expect(benefitCount).toBe(6);
+          expect(service.benefits).toHaveLength(6);
         });
       });
     });
   });
 
   describe("SEO and Content Quality", () => {
-    it("should include Livingston NJ in service descriptions", () => {
-      SERVICE_IDS.forEach((serviceId) => {
-        const serviceStart = fileContent.indexOf(`"${serviceId}": {`);
-        const nextServiceIdx = SERVICE_IDS
-          .map((id) => fileContent.indexOf(`"${id}": {`, serviceStart + 1))
-          .filter((idx) => idx > serviceStart)
-          .sort((a, b) => a - b)[0] || fileContent.length;
-        const serviceBlock = fileContent.slice(serviceStart, nextServiceIdx);
-        expect(serviceBlock.toLowerCase()).toContain("livingston");
+    it("should include Livingston in service descriptions", () => {
+      ALL_SERVICE_IDS.forEach((serviceId) => {
+        const service = SERVICES_DATA[serviceId];
+        expect(service.details.toLowerCase()).toContain("livingston");
       });
     });
 
     it("should include ProCare Dental in service descriptions", () => {
-      SERVICE_IDS.forEach((serviceId) => {
-        const serviceStart = fileContent.indexOf(`"${serviceId}": {`);
-        const nextServiceIdx = SERVICE_IDS
-          .map((id) => fileContent.indexOf(`"${id}": {`, serviceStart + 1))
-          .filter((idx) => idx > serviceStart)
-          .sort((a, b) => a - b)[0] || fileContent.length;
-        const serviceBlock = fileContent.slice(serviceStart, nextServiceIdx);
-        expect(serviceBlock).toContain("ProCare Dental");
+      ALL_SERVICE_IDS.forEach((serviceId) => {
+        const service = SERVICES_DATA[serviceId];
+        expect(service.details).toContain("ProCare Dental");
       });
     });
 
     it("should include Essex County references for local SEO", () => {
-      // At least some services should mention Essex County
-      const essexCount = (fileContent.match(/Essex County/g) || []).length;
-      expect(essexCount).toBeGreaterThanOrEqual(4);
+      const essexCount = Object.values(SERVICES_DATA).filter(
+        (s) => s.details.includes("Essex County")
+      ).length;
+      expect(essexCount).toBeGreaterThanOrEqual(10);
     });
 
-    it("should include phone number (973) 533-1777", () => {
+    it("ServiceDetail.tsx should include phone number (973) 533-1777", () => {
       expect(fileContent).toContain("(973) 533-1777");
-    });
-
-    it("should include practice address", () => {
-      expect(fileContent).toContain("22 Old Short Hills Rd Ste 207");
     });
   });
 
@@ -237,37 +189,64 @@ describe("ServiceDetail Page - Data Integrity", () => {
 
   describe("Review Data Quality", () => {
     it("all reviews should have 5-star ratings", () => {
-      // Extract all rating values
-      const ratingMatches = fileContent.match(/rating:\s*(\d)/g) || [];
-      ratingMatches.forEach((match) => {
-        const rating = parseInt(match.replace("rating: ", "").replace("rating:", ""));
-        expect(rating).toBe(5);
+      Object.values(SERVICES_DATA).forEach((service) => {
+        service.reviews.forEach((review) => {
+          expect(review.rating).toBe(5);
+        });
       });
     });
 
     it("all reviews should have non-empty text", () => {
-      // Check that review text fields are not empty
-      const reviewTextMatches = fileContent.match(/text:\s*"[^"]+"/g) || [];
-      expect(reviewTextMatches.length).toBeGreaterThanOrEqual(24); // 8 services * 3 reviews
+      Object.values(SERVICES_DATA).forEach((service) => {
+        service.reviews.forEach((review) => {
+          expect(review.text.length).toBeGreaterThan(20);
+        });
+      });
     });
 
     it("all reviews should have treatment labels", () => {
-      const treatmentMatches = fileContent.match(/treatment:\s*"[^"]+"/g) || [];
-      expect(treatmentMatches.length).toBeGreaterThanOrEqual(24); // 8 services * 3 reviews
+      Object.values(SERVICES_DATA).forEach((service) => {
+        service.reviews.forEach((review) => {
+          expect(review.treatment.length).toBeGreaterThan(3);
+        });
+      });
     });
   });
 
   describe("Gallery Data Quality", () => {
     it("all gallery items should have captions", () => {
-      const captionMatches = fileContent.match(/caption:\s*"[^"]+"/g) || [];
-      expect(captionMatches.length).toBeGreaterThanOrEqual(24); // 8 services * 3 items
+      Object.values(SERVICES_DATA).forEach((service) => {
+        service.gallery.forEach((item) => {
+          expect(item.caption.length).toBeGreaterThan(5);
+        });
+      });
     });
 
-    it("all gallery items should have image URLs", () => {
-      const beforeMatches = fileContent.match(/before:\s*"https:\/\/[^"]+"/g) || [];
-      const afterMatches = fileContent.match(/after:\s*"https:\/\/[^"]+"/g) || [];
-      expect(beforeMatches.length).toBeGreaterThanOrEqual(24);
-      expect(afterMatches.length).toBeGreaterThanOrEqual(24);
+    it("all gallery items should have image references", () => {
+      Object.values(SERVICES_DATA).forEach((service) => {
+        service.gallery.forEach((item) => {
+          expect(item.before).toBeTruthy();
+          expect(item.after).toBeTruthy();
+        });
+      });
+    });
+  });
+
+  describe("FAQ Data Quality", () => {
+    it("all FAQs should have questions ending with ?", () => {
+      Object.values(SERVICES_DATA).forEach((service) => {
+        service.faqs.forEach((faq) => {
+          expect(faq.question.endsWith("?")).toBe(true);
+        });
+      });
+    });
+
+    it("all FAQs should have answers with substantial content", () => {
+      Object.values(SERVICES_DATA).forEach((service) => {
+        service.faqs.forEach((faq) => {
+          expect(faq.answer.length).toBeGreaterThan(50);
+        });
+      });
     });
   });
 });

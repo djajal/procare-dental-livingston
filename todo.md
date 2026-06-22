@@ -129,3 +129,57 @@
 - [x] Expand descriptions to approximately 500 words each (range: 466-506 words)
 - [ ] Source real before/after gallery images
 - [ ] Expand remaining descriptions from ~470 to 500+ words (optional polish)
+
+## Service Pages Restructure (Full Service List)
+
+### Preventative & General
+- [x] Dental Hygiene service page (500+ words, gallery, reviews, FAQ)
+- [x] Oral Cancer Screenings service page (500+ words, gallery, reviews, FAQ)
+- [x] Digital X-Ray service page (500+ words, gallery, reviews, FAQ)
+
+### Cosmetic Services
+- [x] Lumineers service page (500+ words, gallery, reviews, FAQ)
+- [x] Veneers service page (500+ words, gallery, reviews, FAQ)
+- [x] Zoom Whitening service page (500+ words, gallery, reviews, FAQ)
+- [x] Snap On Smile service page (500+ words, gallery, reviews, FAQ)
+- [x] Bonding & White Fillings service page (500+ words, gallery, reviews, FAQ)
+
+### Restorative
+- [x] Dental Implants service page (500+ words, gallery, reviews, FAQ)
+- [x] Bridges service page (500+ words, gallery, reviews, FAQ)
+- [x] Crowns service page (500+ words, gallery, reviews, FAQ)
+- [x] Dentures service page (500+ words, gallery, reviews, FAQ)
+- [x] Inlays & Onlays service page (500+ words, gallery, reviews, FAQ)
+
+### Endodontics
+- [x] Root Canal Treatment service page (500+ words, gallery, reviews, FAQ)
+- [x] Retreatment service page (500+ words, gallery, reviews, FAQ)
+
+### Periodontic
+- [x] Gum Disease Treatment service page (500+ words, gallery, reviews, FAQ)
+- [x] Scaling & Root Planing service page (500+ words, gallery, reviews, FAQ)
+
+### Oral Surgery
+- [x] Wisdom Teeth Extraction service page (500+ words, gallery, reviews, FAQ)
+- [x] Extractions service page (500+ words, gallery, reviews, FAQ)
+- [x] Sleep Apnea Treatment service page (500+ words, gallery, reviews, FAQ)
+
+### Pediatric & Specialty
+- [x] Sealants service page (500+ words, gallery, reviews, FAQ)
+- [x] Mouth Guards service page (500+ words, gallery, reviews, FAQ)
+- [x] Night Guards service page (500+ words, gallery, reviews, FAQ)
+- [x] TMJ Treatment service page (500+ words, gallery, reviews, FAQ)
+- [x] Occlusal Adjustment service page (500+ words, gallery, reviews, FAQ)
+
+### Technology
+- [x] Our Advanced Technology page (500+ words, gallery, reviews, FAQ)
+
+### Infrastructure
+- [x] Consolidate all 26 services into serviceData.ts with full data
+- [x] Update ServiceDetail.tsx to import from serviceData.ts
+- [x] Update App.tsx to route all /service/* to ServiceDetail catch-all
+- [x] Ensure Header component is used on all service pages (consistent nav/logo)
+- [x] Update Header desktop nav with full service categories
+- [x] Update MobileNav with full service categories
+- [x] Update Home.tsx inline nav links to match new service IDs
+- [x] Update vitest tests for new service structure (253 tests passing)
